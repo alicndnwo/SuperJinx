@@ -1,0 +1,87 @@
+/* ⚡ Super JinX skin for the Marzban dashboard
+   Safe by design: only polishes spacing, sizes, fonts and RTL. Never hides or moves panel features. */
+
+/* ---------- font (bundled in the image, works even if Google Fonts is blocked) ---------- */
+@font-face { font-family: "Vazirmatn"; src: url("/jinx-fonts/Vazirmatn-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Vazirmatn"; src: url("/jinx-fonts/Vazirmatn-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Vazirmatn"; src: url("/jinx-fonts/Vazirmatn-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+:root {
+  --chakra-fonts-body: "Vazirmatn", Tahoma, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --chakra-fonts-heading: "Vazirmatn", Tahoma, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+body { font-family: var(--chakra-fonts-body); }
+
+/* ---------- global ---------- */
+html { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+body { overflow-x: clip; -webkit-text-size-adjust: 100%; }   /* clip (not hidden): keeps the sticky header and the «حمایت مالی» button pinned at the top */
+* { -webkit-tap-highlight-color: transparent; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #7c5cff88; border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::selection { background: #7c5cff55; }
+
+/* wide tables scroll sideways instead of breaking the page */
+.chakra-table__container { max-width: 100%; overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+th, .chakra-badge { white-space: nowrap; }
+
+/* long values (sub links, UUIDs, tokens) never overflow */
+.chakra-code, code, pre { word-break: break-all; white-space: pre-wrap; }
+
+/* mixed Persian + English/numbers always read correctly ("10 GB / 50 GB", links, usernames) */
+td, .chakra-input, input, textarea, .chakra-code, code { unicode-bidi: plaintext; }
+
+/* menus / popovers / toasts stay on screen */
+.chakra-menu__menu-list, .chakra-popover__content { max-width: 92vw !important; max-height: 70vh; overflow-y: auto; }
+.chakra-toast { max-width: 92vw; }
+
+/* soft polish */
+.chakra-modal__content, .chakra-card, .chakra-menu__menu-list { border-radius: 16px !important; }
+.chakra-button { border-radius: 10px !important; }
+
+/* desktop */
+@media (min-width: 1024px) {
+  .chakra-container { max-width: 1280px !important; }
+}
+
+/* ---------- RTL (Persian) fixes: only applied when the panel itself is in RTL ---------- */
+[dir="rtl"] .chakra-modal__close-btn { right: auto !important; left: 12px !important; }
+[dir="rtl"] .chakra-select__icon-wrapper { right: auto !important; left: 0.5rem !important; }
+[dir="rtl"] .chakra-select { padding-inline-start: 1rem !important; padding-inline-end: 2rem !important; }
+[dir="rtl"] .chakra-menu__icon-wrapper { margin-inline-start: 0 !important; margin-inline-end: 0.75rem !important; }
+[dir="rtl"] input, [dir="rtl"] textarea { text-align: start; }
+
+/* ---------- tablet & mobile ---------- */
+@media (max-width: 768px) {
+  .chakra-container { padding-left: 12px !important; padding-right: 12px !important; max-width: 100% !important; }
+
+  header, .chakra-button__group { flex-wrap: wrap !important; gap: 8px; }
+  h1, h2, .chakra-heading { font-size: clamp(16px, 5vw, 22px) !important; line-height: 1.5 !important; }
+
+  /* 16px inputs = iPhone never auto-zooms; taller = easy to tap */
+  input:not([type=checkbox]):not([type=radio]):not([type=hidden]):not([type=range]),
+  select, textarea, .chakra-input, .chakra-select, .chakra-textarea { font-size: 16px !important; min-height: 42px; }
+
+  .chakra-button { min-height: 40px; }
+  .chakra-icon-button { min-width: 40px; min-height: 40px; }
+
+  /* modals: full width card, page scrolls naturally (date pickers & dropdowns never get clipped) */
+  .chakra-modal__content-container { align-items: flex-start !important; }
+  .chakra-modal__content { width: calc(100vw - 16px) !important; max-width: calc(100vw - 16px) !important;
+                           margin: 8px auto !important; }
+  .chakra-modal__header { font-size: 18px !important; padding-inline-end: 48px !important; }
+  .chakra-modal__body { padding-left: 14px !important; padding-right: 14px !important; }
+  .chakra-modal__footer { flex-wrap: wrap; gap: 8px; }
+  .chakra-modal__footer .chakra-button { flex: 1 1 auto; }
+
+  .chakra-form-control { width: 100% !important; }
+  th, td { padding: 10px 8px !important; font-size: 13px !important; }
+  .chakra-tabs__tablist { overflow-x: auto; flex-wrap: nowrap !important; }
+  .chakra-modal__body canvas { max-width: 78vw !important; height: auto !important; }
+  .chakra-menu__menu-list { min-width: 200px !important; }
+}
+
+/* ---------- small phones ---------- */
+@media (max-width: 400px) {
+  th, td { font-size: 12px !important; padding: 8px 6px !important; }
+  .chakra-badge { font-size: 10px !important; }
+}

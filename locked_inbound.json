@@ -1,0 +1,7 @@
+{
+  "tag": "جینکس | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫", "listen": "127.0.0.1", "port": 2004, "protocol": "vless",
+  "settings": { "clients": [], "decryption": "none" },
+  "streamSettings": { "network": "ws", "wsSettings": { "path": "/cdn/jinx", "heartbeatPeriod": 30 }, "security": "none",
+                      "sockopt": { "tcpKeepAliveIdle": 30, "tcpKeepAliveInterval": 15 } },
+  "sniffing": { "enabled": true, "destOverride": ["http", "tls", "quic"], "routeOnly": true }
+}

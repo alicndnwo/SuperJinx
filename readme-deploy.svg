@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="160" viewBox="0 0 1200 160" role="img" aria-label="Fork, Railway, Amsterdam, Volume, Port 8080, No sleep, Deploy">
+<defs>
+<linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#7c5cff"/><stop offset="0.5" stop-color="#5b8cff"/><stop offset="1" stop-color="#00d4a6"/>
+</linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+  <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter>
+</defs>
+<rect x="0.5" y="0.5" width="1199" height="159" rx="26" fill="#0b0a1f" stroke="url(#brand)" stroke-opacity="0.4"/>
+<rect x="90" y="67" width="1020" height="6" rx="3" fill="#2f2c5c"/>
+<rect x="90" y="67" width="0" height="6" rx="3" fill="url(#brand)" filter="url(#glow)">
+  <animate attributeName="width" values="0;0;1020;1020;0" keyTimes="0;0.050;0.613;0.93;1" dur="8.0s" repeatCount="indefinite"/></rect>
+
+  <g transform="translate(90 70)">
+    <circle r="26" fill="#11102a" stroke="#2f2c5c" stroke-width="3"/>
+    <circle r="26" fill="url(#brand)" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.050;0.080;0.93;1" dur="8.0s" repeatCount="indefinite"/></circle>
+    <text y="7" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="19" font-weight="900" fill="#fff">1</text>
+    <text y="62" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="800" letter-spacing="1.5" fill="#c9c4ff">FORK</text>
+  </g>
+  <g transform="translate(260 70)">
+    <circle r="26" fill="#11102a" stroke="#2f2c5c" stroke-width="3"/>
+    <circle r="26" fill="url(#brand)" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.144;0.174;0.93;1" dur="8.0s" repeatCount="indefinite"/></circle>
+    <text y="7" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="19" font-weight="900" fill="#fff">2</text>
+    <text y="62" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="800" letter-spacing="1.5" fill="#c9c4ff">RAILWAY</text>
+  </g>
+  <g transform="translate(430 70)">
+    <circle r="26" fill="#11102a" stroke="#2f2c5c" stroke-width="3"/>
+    <circle r="26" fill="url(#brand)" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.237;0.267;0.93;1" dur="8.0s" repeatCount="indefinite"/></circle>
+    <text y="7" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="19" font-weight="900" fill="#fff">3</text>
+    <text y="62" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="800" letter-spacing="1.5" fill="#c9c4ff">AMSTERDAM</text>
+  </g>
+  <g transform="translate(600 70)">
+    <circle r="26" fill="#11102a" stroke="#2f2c5c" stroke-width="3"/>
+    <circle r="26" fill="url(#brand)" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.331;0.361;0.93;1" dur="8.0s" repeatCount="indefinite"/></circle>
+    <text y="7" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="19" font-weight="900" fill="#fff">4</text>
+    <text y="62" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="800" letter-spacing="1.5" fill="#c9c4ff">VOLUME</text>
+  </g>
+  <g transform="translate(770 70)">
+    <circle r="26" fill="#11102a" stroke="#2f2c5c" stroke-width="3"/>
+    <circle r="26" fill="url(#brand)" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.425;0.455;0.93;1" dur="8.0s" repeatCount="indefinite"/></circle>
+    <text y="7" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="19" font-weight="900" fill="#fff">5</text>
+    <text y="62" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="800" letter-spacing="1.5" fill="#c9c4ff">PORT 8080</text>
+  </g>
+  <g transform="translate(940 70)">
+    <circle r="26" fill="#11102a" stroke="#2f2c5c" stroke-width="3"/>
+    <circle r="26" fill="url(#brand)" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.519;0.549;0.93;1" dur="8.0s" repeatCount="indefinite"/></circle>
+    <text y="7" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="19" font-weight="900" fill="#fff">6</text>
+    <text y="62" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="800" letter-spacing="1.5" fill="#c9c4ff">NO SLEEP</text>
+  </g>
+  <g transform="translate(1110 70)">
+    <circle r="26" fill="#11102a" stroke="#2f2c5c" stroke-width="3"/>
+    <circle r="26" fill="url(#brand)" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.613;0.643;0.93;1" dur="8.0s" repeatCount="indefinite"/></circle>
+    <text y="7" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="19" font-weight="900" fill="#fff">7</text>
+    <text y="62" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="800" letter-spacing="1.5" fill="#c9c4ff">DEPLOY</text>
+  </g>
+<g opacity="0" transform="translate(1110 22)"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.613;0.643;0.93;1" dur="8.0s" repeatCount="indefinite"/>
+  <text text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="900" letter-spacing="2" fill="#00d4a6">LIVE ✓</text></g>
+</svg>

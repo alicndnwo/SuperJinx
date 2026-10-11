@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="170" viewBox="0 0 1200 170" role="img" aria-label="12 methods, 5 minutes, 15s self-heal, 4 languages">
+<defs>
+<linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#7c5cff"/><stop offset="0.5" stop-color="#5b8cff"/><stop offset="1" stop-color="#00d4a6"/>
+</linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+  <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter>
+</defs>
+  <g transform="translate(15 10)">
+    <rect width="270" height="150" rx="22" fill="#11102a" stroke="#7c5cff" stroke-opacity="0.45"/>
+    <rect width="270" height="150" rx="22" fill="#7c5cff" opacity="0.05"><animate attributeName="opacity" values="0.03;0.12;0.03" dur="3s" begin="0.0s" repeatCount="indefinite"/></rect>
+    <g transform="translate(64 75) rotate(-90)">
+      <circle r="34" fill="none" stroke="#2a2850" stroke-width="7"/>
+      <circle r="34" fill="none" stroke="#7c5cff" stroke-width="7" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="213.6" filter="url(#glow)">
+        <animate attributeName="stroke-dashoffset" values="213.6;0;0;213.6" keyTimes="0;0.25;0.85;1" dur="6s" begin="0.2s" repeatCount="indefinite"/></circle>
+    </g>
+    <g transform="translate(64 75)" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M3,-14 L-8,2 L0,2 L-3,14 L8,-2 L0,-2 Z" fill="#fff" stroke="none"/></g>
+    <text x="118" y="68" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="34" font-weight="900" fill="#7c5cff">12</text>
+    <text x="118" y="96" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.2" fill="#aab1d6">CONNECTION</text>
+    <text x="118" y="114" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.2" fill="#aab1d6">METHODS</text>
+  </g>
+  <g transform="translate(315 10)">
+    <rect width="270" height="150" rx="22" fill="#11102a" stroke="#5b8cff" stroke-opacity="0.45"/>
+    <rect width="270" height="150" rx="22" fill="#5b8cff" opacity="0.05"><animate attributeName="opacity" values="0.03;0.12;0.03" dur="3s" begin="0.5s" repeatCount="indefinite"/></rect>
+    <g transform="translate(64 75) rotate(-90)">
+      <circle r="34" fill="none" stroke="#2a2850" stroke-width="7"/>
+      <circle r="34" fill="none" stroke="#5b8cff" stroke-width="7" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="213.6" filter="url(#glow)">
+        <animate attributeName="stroke-dashoffset" values="213.6;0;0;213.6" keyTimes="0;0.25;0.85;1" dur="6s" begin="0.4s" repeatCount="indefinite"/></circle>
+    </g>
+    <g transform="translate(64 75)" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle r="13"/><path d="M0,-7 L0,0 L6,4"/></g>
+    <text x="118" y="68" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="34" font-weight="900" fill="#5b8cff">5</text>
+    <text x="118" y="96" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.2" fill="#aab1d6">MINUTES</text>
+    <text x="118" y="114" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.2" fill="#aab1d6">TO DEPLOY</text>
+  </g>
+  <g transform="translate(615 10)">
+    <rect width="270" height="150" rx="22" fill="#11102a" stroke="#00d4a6" stroke-opacity="0.45"/>
+    <rect width="270" height="150" rx="22" fill="#00d4a6" opacity="0.05"><animate attributeName="opacity" values="0.03;0.12;0.03" dur="3s" begin="1.0s" repeatCount="indefinite"/></rect>
+    <g transform="translate(64 75) rotate(-90)">
+      <circle r="34" fill="none" stroke="#2a2850" stroke-width="7"/>
+      <circle r="34" fill="none" stroke="#00d4a6" stroke-width="7" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="213.6" filter="url(#glow)">
+        <animate attributeName="stroke-dashoffset" values="213.6;0;0;213.6" keyTimes="0;0.25;0.85;1" dur="6s" begin="0.6000000000000001s" repeatCount="indefinite"/></circle>
+    </g>
+    <g transform="translate(64 75)" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M-14,0 L-7,0 L-3,-9 L3,9 L7,0 L14,0"/></g>
+    <text x="118" y="68" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="34" font-weight="900" fill="#00d4a6">15s</text>
+    <text x="118" y="96" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.2" fill="#aab1d6">SELF-HEAL</text>
+    <text x="118" y="114" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.2" fill="#aab1d6">CHECK</text>
+  </g>
+  <g transform="translate(915 10)">
+    <rect width="270" height="150" rx="22" fill="#11102a" stroke="#ff5ca8" stroke-opacity="0.45"/>
+    <rect width="270" height="150" rx="22" fill="#ff5ca8" opacity="0.05"><animate attributeName="opacity" values="0.03;0.12;0.03" dur="3s" begin="1.5s" repeatCount="indefinite"/></rect>
+    <g transform="translate(64 75) rotate(-90)">
+      <circle r="34" fill="none" stroke="#2a2850" stroke-width="7"/>
+      <circle r="34" fill="none" stroke="#ff5ca8" stroke-width="7" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="213.6" filter="url(#glow)">
+        <animate attributeName="stroke-dashoffset" values="213.6;0;0;213.6" keyTimes="0;0.25;0.85;1" dur="6s" begin="0.8s" repeatCount="indefinite"/></circle>
+    </g>
+    <g transform="translate(64 75)" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle r="13"/><ellipse rx="6" ry="13"/><path d="M-13,0 L13,0"/></g>
+    <text x="118" y="68" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="34" font-weight="900" fill="#ff5ca8">4</text>
+    <text x="118" y="96" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.2" fill="#aab1d6">PANEL</text>
+    <text x="118" y="114" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.2" fill="#aab1d6">LANGUAGES</text>
+  </g>
+</svg>

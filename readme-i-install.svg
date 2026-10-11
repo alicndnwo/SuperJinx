@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="install">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00d4a6"/><stop offset="1" stop-color="#5b8cff"/></linearGradient>
+<radialGradient id="h" cx="0.3" cy="0.2" r="0.9"><stop offset="0" stop-color="#00d4a6" stop-opacity="0.35"/><stop offset="1" stop-color="#00d4a6" stop-opacity="0"/></radialGradient></defs>
+<rect x="2" y="2" width="60" height="60" rx="17" fill="#11112a"/>
+<rect x="2" y="2" width="60" height="60" rx="17" fill="url(#h)"/>
+<rect x="2.75" y="2.75" width="58.5" height="58.5" rx="16.25" fill="none" stroke="url(#g)" stroke-width="1.5" stroke-opacity="0.85"/>
+<g transform="translate(16 16) scale(1.3333)" fill="none" stroke="url(#g)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></g>
+</svg>

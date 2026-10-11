@@ -1,0 +1,911 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src data:; font-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0b0d">
+<meta name="color-scheme" content="dark light">
+<title>حمایت مالی | Super JinX</title>
+<style>@font-face{font-family:Vazirmatn;font-weight:400;font-display:swap;src:url(/jinx-fonts/Vazirmatn-Regular.woff2) format("woff2")}
+@font-face{font-family:Vazirmatn;font-weight:500 600;font-display:swap;src:url(/jinx-fonts/Vazirmatn-Medium.woff2) format("woff2")}
+@font-face{font-family:Vazirmatn;font-weight:700 900;font-display:swap;src:url(/jinx-fonts/Vazirmatn-Bold.woff2) format("woff2")}
+:root{--bg:#0a0b0d;--s1:#111215;--s2:#16181c;--s3:#1c1f24;--line:rgba(255,255,255,.07);--line2:rgba(255,255,255,.13);--tx:#ecedef;--tx2:#a3a6ad;--tx3:#6d717a;
+--gold:#c9ae78;--gold2:#e3cd9c;--ok:#5fbf8f;--warn:#d9a74a;--bad:#e06a6a;--cr:201,174,120;--on:#fff;--r:14px;--ease:cubic-bezier(.2,.7,.2,1);
+--mono:"JetBrains Mono","SF Mono","Cascadia Mono",ui-monospace,Menlo,Consolas,"Roboto Mono",monospace;
+--noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+:root[data-theme=light]{--bg:#f4f3ef;--s1:#ffffff;--s2:#faf9f6;--s3:#f1efe9;--line:rgba(20,20,25,.08);--line2:rgba(20,20,25,.15);--tx:#16171a;--tx2:#4f525a;--tx3:#7c7f87;--gold:#94733a;--gold2:#7a5d2b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:Vazirmatn,"IRANSansX","Segoe UI",Tahoma,system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:15px}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(1100px 520px at 70% -8%,rgba(var(--cr),.075),transparent 70%),radial-gradient(900px 500px at 0% 100%,rgba(255,255,255,.025),transparent 70%)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:var(--noise);opacity:.035;mix-blend-mode:overlay}
+:root[data-theme=light] body::after{opacity:.05;mix-blend-mode:multiply}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+input{font:inherit;color:inherit}
+svg{display:block;flex:none}
+:focus-visible{outline:1.5px solid var(--gold);outline-offset:3px}
+.ltr{direction:ltr;unicode-bidi:isolate}
+.mono{font-family:var(--mono)}
+[hidden]{display:none!important}
+.ico{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;letter-spacing:2.2px;color:var(--gold);text-transform:uppercase}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor;opacity:.7}
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;border:1px solid rgba(var(--cr),.45);color:var(--gold);font:700 13px/1 var(--mono);letter-spacing:.5px;
+background:linear-gradient(180deg,rgba(201,174,120,.12),rgba(201,174,120,.02))}
+:root[data-theme=light] .mark{border-color:rgba(148,115,58,.4)}
+.brand b{display:block;font-size:14.5px;font-weight:700;line-height:1.3}
+.brand small{display:block;font-size:11.5px;color:var(--tx3);line-height:1.3;letter-spacing:.3px}
+.tr{display:flex;align-items:center;gap:8px}
+.status{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px;border-radius:9px;font-size:12.5px;color:var(--tx2);border:1px solid var(--line)}
+.status i{width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(95,191,143,.15)}
+.ib{width:36px;height:36px;border-radius:9px;display:grid;place-items:center;border:1px solid var(--line);color:var(--tx2);transition:color .2s,border-color .2s,background .2s}
+.ib:hover{color:var(--tx);border-color:var(--line2);background:var(--s2)}
+/* toast */
+.toast{position:fixed;left:50%;bottom:28px;z-index:80;display:flex;align-items:center;gap:12px;max-width:calc(100vw - 28px);padding:12px 18px 12px 14px;border-radius:12px;
+background:var(--s3);color:var(--tx);border:1px solid var(--line2);box-shadow:0 20px 50px -20px rgba(0,0,0,.6);font-size:13.5px;font-weight:500;
+transform:translate(-50%,24px);opacity:0;transition:transform .35s var(--ease),opacity .25s;pointer-events:none}
+.toast.on{transform:translate(-50%,0);opacity:1}
+.toast .ti{width:24px;height:24px;border-radius:50%;flex:none;display:grid;place-items:center;color:var(--ok);border:1px solid rgba(95,191,143,.4)}
+.toast.err .ti{color:var(--bad);border-color:rgba(224,106,106,.4)}
+.toast .ti .ico{width:13px;height:13px;stroke-width:2.2}
+.toast span{min-width:0;overflow-wrap:anywhere;line-height:1.6}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+a.ib{text-decoration:none}
+.ib.back .ico{transform:scaleX(-1)}
+/* ---------- intro ---------- */
+.intro{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:end;padding:64px 0 48px;border-bottom:1px solid var(--line)}
+.intro h1{font-size:44px;line-height:1.3;font-weight:700;letter-spacing:-.3px;margin:18px 0 14px}
+.intro h1 span{color:var(--gold)}
+.intro p{color:var(--tx2);font-size:16px;max-width:560px}
+.facts{border-top:1px solid var(--line2)}
+.facts div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.facts dt{color:var(--tx3)}
+.facts dd{font-weight:600;text-align:left}
+.facts dd.mono{font-size:12.5px;letter-spacing:.3px}
+/* ---------- assets list ---------- */
+.lh{display:flex;justify-content:space-between;align-items:center;padding:0 4px 12px;font-size:12px;color:var(--tx3);letter-spacing:.3px}
+.lh b{font-weight:600;color:var(--tx2)}
+.list{border:1px solid var(--line);border-radius:var(--r);background:var(--s1);overflow:hidden}
+.row{position:relative;display:flex;align-items:center;gap:14px;width:100%;padding:15px 18px;text-align:right;border-bottom:1px solid var(--line);transition:background .2s}
+.row:last-child{border-bottom:0}
+.row:hover{background:var(--s2)}
+.row::before{content:"";position:absolute;right:0;top:12px;bottom:12px;width:2px;border-radius:2px;background:rgb(var(--tc));transform:scaleY(0);transition:transform .25s var(--ease)}
+.row[aria-checked=true]{background:var(--s2)}
+.row[aria-checked=true]::before{transform:none}
+.row .ci{width:32px;height:32px}
+.row .ci svg,.dh .ci svg,.bar .ci svg{width:100%;height:100%}
+.row .nm{flex:1;min-width:0;line-height:1.4}
+.row .nm b{display:block;font-size:14.5px;font-weight:600}
+.row .nm small{display:block;font-size:12px;color:var(--tx3)}
+.row .tag{font:600 11px/1 var(--mono);letter-spacing:.6px;color:var(--tx2);padding:6px 8px;border-radius:6px;border:1px solid var(--line2)}
+.row .chev{color:var(--tx3);transition:transform .2s,color .2s}
+.row[aria-checked=true] .chev{color:var(--gold);transform:translateX(-3px)}
+.row.off{opacity:.45;cursor:not-allowed}
+.row.off .tag{color:var(--bad);border-color:rgba(224,106,106,.35)}
+/* ---------- detail ---------- */
+.detail{border:1px solid var(--line);border-radius:var(--r);background:var(--s1);overflow:hidden}
+.dh{display:flex;align-items:center;gap:16px;padding:22px 24px;border-bottom:1px solid var(--line)}
+.dh .ci{width:44px;height:44px}
+.dh .tt{flex:1;min-width:0}
+.dh h2{font-size:20px;font-weight:700;line-height:1.35;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.dh h2 .tag{font:600 11px/1 var(--mono);letter-spacing:.6px;color:var(--tx2);padding:6px 8px;border-radius:6px;border:1px solid var(--line2)}
+.dh small{display:block;color:var(--tx3);font-size:12.5px}
+.stamp{display:inline-flex;align-items:center;gap:7px;height:30px;padding:0 11px;border-radius:8px;font-size:12px;font-weight:600;color:var(--ok);border:1px solid rgba(95,191,143,.3);background:rgba(95,191,143,.06);white-space:nowrap}
+.stamp .ico{width:15px;height:15px}
+.db{padding:22px 24px;display:flex;flex-direction:column;gap:18px}
+.kv{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.kv div{padding:12px 16px;min-width:0}
+.kv div+div{border-right:1px solid var(--line)}
+.kv dt{font-size:11.5px;color:var(--tx3);letter-spacing:.3px}
+.kv dd{font-size:15px;font-weight:600;margin-top:2px}
+.kv dd.mono{font-size:14px;letter-spacing:.5px;color:rgb(var(--cr))}
+:root[data-theme=light] .kv dd.mono{color:var(--ck)}
+.note{display:flex;gap:12px;padding:12px 14px;border-radius:10px;font-size:13px;color:var(--tx2);background:rgba(217,167,74,.06);border:1px solid rgba(217,167,74,.22)}
+.note .ico{color:var(--warn);margin-top:3px}
+.note b{color:var(--tx);font-weight:600}
+.fl{display:flex;justify-content:space-between;align-items:baseline;margin:0 2px 8px;font-size:12px;color:var(--tx3)}
+.fl .mono{color:var(--tx2)}
+.addr{padding:16px 18px;border-radius:12px;background:var(--bg);border:1px solid var(--line2);cursor:text;-webkit-user-select:all;user-select:all;transition:border-color .2s}
+.addr:hover{border-color:rgba(var(--cr),.5)}
+:root[data-theme=light] .addr{background:var(--s2)}
+.addr .ltr{display:flex;flex-wrap:wrap;gap:4px 10px;font-family:var(--mono);font-size:17px;font-weight:500;letter-spacing:.6px;word-break:break-all;color:var(--tx)}
+.addr i{font-style:normal}
+.addr i.k{color:rgb(var(--cr));font-weight:600}
+:root[data-theme=light] .addr i.k{color:var(--ck)}
+.ends{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:10px;font-size:12px;color:var(--tx3)}
+.ends span{display:inline-flex;gap:6px;align-items:center}
+.ends .mono{color:var(--tx);font-weight:600;font-size:12.5px;padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+/* ---------- buttons ---------- */
+.acts{display:flex;gap:10px;flex-wrap:wrap}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:50px;padding:0 22px;border-radius:11px;font-weight:600;font-size:14.5px;white-space:nowrap;
+transition:background .2s,border-color .2s,color .2s,transform .12s}
+.btn:active{transform:scale(.985)}
+.btn-p{flex:1 1 240px;color:#141414;background:linear-gradient(180deg,#f2f2f0,#d9d9d6);box-shadow:inset 0 1px 0 #fff,0 1px 0 rgba(0,0,0,.4),0 10px 24px -14px rgba(0,0,0,.8)}
+.btn-p:hover{background:linear-gradient(180deg,#fff,#e6e6e3)}
+:root[data-theme=light] .btn-p{color:#fff;background:linear-gradient(180deg,#2a2b2f,#141518);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 10px 24px -14px rgba(0,0,0,.6)}
+:root[data-theme=light] .btn-p:hover{background:linear-gradient(180deg,#36373c,#1c1d21)}
+.btn-p .bar-p{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--ok);border-radius:0 0 11px 11px}
+.btn-p.done .bar-p{animation:prog 2.2s linear forwards}
+@keyframes prog{to{width:100%}}
+.btn-p.done{color:#0f3d27}
+:root[data-theme=light] .btn-p.done{color:#bff0d6}
+.btn-p.fail{color:#7a1f1f}
+.btn-g{border:1px solid var(--line2);color:var(--tx);background:transparent}
+.btn-g:hover{background:var(--s2);border-color:rgba(var(--cr),.45)}
+.btn-g[aria-pressed=true]{border-color:rgba(var(--cr),.6);color:rgb(var(--cr))}
+.btn .ico{width:18px;height:18px}
+/* ---------- QR + verify split ---------- */
+.split{display:grid;grid-template-columns:auto 1fr;border-top:1px solid var(--line)}
+.qrw{padding:22px 24px;border-left:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:10px}
+.qrc{position:relative;width:176px;padding:10px;border-radius:12px;background:#fff;border:1px solid var(--line2)}
+.qrc>svg{width:100%;height:auto}
+.qrc .mid{position:absolute;inset:0;margin:auto;width:22%;height:22%;border-radius:50%;background:#fff;padding:3px}
+.qrc .mid svg{width:100%;height:100%}
+.qrw small{font-size:11.5px;color:var(--tx3);text-align:center}
+.vw{padding:22px 24px;min-width:0}
+.vw h3{font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
+.vw h3 .ico{color:var(--gold)}
+.vw p{font-size:12.5px;color:var(--tx3);margin:2px 0 12px}
+.vf{display:flex;gap:8px}
+.vf input{flex:1;min-width:0;height:46px;padding:0 14px;border-radius:10px;background:var(--bg);border:1px solid var(--line2);direction:ltr;text-align:left;font:500 13.5px var(--mono);transition:border-color .2s,box-shadow .2s}
+:root[data-theme=light] .vf input{background:var(--s2)}
+.vf input:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(var(--cr),.14)}
+.vf input::placeholder{color:var(--tx3)}
+.vf .btn{height:46px;padding:0 16px;font-size:13.5px}
+.vres{display:none;align-items:flex-start;gap:10px;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:13px}
+.vres .ico{margin-top:3px}
+.vres.show{display:flex;animation:fade .25s var(--ease)}
+.vres.good{color:var(--ok);background:rgba(95,191,143,.07);border:1px solid rgba(95,191,143,.28)}
+.vres.bad{color:var(--bad);background:rgba(224,106,106,.07);border:1px solid rgba(224,106,106,.28)}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.swap{animation:fade .3s var(--ease)}
+/* ---------- process ---------- */
+.proc{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:56px;background:var(--s1)}
+.proc div{padding:22px 24px}
+.proc div+div{border-right:1px solid var(--line)}
+.proc .n{font:600 11.5px var(--mono);color:var(--gold);letter-spacing:1.5px}
+.proc b{display:block;font-size:14.5px;font-weight:600;margin:6px 0 4px}
+.proc p{font-size:13px;color:var(--tx2)}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:40px;padding:22px 0 8px;border-top:1px solid var(--line);font-size:12.5px;color:var(--tx3)}
+.foot a{color:var(--tx2);text-decoration:none}
+.foot a:hover{color:var(--gold)}
+/* ================= DESKTOP ================= */
+.D .wrap{max-width:1200px;margin:0 auto;padding:0 40px 40px}
+.D .desk{display:grid;grid-template-columns:360px 1fr;gap:24px;align-items:start;margin-top:40px}
+.D .side{position:sticky;top:24px}
+@media (max-width:1160px){.D .intro{grid-template-columns:1fr;gap:28px}.D .desk{grid-template-columns:320px 1fr}.D .split{grid-template-columns:1fr}.D .qrw{border-left:0;border-bottom:1px solid var(--line)}}
+/* ================= MOBILE ================= */
+.M .wrap{padding:0 18px calc(104px + env(safe-area-inset-bottom))}
+.M .top{position:sticky;top:0;z-index:30;height:60px;margin:0 -18px;padding:0 18px;padding-top:env(safe-area-inset-top);box-sizing:content-box;
+background:rgba(10,11,13,.86);-webkit-backdrop-filter:blur(16px) saturate(130%);backdrop-filter:blur(16px) saturate(130%)}
+:root[data-theme=light] .M .top{background:rgba(244,243,239,.88)}
+.M .intro{display:block;padding:34px 0 28px}
+.M .intro h1{font-size:clamp(25px,7.2vw,31px);margin:14px 0 10px}
+.M .intro p{font-size:14.5px}
+.M .facts{margin-top:22px}
+.M .facts div{padding:11px 0;font-size:13px}
+.M .sec{margin-top:28px}
+.M .row{padding:14px 16px}
+.M .dh{padding:18px}
+.M .dh .ci{width:40px;height:40px}
+.M .dh h2{font-size:18px}
+.M .db{padding:18px;gap:16px}
+.M .kv{grid-template-columns:1fr}
+.M .kv div+div{border-right:0;border-top:1px solid var(--line)}
+.M .addr{padding:14px}
+.M .addr .ltr{font-size:15.5px;gap:4px 8px}
+.M .tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.M .tool{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 4px;border-radius:11px;border:1px solid var(--line2);font-size:12.5px;font-weight:500;color:var(--tx2);transition:background .2s}
+.M .tool:active{background:var(--s2)}
+.M .tool .ico{width:20px;height:20px;color:var(--tx)}
+.M .proc{grid-template-columns:1fr;margin-top:32px}
+.M .proc div+div{border-right:0;border-top:1px solid var(--line)}
+.M .proc div{padding:18px}
+.M .foot{flex-direction:column;align-items:center;text-align:center}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;align-items:center;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+background:rgba(14,15,18,.92);border-top:1px solid var(--line2);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+:root[data-theme=light] .bar{background:rgba(255,255,255,.94)}
+.bar .ci{width:34px;height:34px}
+.bar .tx{flex:1;min-width:0;line-height:1.35}
+.bar .tx b{display:block;font-size:14px;font-weight:600}
+.bar .tx small{display:block;font-size:11.5px;color:var(--tx3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .btn{height:46px;flex:none;padding:0 18px;font-size:14px}
+.bar .btn-p{flex:0 0 auto}
+.bar .ib{width:46px;height:46px;border-radius:11px}
+.M .toast{bottom:calc(84px + env(safe-area-inset-bottom))}
+/* sheet */
+.sheet{position:fixed;inset:0;z-index:90;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.55);opacity:0;transition:opacity .25s}
+.sheet.on{opacity:1}
+.sheet .sh{width:100%;max-width:560px;max-height:90vh;overflow:auto;padding:8px 18px calc(22px + env(safe-area-inset-bottom));border-radius:18px 18px 0 0;background:var(--s1);border:1px solid var(--line2);border-bottom:0;
+transform:translateY(100%);transition:transform .35s var(--ease)}
+.sheet.on .sh{transform:none}
+.sh .grab{width:36px;height:4px;border-radius:4px;background:var(--line2);margin:4px auto 14px}
+.sh .shh{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.sh .shh b{flex:1;font-size:15px;font-weight:600}
+.sh .qrc{width:min(72vw,260px);margin:4px auto 14px}
+.sh p{font-size:13px;color:var(--tx2);text-align:center}
+.M .vf{flex-direction:column}.M .vf .btn{width:100%}
+@media (max-width:350px){.M .wrap{padding-left:14px;padding-right:14px}.M .top{margin:0 -14px;padding-left:14px;padding-right:14px}.M .addr .ltr{font-size:14.5px}.bar .btn{padding:0 14px}.bar .tx small{display:none}}
+/* ================= JinX Care (support bot) ================= */
+.fab{position:fixed;left:28px;bottom:28px;z-index:70;display:flex;align-items:center;gap:10px;height:48px;padding:0 18px 0 14px;border-radius:24px;background:var(--s3);border:1px solid var(--line2);
+color:var(--tx);font-size:13.5px;font-weight:600;box-shadow:0 18px 40px -18px rgba(0,0,0,.7);transition:border-color .2s,transform .2s}
+.fab:hover{border-color:rgba(var(--cr),.55);transform:translateY(-1px)}
+.fab .ico{color:var(--gold)}
+.fab i{width:7px;height:7px;border-radius:50%;background:var(--ok)}
+.bot{position:fixed;left:28px;bottom:88px;z-index:85;width:380px;max-height:min(620px,calc(100vh - 120px));display:flex;flex-direction:column;border-radius:16px;background:var(--s1);border:1px solid var(--line2);
+box-shadow:0 30px 80px -30px rgba(0,0,0,.8);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .22s,transform .28s var(--ease)}
+.bot.on{opacity:1;transform:none;pointer-events:auto}
+.bh{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.bh .av{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;border:1px solid rgba(var(--cr),.45);color:var(--gold)}
+.bh .t{flex:1;line-height:1.35}
+.bh .t b{display:block;font-size:14px;font-weight:600}
+.bh .t small{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--tx3)}
+.bh .t small i{width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.bm{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:200px;overscroll-behavior:contain}
+.msg{max-width:88%;padding:10px 13px;border-radius:12px;font-size:13.5px;line-height:1.75;animation:fade .25s var(--ease);overflow-wrap:anywhere}
+.msg.b{align-self:flex-start;background:var(--s2);border:1px solid var(--line);border-top-right-radius:4px}
+.msg.u{align-self:flex-end;background:rgba(var(--cr),.12);border:1px solid rgba(var(--cr),.3);border-top-left-radius:4px}
+.msg b{font-weight:600}
+.msg .mono{font-size:12px;word-break:break-all;display:block;margin-top:6px;padding:8px;border-radius:8px;background:var(--bg);border:1px solid var(--line)}
+.msg .ma{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.msg .ma button{height:32px;padding:0 11px;border-radius:8px;border:1px solid var(--line2);font-size:12.5px;font-weight:500}
+.msg .ma button:hover{border-color:var(--gold);color:var(--gold)}
+.msg ul{margin:6px 0 0;padding-right:16px}
+.msg li .ok{color:var(--ok)}.msg li .no{color:var(--bad)}
+.typing{display:inline-flex;gap:4px;padding:12px 14px}
+.typing i{width:5px;height:5px;border-radius:50%;background:var(--tx3);animation:dot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{50%{opacity:.25;transform:translateY(-2px)}}
+.bq{display:flex;gap:6px;overflow-x:auto;padding:10px 16px 0;scrollbar-width:none}
+.bq::-webkit-scrollbar{display:none}
+.bq button{flex:none;height:32px;padding:0 12px;border-radius:16px;border:1px solid var(--line2);font-size:12.5px;color:var(--tx2);white-space:nowrap}
+.bq button:hover{color:var(--tx);border-color:rgba(var(--cr),.5)}
+.bi{display:flex;gap:8px;padding:12px 16px 14px}
+.bi input{flex:1;min-width:0;height:42px;padding:0 13px;border-radius:10px;background:var(--bg);border:1px solid var(--line2);font-size:13.5px}
+:root[data-theme=light] .bi input{background:var(--s2)}
+.bi input:focus{outline:0;border-color:var(--gold)}
+.bi button{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;background:var(--tx);color:var(--bg)}
+.M .bot{left:0;right:0;bottom:0;width:auto;max-height:none;height:min(86vh,680px);border-radius:18px 18px 0 0;border-bottom:0;padding-bottom:env(safe-area-inset-bottom);transform:translateY(100%)}
+.M .bot.on{transform:none}
+.M .fab{display:none}
+.scrim{position:fixed;inset:0;z-index:84;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .25s}
+.M .scrim.on{opacity:1;pointer-events:auto}
+.msg li{list-style:none;display:flex;gap:6px;align-items:flex-start}
+.msg li span .ico{width:14px;height:14px;stroke-width:2.2;margin-top:5px}
+.bh,.bq,.bi{flex:none}
+.bq{padding-bottom:2px}
+.intro h1 span{white-space:nowrap}
+@media (max-width:1380px){.D .fab{width:48px;padding:0;justify-content:center;border-radius:50%}.D .fab span,.D .fab i{display:none}}
+.mantx{width:100%;min-height:96px;padding:12px;border-radius:10px;background:var(--bg);border:1px solid var(--line2);color:var(--tx);font-size:14px;line-height:1.6;resize:none;word-break:break-all}
+
+/* English (LTR) mode: mirror the few physical sides */
+html[dir=ltr] .facts dd{text-align:right}html[dir=ltr] .row{text-align:left}html[dir=ltr] .row::before{right:auto;left:0}
+html[dir=ltr] .kv div+div,html[dir=ltr] .proc div+div{border-right:0;border-left:1px solid var(--line)}
+html[dir=ltr] .qrw{border-left:0;border-right:1px solid var(--line)}html[dir=ltr] .D .qrw{border-right:0}
+html[dir=ltr] .M .kv div+div,html[dir=ltr] .M .proc div+div{border-left:0}
+html[dir=ltr] .msg.b{border-top-right-radius:12px;border-top-left-radius:4px}html[dir=ltr] .msg.u{border-top-left-radius:12px;border-top-right-radius:4px}
+html[dir=ltr] .msg ul{padding-right:0;padding-left:16px}html[dir=ltr] .back .ico{transform:none}html[dir=ltr] .chev{transform:scaleX(-1)}html[dir=ltr] .row[aria-checked=true] .chev{transform:scaleX(-1) translateX(-3px)}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<div class="toast" id="toast" role="status" aria-live="polite"><span class="ti"></span><span id="tmsg"></span></div>
+<noscript><p style="padding:24px">برای نمایش آدرس‌ها جاوااسکریپت را فعال کنید.</p></noscript>
+<!-- all donation addresses live in ONE place: donate-config.js (served at /donate/config.js) -->
+<script src="/donate/config.js"></script>
+<script>var __L = (function () { try { var q = (location.search.match(/[?&]lang=([a-z]{2})/i) || [])[1], l = (q || localStorage.getItem("i18nextLng") || "fa").slice(0, 2).toLowerCase(); return l === "fa" ? "fa" : "en"; } catch (e) { return "fa"; } })();
+window.__L = __L;
+var __EN = {"<div style=\"max-width:640px;margin:40px auto;padding:0 18px\"><p>نمایش کامل بارگذاری نشد؛ نسخه‌ی ساده و امن آدرس‌ها:</p>": "<div style=\"max-width:640px;margin:40px auto;padding:0 18px\"><p>The full page did not load; here is a simple, safe list of the addresses:</p>", "ساختار نامعتبر": "Invalid structure", "شناسه تکراری یا نامعتبر": "Duplicate or invalid id", "نوع شبکه ناشناخته": "Unknown network type", "آدرس با شبکه هم‌خوانی ندارد": "Address does not match the network", "چک‌سام آدرس نامعتبر است": "Address checksum is invalid", "اطلاعات شبکه ناقص است": "Network details are incomplete", "تم روشن": "Light theme", "تم تیره": "Dark theme", "خطای امنیتی: آدرس معتبر نیست، کپی انجام نشد": "Security error: the address is not valid, nothing was copied", "کپی شد": "Copied", "آدرس ": "", " · شبکه‌ی ": " address · ", " کپی شد": " copied", "کپی دستی": "Copy manually", "کپی دستی آدرس ": "Copy manually: ", "<p style=\"margin-bottom:10px\">مرورگر اجازه‌ی کپی خودکار نداد. متن زیر را نگه دارید و Copy را بزنید.</p><textarea class=\"mantx mono\" readonly dir=\"ltr\" spellcheck=\"false\"></textarea>": "<p style=\"margin-bottom:10px\">The browser blocked automatic copying. Select the text below and choose Copy.</p><textarea class=\"mantx mono\" readonly dir=\"ltr\" spellcheck=\"false\"></textarea>", "کپی خودکار مجاز نبود؛ آدرس آماده‌ی کپی دستی است": "Automatic copy was blocked; the address is ready to copy manually", "نام شبکه کپی شد: ": "Network name copied: ", "کپی نشد": "Copy failed", "<span>کاملاً مطابق است. می‌توانید روی شبکه‌ی ": "<span>Exact match. You can send on ", " ارسال کنید.</span>": ".</span>", "این آدرس مربوط به ": "This address belongs to ", " است، نه ": ", not ", "مطابقت ندارد (از کاراکتر <b class=\"ltr\">": "Does not match (from character <b class=\"ltr\">", "</b>). ارسال نکنید و دوباره از همین صفحه کپی کنید.": "</b>). Do not send; copy it again from this page.", "تطبیق آدرس کپی‌شده</h3><p>آدرس را بچسبانید تا از عدم تغییر آن توسط بدافزار کلیپ‌بورد مطمئن شوید.</p>": "Verify a copied address</h3><p>Paste the address to make sure clipboard malware has not changed it.</p>", "<div class=\"vf\"><input class=\"vin\" autocomplete=\"off\" autocapitalize=\"off\" spellcheck=\"false\" placeholder=\"Paste address\" dir=\"ltr\" aria-label=\"آدرس کپی‌شده\">": "<div class=\"vf\"><input class=\"vin\" autocomplete=\"off\" autocapitalize=\"off\" spellcheck=\"false\" placeholder=\"Paste address\" dir=\"ltr\" aria-label=\"Copied address\">", "<span class=\"lbl\">چسباندن و تطبیق</span></button></div><div class=\"vres\" role=\"status\"></div>": "<span class=\"lbl\">Paste &amp; verify</span></button></div><div class=\"vres\" role=\"status\"></div>", "کلیپ‌بورد خالی است": "Clipboard is empty", "اجازه‌ی خواندن کلیپ‌بورد داده نشد؛ دستی بچسبانید": "Clipboard access was denied; paste it manually", "آدرس را دستی در کادر بچسبانید": "Paste the address into the box manually", "<span>فقط <b>": "<span>Send only <b>", "</b> را روی شبکه‌ی <b>": "</b> on <b>", "</b> ارسال کنید. تراکنش روی شبکه‌ی دیگر قابل بازگشت نیست.": "</b>. A transaction on any other network cannot be reversed.", " این آدرس برای <b class=\"ltr\">": " This address is also valid for <b class=\"ltr\">", "</b> نیز معتبر است.": "</b>.", "<div><div class=\"fl\"><span>آدرس کامل کیف پول</span><span><span class=\"mono ltr\">": "<div><div class=\"fl\"><span>Full wallet address</span><span><span class=\"mono ltr\">", "</span> کاراکتر</span></div>": "</span> characters</span></div>", "<div class=\"addr\" title=\"برای انتخاب کلیک کنید\"><span class=\"ltr\">": "<div class=\"addr\" title=\"Click to select\"><span class=\"ltr\">", "<div class=\"ends\"><span>ابتدا <b class=\"mono ltr\">": "<div class=\"ends\"><span>Starts <b class=\"mono ltr\">", "</b></span><span>انتها <b class=\"mono ltr\">": "</b></span><span>Ends <b class=\"mono ltr\">", "</b></span><span>تأیید <b class=\"mono ltr\">": "</b></span><span>Check <b class=\"mono ltr\">", "تأییدشده</span></div>": "Verified</span></div>", "<dl class=\"kv\"><div><dt>شبکه</dt><dd>": "<dl class=\"kv\"><div><dt>Network</dt><dd>", "</dd></div><div><dt>استاندارد</dt><dd class=\"mono ltr\">": "</dd></div><div><dt>Standard</dt><dd class=\"mono ltr\">", "</b><small>Donation · حمایت مالی</small></span></div><div class=\"tr\">": "</b><small>Donation · Support</small></span></div><div class=\"tr\">", "</span> آدرس تأییدشده</span>": "</span> verified addresses</span>", "<a class=\"ib back\" href=\"/dashboard/\" aria-label=\"بازگشت به پنل\" title=\"بازگشت به پنل\">": "<a class=\"ib back\" href=\"/dashboard/\" aria-label=\"Back to panel\" title=\"Back to panel\">", "<section class=\"intro\"><div><span class=\"eyebrow\">Support the project</span><h1>حمایت از توسعه‌ی <span class=\"ltr\">": "<section class=\"intro\"><div><span class=\"eyebrow\">Support the project</span><h1>Support the development of <span class=\"ltr\">", "<dl class=\"facts\"><div><dt>ارزهای فعال</dt><dd class=\"mono ltr\">": "<dl class=\"facts\"><div><dt>Active coins</dt><dd class=\"mono ltr\">", "</dd></div><div><dt>شبکه‌ها</dt><dd class=\"mono ltr\">": "</dd></div><div><dt>Networks</dt><dd class=\"mono ltr\">", "</dd></div><div><dt>اعتبارسنجی</dt><dd class=\"mono ltr\">Checksum · On-device</dd></div><div><dt>واسطه</dt><dd>ندارد؛ مستقیم به کیف پول</dd></div></dl></section>": "</dd></div><div><dt>Validation</dt><dd class=\"mono ltr\">Checksum · On-device</dd></div><div><dt>Middleman</dt><dd>None; straight to the wallet</dd></div></dl></section>", "غیرفعال · ": "Disabled · ", "انتخاب دارایی": "Choose an asset", "ارزی را که در کیف پول یا صرافی دارید از فهرست انتخاب کنید.": "Pick the coin you hold in your wallet or exchange.", "تطبیق شبکه": "Match the network", "در کیف پول دقیقاً همان شبکه و استاندارد نمایش‌داده‌شده را انتخاب کنید.": "In your wallet choose exactly the network and standard shown here.", "کپی و بازبینی": "Copy and double-check", "آدرس را کپی کنید و ابتدا و انتهای آن را پیش از ارسال تطبیق دهید.": "Copy the address and compare its start and end before sending.", "</span> · با سپاس از حمایت شما</span>": "</span> · Thank you for your support</span>", "\" target=\"_blank\" rel=\"noopener noreferrer\">کانال رسمی</a>": "\" target=\"_blank\" rel=\"noopener noreferrer\">Official channel</a>", "<div class=\"desk\"><aside class=\"side\"><div class=\"lh\"><span>دارایی‌ها</span><b class=\"ltr\">": "<div class=\"desk\"><aside class=\"side\"><div class=\"lh\"><span>Assets</span><b class=\"ltr\">", " Assets</b></div><div class=\"list\" id=\"list\" role=\"radiogroup\" aria-label=\"ارزها\">": " Assets</b></div><div class=\"list\" id=\"list\" role=\"radiogroup\" aria-label=\"Coins\">", "<span class=\"lbl\">کپی آدرس</span><span class=\"bar-p\"></span></button><button type=\"button\" class=\"btn btn-g\" id=\"cpn\">": "<span class=\"lbl\">Copy address</span><span class=\"bar-p\"></span></button><button type=\"button\" class=\"btn btn-g\" id=\"cpn\">", "<span class=\"lbl\">کپی نام شبکه</span></button></div></div>": "<span class=\"lbl\">Copy network name</span></button></div></div>", "<small>اسکن با اپلیکیشن کیف پول</small></div>": "<small>Scan with your wallet app</small></div>", "<section class=\"sec\"><div class=\"lh\"><span>دارایی‌ها</span><b class=\"ltr\">": "<section class=\"sec\"><div class=\"lh\"><span>Assets</span><b class=\"ltr\">", "کد QR</button>": "QR code</button>", "تطبیق آدرس</button><button type=\"button\" class=\"tool\" id=\"tn\">": "Verify address</button><button type=\"button\" class=\"tool\" id=\"tn\">", "کپی شبکه</button></div></div></div>": "Copy network</button></div></div></div>", "</small></span><button type=\"button\" class=\"ib botb\" aria-label=\"پشتیبان\">": "</small></span><button type=\"button\" class=\"ib botb\" aria-label=\"Support\">", "<span class=\"lbl\">کپی آدرس</span><span class=\"bar-p\"></span></button>": "<span class=\"lbl\">Copy address</span><span class=\"bar-p\"></span></button>", "کد QR · ": "QR code · ", "<p>شبکه: <b>": "<p>Network: <b>", "تطبیق آدرس ": "Verify address ", "</b><button type=\"button\" class=\"ib x\" aria-label=\"بستن\">": "</b><button type=\"button\" class=\"ib x\" aria-label=\"Close\">", "این ارز به‌دلیل آدرس نامعتبر غیرفعال است": "This coin is disabled because its address is invalid", "پشتیبان JinX Care": "JinX Care support", "<span>پشتیبان JinX Care</span><i></i>": "<span>JinX Care support</span><i></i>", "<span>در حال حاضر آدرس معتبری برای نمایش وجود ندارد.</span></div></div>": "<span>There is no valid address to show right now.</span></div></div>", "معمولاً چند ثانیه": "usually a few seconds", "بسیار کم (با BNB پرداخت می‌شود)": "very low (paid in BNB)", "بسیار کم (کارمزد با BNB در کیف پول فرستنده پرداخت می‌شود)": "very low (the fee is paid in BNB from the sender's wallet)", "معمولاً کمتر از یک دقیقه": "usually under a minute", "متغیر و گاهی بالا (با ETH پرداخت می‌شود)": "varies, sometimes high (paid in ETH)", "حدود ۱۰ دقیقه برای اولین تأیید": "about 10 minutes for the first confirmation", "متغیر؛ به شلوغی شبکه بستگی دارد": "varies with network load", "بسیار کم (Bandwidth/Energy شبکه‌ی TRON)": "very low (TRON Bandwidth/Energy)", "بسیار کم (با TON پرداخت می‌شود)": "very low (paid in TON)", "در Binance: Wallet ← Withdraw ← ارز را انتخاب کنید ← آدرس را بچسبانید ← در بخش Network دقیقاً <b>{net}</b> را بزنید ← مقدار و تأیید.": "In Binance: Wallet → Withdraw → choose the coin → paste the address → under Network pick exactly <b>{net}</b> → amount and confirm.", "در Trust Wallet: روی <b>{sym}</b> با برچسب شبکه‌ی <b>{net}</b> بزنید ← Send ← آدرس را بچسبانید. اگر چند {sym} با شبکه‌های مختلف دارید، همانی را بزنید که برچسب {net} دارد.": "In Trust Wallet: tap <b>{sym}</b> with the <b>{net}</b> network label → Send → paste the address. If you hold several {sym} on different networks, tap the one labelled {net}.", "در MetaMask: بالای کیف پول شبکه را روی <b>{net}</b> بگذارید ← Send ← آدرس را بچسبانید. برای کارمزد باید کمی <b>{gas}</b> در همان شبکه داشته باشید.": "In MetaMask: set the network at the top to <b>{net}</b> → Send → paste the address. You need a little <b>{gas}</b> on the same network for the fee.", "در Tonkeeper: Send ← آدرس را بچسبانید ← مقدار. برای این آدرس کامنت/Memo لازم نیست.": "In Tonkeeper: Send → paste the address → amount. No comment/Memo is needed for this address.", "در OKX: Assets ← Withdraw ← On-chain ← آدرس را بچسبانید ← Network را دقیقاً <b>{net}</b> انتخاب کنید.": "In OKX: Assets → Withdraw → On-chain → paste the address → set Network to exactly <b>{net}</b>.", "در صرافی‌های ایرانی: بخش برداشت ← ارز ← شبکه‌ی <b>{net}</b> ← آدرس را بچسبانید. فیلد Memo/Tag را خالی بگذارید؛ این آدرس به آن نیاز ندارد.": "In Iranian exchanges: Withdraw → coin → <b>{net}</b> network → paste the address. Leave the Memo/Tag field empty; this address does not need it.", "در Wallet تلگرام: Send ← ارز ← External wallet/آدرس ← شبکه‌ی <b>{net}</b> را انتخاب و آدرس را بچسبانید.": "In Telegram Wallet: Send → coin → External wallet/address → choose the <b>{net}</b> network and paste the address.", "<b>خیر.</b> آدرس ": "<b>No.</b> Our ", " ما فقط روی شبکه‌ی <b>": " address is only on <b>", "</b> است. ارسال با <b>": "</b>. Sending via <b>", "</b> به این آدرس باعث از دست رفتن دارایی می‌شود.": "</b> to this address will lose the funds.", "کپی شبکه‌ی درست": "Copy the right network", "<b>بله، درست است.</b> ": "<b>Yes, that's right.</b> Send ", " را روی <b>": " on <b>", "</b> ارسال کنید.": "</b>.", "کپی آدرس ": "Copy address ", "برای <b>": "For <b>", "</b> فقط شبکه‌ی <b>": "</b> use only <b>", " این شبکه‌ها <b>قابل قبول نیستند</b>: <span class=\"ltr\">": " These networks are <b>not accepted</b>: <span class=\"ltr\">", "، ": ", ", "کپی نام شبکه": "Copy network name", "کپی آدرس": "Copy address", "آدرس <b>": "The <b>", "</b> روی شبکه‌ی <b>": "</b> address on <b>", "کپی شبکه": "Copy network", "آدرس کپی‌شده را همین‌جا بچسبانید تا حرف‌به‌حرف با آدرس رسمی تطبیق بدهم. همچنین ابتدا و انتهای آدرس را با صفحه مقایسه کنید.": "Paste the copied address here and I will compare it character by character with the official one. Also compare the start and end of the address with the page.", "تراکنش بلاک‌چین قابل بازگشت نیست. اگر روی شبکه‌ای غیر از <b>": "A blockchain transaction cannot be reversed. If it was sent on a network other than <b>", "</b> ارسال شده، شناسه‌ی تراکنش (TxID) را از کیف پول یا صرافی بردارید و از طریق کانال رسمی پیگیری کنید. اگر هنوز تأیید نشده، فعلاً کاری انجام ندهید.": "</b>, take the transaction ID (TxID) from your wallet or exchange and follow up through the official channel. If it is not confirmed yet, wait for now.", "کانال رسمی": "Official channel", "TxID چیست؟": "What is a TxID?", "کد QR روی همین دستگاه ساخته می‌شود و دقیقاً همان آدرس است. اگر اسکن نشد، نور صفحه را بیشتر کنید یا آدرس را کپی کنید.": "The QR code is made on this device and is exactly the same address. If it does not scan, raise the screen brightness or copy the address.", "نمایش QR": "Show QR", "</b><br>زمان: ": "</b><br>Time: ", "متغیر": "varies", "<br>کارمزد: ": "<br>Fee: ", "<br>حداقل مبلغی برای حمایت تعیین نشده است. کم‌هزینه‌ترین گزینه‌ها معمولاً TRON، BNB Smart Chain و TON هستند.": "<br>There is no minimum amount. The cheapest options are usually TRON, BNB Smart Chain and TON.", "مقایسه‌ی همه": "Compare all", "برای هیچ‌کدام از این آدرس‌ها <b>Memo/Tag لازم نیست</b>. اگر صرافی اجباری کرد، خالی بگذارید یا گزینه‌ی «بدون Memo» را بزنید.": "None of these addresses <b>needs a Memo/Tag</b>. If an exchange insists, leave it empty or choose “No Memo”.", "بله، آدرس <b>": "Yes, the <b>", "</b> و <b class=\"ltr\">": "</b> and <b class=\"ltr\">", "</b> یکی است چون هر دو روی BNB Smart Chain هستند. هر دو را روی همین شبکه بفرستید.": "</b> addresses are the same because both are on BNB Smart Chain. Send both on this network.", " اختصاصی است و با ارز دیگری مشترک نیست.": " address is unique and not shared with any other coin.", "همه‌ی آدرس‌ها پیش از نمایش با الگوریتم رسمی شبکه‌ی خودشان بررسی می‌شوند (EIP-55، Bech32، Base58Check و CRC16) و آدرس تأییدنشده اصلاً نمایش داده نمی‌شود. صفحه هیچ اتصال خارجی ندارد.": "Every address is checked with its network's official algorithm before it is shown (EIP-55, Bech32, Base58Check and CRC16), and an unverified address is never shown. The page makes no outside connections.", "بررسی کامل": "Full check", "TxID (Hash) شناسه‌ی یکتای تراکنش است و در تاریخچه‌ی کیف پول یا صرافی، جزئیات همان برداشت دیده می‌شود. برای پیگیری کافی است همین شناسه را ارسال کنید.": "The TxID (hash) is the unique ID of a transaction; you can find it in your wallet or exchange history under that withdrawal. To follow up, just send this ID.", "1. ارز را انتخاب کنید (الان: <b>": "1. Choose the coin (now: <b>", "</b>)<br>2. آدرس را کپی کنید<br>3. در کیف پول/صرافی شبکه‌ی <b>": "</b>)<br>2. Copy the address<br>3. In your wallet/exchange choose the <b>", "</b> را انتخاب کنید<br>4. ابتدا و انتهای آدرس را تطبیق دهید و ارسال کنید.": "</b> network<br>4. Compare the start and end of the address, then send.", "صرافی ایرانی": "Iranian exchange", "من <b>JinX Care</b> هستم، دستیار همین صفحه. می‌توانم شبکه‌ی درست هر ارز را بگویم، آدرس بدهم، آدرس کپی‌شده را تطبیق بدهم، مراحل ارسال در Binance، Trust Wallet، MetaMask و صرافی‌های ایرانی را توضیح دهم و صفحه را عیب‌یابی کنم.": "I'm <b>JinX Care</b>, this page's assistant. I can tell you the right network for each coin, give addresses, verify a copied address, explain how to send in Binance, Trust Wallet, MetaMask and Iranian exchanges, and troubleshoot the page.", "فهرست ارزها": "Coin list", "عیب‌یابی": "Troubleshoot", "سلام، در خدمتم. نام ارز را بنویسید یا سؤالتان را بپرسید.": "Hi, how can I help? Type a coin name or ask your question.", "خواهش می‌کنم. از حمایت شما سپاسگزاریم.": "You're welcome. Thank you for your support.", "آدرس": "Address", "در حال نوشتن": "typing", "این آدرس <b>دقیقاً مطابق</b> آدرس رسمی ": "This address <b>exactly matches</b> the official ", " و ": " and ", " است.": " address.", " با خیال راحت ارسال کنید.": " You can send safely.", " توجه: ارز انتخاب‌شده‌ی فعلی ": " Note: the selected coin is ", "رفتن به ": "Go to ", "این آدرس از نظر ساختار معتبر است (": "This address has a valid format (", ") اما <b>با هیچ‌کدام از آدرس‌های رسمی ما مطابقت ندارد</b>.": ") but <b>does not match any of our official addresses</b>.", " ابتدای آن شبیه آدرس ": " Its start looks like the ", " است ولی بقیه فرق دارد؛ این نشانه‌ی رایج بدافزار کلیپ‌بورد است.": " address but the rest differs; this is a common sign of clipboard malware.", " به آن ارسال نکنید.": " Do not send to it.", "کپی آدرس درست ": "Copy the correct address ", "این آدرس <b>نامعتبر</b> است (چک‌سام یا طول آن درست نیست). احتمالاً ناقص کپی شده یا یک حرف آن تغییر کرده است.": "This address is <b>invalid</b> (its checksum or length is wrong). It was probably copied incompletely or a character changed.", "کپی دوباره‌ی آدرس ": "Copy the address again ", "آدرس <b class=\"ltr\">": "The <b class=\"ltr\">", "</b> در حال حاضر <b>غیرفعال</b> است چون در اعتبارسنجی خودکار رد شد (": "</b> address is <b>disabled</b> right now because it failed the automatic check (", "). برای امنیت شما نمایش داده نمی‌شود؛ لطفاً از ارزهای فعال استفاده کنید.": "). For your safety it is not shown; please use an active coin.", "ارزهای فعال": "Active coins", "مطمئن نیستم منظورتان را درست فهمیده باشم.": "I'm not sure I understood you.", " آیا درباره‌ی موضوع زیر می‌پرسید؟": " Are you asking about this?", " می‌توانید نام ارز (مثلاً «تتر» یا «BTC») را بنویسید، آدرس را برای تطبیق بچسبانید، یا یکی از گزینه‌ها را بزنید.": " You can type a coin name (e.g. “USDT” or “BTC”), paste an address to verify it, or tap one of the options.", "کدام شبکه؟": "Which network?", "مراحل ارسال": "How to send", "شبکه‌ی درست": "Right network", "تطبیق آدرس": "Verify address", "ارسال اشتباه": "Sent by mistake", "کارمزد و زمان": "Fee & time", "آدرس مشترک": "Shared address", "امنیت": "Security", "قابلیت‌ها": "What I can do", "سلام": "Hello", "تشکر": "Thanks", "</b> کپی شد. در کیف پول شبکه‌ی <b>": "</b> address was copied. In your wallet choose the <b>", "</b> را انتخاب کنید.": "</b> network.", "مرورگر اجازه‌ی کپی نداد. آدرس روی صفحه انتخاب شد؛ نگه دارید و Copy را بزنید:": "The browser blocked copying. The address is selected on the page; long-press and choose Copy:", "نام شبکه کپی شد: <b>": "Network name copied: <b>", "ارزها و شبکه‌ها:<ul>": "Coins and networks:<ul>", "<br><small style=\"color:var(--tx3)\">کارمزد: ": "<br><small style=\"color:var(--tx3)\">Fee: ", "QR در این مرورگر در دسترس نیست؛ از کپی استفاده کنید.": "QR is not available in this browser; use copy instead.", "کانال رسمی هنوز تنظیم نشده است.": "The official channel is not set yet.", "نکات شبکه": "Network notes", "موتور اعتبارسنجی (بردارهای آزمون رسمی)": "Validation engine (official test vectors)", "آدرس‌ها: ": "Addresses: ", " از ": " of ", " معتبر": " valid", " (غیرفعال: ": " (disabled: ", "تولید کد QR": "QR code generation", "نمایش آدرس از نو ساخته شد": "Address view rebuilt", "تطابق آدرس نمایش‌داده‌شده با منبع": "Shown address matches the source", "روش کپی به Clipboard API تغییر کرد": "Copy method switched to the Clipboard API", "دسترسی کپی": "Copy access", "مستقیم": "direct", " (فقط انتخاب دستی)": " (manual selection only)", "تم بازنشانی شد": "Theme reset", "ذخیره‌ی تنظیمات": "Saving settings", " (غیرفعال؛ بی‌اثر بر عملکرد)": " (off; no effect on the page)", "چیدمان صفحه (بدون بیرون‌زدگی)": "Page layout (nothing overflows)", "اتصال خارجی: ندارد (کاملاً روی دستگاه)": "Outside connections: none (fully on-device)", "<b>نتیجه‌ی بررسی خودکار</b><ul>": "<b>Automatic check result</b><ul>", "<b>تعمیر خودکار:</b> ": "<b>Auto-repair:</b> ", "همه‌چیز سالم است.": "Everything is healthy.", "موارد ناموفق روی امنیت آدرس‌ها اثری ندارند؛ آدرس نامعتبر هرگز نمایش داده نمی‌شود.": "Failed items do not affect address safety; an invalid address is never shown.", "همه‌ی ارزها": "All coins", "Memo لازم است؟": "Memo needed?", "</span><div class=\"t\"><b>JinX Care</b><small><i></i>دستیار هوشمند · روی همین دستگاه</small></div><button type=\"button\" class=\"ib\" id=\"bdiag\" aria-label=\"عیب‌یابی\" title=\"عیب‌یابی\">": "</span><div class=\"t\"><b>JinX Care</b><small><i></i>Smart assistant · on this device</small></div><button type=\"button\" class=\"ib\" id=\"bdiag\" aria-label=\"Troubleshoot\" title=\"Troubleshoot\">", "</button><button type=\"button\" class=\"ib\" id=\"bx\" aria-label=\"بستن\">": "</button><button type=\"button\" class=\"ib\" id=\"bx\" aria-label=\"Close\">", "<form class=\"bi\" id=\"bf\" autocomplete=\"off\" novalidate><input id=\"bin\" maxlength=\"600\" enterkeyhint=\"send\" placeholder=\"سؤال یا آدرس را بنویسید…\" aria-label=\"پیام\"><button type=\"submit\" aria-label=\"ارسال\">": "<form class=\"bi\" id=\"bf\" autocomplete=\"off\" novalidate><input id=\"bin\" maxlength=\"600\" enterkeyhint=\"send\" placeholder=\"Type a question or an address…\" aria-label=\"Message\"><button type=\"submit\" aria-label=\"Send\">", "عیب‌یابی خودکار": "Automatic troubleshooting", "سلام، من <b>JinX Care</b> هستم. ارز فعلی: <b class=\"ltr\">": "Hi, I'm <b>JinX Care</b>. Current coin: <b class=\"ltr\">", "</b>.<br>سؤالتان را به فارسی یا انگلیسی بنویسید؛ مثلاً «تتر رو با TRC20 بفرستم؟». آدرس را هم می‌توانید برای تطبیق همین‌جا بچسبانید.": "</b>.<br>Write your question in English or Persian, e.g. “Can I send USDT with TRC20?”. You can also paste an address here to verify it."};
+function __T(s) { return __L === "en" && Object.prototype.hasOwnProperty.call(__EN, s) ? __EN[s] : s; }
+try { if (__L === "en") { document.documentElement.lang = "en"; document.documentElement.dir = "ltr"; document.title = "Donate | Super JinX"; } } catch (e) {}
+window.__jdFail = function (e) {
+  try { if (window.console) console.error("[JinX Care]", e); var v = document.getElementById("app"); if (!v) return; var C = (window.JINX_DONATE || {}).coins || [], h = "";
+    var es = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, ""); };
+    C.forEach(function (c) { if (c && window.JinxAddr && JinxAddr.check(c.kind, c.address)) h += '<div style="margin:12px 0;padding:14px;border-radius:12px;border:1px solid rgba(128,128,128,.3)"><b>' + es(c.symbol) + " · " + es(c.network) + (c.standard ? " (" + es(c.standard) + ")" : "") + '</b><div dir="ltr" style="font-family:monospace;word-break:break-all;user-select:all;margin-top:6px">' + es(c.address) + "</div></div>"; });
+    v.innerHTML = __T('<div style="max-width:640px;margin:40px auto;padding:0 18px"><p>نمایش کامل بارگذاری نشد؛ نسخه‌ی ساده و امن آدرس‌ها:</p>') + h + "</div>"; } catch (x) {}
+};
+window.addEventListener("error", function (ev) { if (!document.querySelector("#app .addr")) window.__jdFail(ev.error || ev.message); });
+/* address validators: real checksums, no network calls */
+var JinxAddr = (function () {
+  // ---- keccak-256 (for EIP-55 checksums of BNB / ETH / USDT addresses)
+  function keccak256(str) {
+    var RC = [1, 0, 32898, 0, 32906, 2147483648, 2147516416, 2147483648, 32907, 0, 2147483649, 0, 2147516545, 2147483648, 32777, 2147483648, 138, 0, 136, 0, 2147516425, 0, 2147483658, 0, 2147516555, 0, 139, 2147483648, 32905, 2147483648, 32771, 2147483648, 32770, 2147483648, 128, 2147483648, 32778, 0, 2147483658, 2147483648, 2147516545, 2147483648, 32896, 2147483648, 2147483649, 0, 2147516424, 2147483648];
+    var bytes = []; for (var i = 0; i < str.length; i++) bytes.push(str.charCodeAt(i) & 255);
+    var rate = 136, s = new Array(50).fill(0);
+    bytes.push(1); while (bytes.length % rate) bytes.push(0); bytes[bytes.length - 1] |= 128;
+    for (var off = 0; off < bytes.length; off += rate) {
+      for (var j = 0; j < rate / 4; j++) s[j] ^= bytes[off + j * 4] | bytes[off + j * 4 + 1] << 8 | bytes[off + j * 4 + 2] << 16 | bytes[off + j * 4 + 3] << 24;
+      f(s);
+    }
+    var out = ""; for (var k = 0; k < 8; k++) { var w = s[k]; for (var b = 0; b < 4; b++) out += ("0" + ((w >>> (b * 8)) & 255).toString(16)).slice(-2); }
+    return out;
+    function f(s) {
+      var c = new Array(10), b = new Array(50), h, l, n;
+      for (n = 0; n < 48; n += 2) {
+        for (var x = 0; x < 10; x++) c[x] = s[x] ^ s[x + 10] ^ s[x + 20] ^ s[x + 30] ^ s[x + 40];
+        for (x = 0; x < 10; x += 2) {
+          h = c[(x + 8) % 10] ^ (c[(x + 2) % 10] << 1 | c[(x + 3) % 10] >>> 31); l = c[(x + 9) % 10] ^ (c[(x + 3) % 10] << 1 | c[(x + 2) % 10] >>> 31);
+          for (var y = 0; y < 50; y += 10) { s[y + x] ^= h; s[y + x + 1] ^= l; }
+        }
+        var R = [0, 1, 62, 28, 27, 36, 44, 6, 55, 20, 3, 10, 43, 25, 39, 41, 45, 15, 21, 8, 18, 2, 61, 56, 14];
+        var P = [0, 10, 20, 5, 15, 16, 1, 11, 21, 6, 7, 17, 2, 12, 22, 23, 8, 18, 3, 13, 14, 24, 9, 19, 4];
+        for (var i2 = 0; i2 < 25; i2++) {
+          var lo = s[i2 * 2], hi = s[i2 * 2 + 1], r = R[i2], nl, nh;
+          if (r === 0) { nl = lo; nh = hi; } else if (r < 32) { nl = lo << r | hi >>> (32 - r); nh = hi << r | lo >>> (32 - r); }
+          else { r -= 32; nl = r ? hi << r | lo >>> (32 - r) : hi; nh = r ? lo << r | hi >>> (32 - r) : lo; }
+          b[P[i2] * 2] = nl; b[P[i2] * 2 + 1] = nh;
+        }
+        for (y = 0; y < 50; y += 10) for (x = 0; x < 10; x += 2) {
+          s[y + x] = b[y + x] ^ (~b[y + (x + 2) % 10] & b[y + (x + 4) % 10]);
+          s[y + x + 1] = b[y + x + 1] ^ (~b[y + (x + 3) % 10] & b[y + (x + 5) % 10]);
+        }
+        s[0] ^= RC[n]; s[1] ^= RC[n + 1];
+      }
+    }
+  }
+  function evm(a) {
+    if (!/^0x[0-9a-fA-F]{40}$/.test(a)) return false;
+    var body = a.slice(2);
+    if (body === body.toLowerCase() || body === body.toUpperCase()) return true;   // no checksum present
+    var h = keccak256(body.toLowerCase());
+    for (var i = 0; i < 40; i++) {
+      var ch = body[i]; if (!/[a-f]/i.test(ch)) continue;
+      if ((parseInt(h[i], 16) >= 8) !== (ch === ch.toUpperCase())) return false;
+    }
+    return true;
+  }
+  // ---- bech32 / bech32m (BTC)
+  function btc(a) {
+    var CH = "qpzry9x8gf2tvdw0s3jn54khce6mua7l";
+    if (/^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$/.test(a)) return b58check(a, 25, [0, 5]);
+    var s = a.toLowerCase(); if (s !== a && a.toUpperCase() !== a) return false;
+    var p = s.lastIndexOf("1"); if (p < 1 || s.slice(0, p) !== "bc" || s.length < 14 || s.length > 74) return false;
+    var data = []; for (var i = p + 1; i < s.length; i++) { var v = CH.indexOf(s[i]); if (v < 0) return false; data.push(v); }
+    var hrp = s.slice(0, p), values = [];
+    for (i = 0; i < hrp.length; i++) values.push(hrp.charCodeAt(i) >> 5); values.push(0);
+    for (i = 0; i < hrp.length; i++) values.push(hrp.charCodeAt(i) & 31);
+    var G = [0x3b6a57b2, 0x26508e6d, 0x1ea119fa, 0x3d4233dd, 0x2a1462b3], chk = 1;
+    values.concat(data).forEach(function (x) { var t = chk >> 25; chk = (chk & 0x1ffffff) << 5 ^ x; for (var k = 0; k < 5; k++) if ((t >> k) & 1) chk ^= G[k]; });
+    var ver = data[0];
+    return ver === 0 ? chk === 1 : (ver > 0 && ver <= 16 && chk === 0x2bc830a3);
+  }
+  // ---- base58check (TRON, legacy BTC)
+  var sha256 = (function () {
+    var K = [], H0 = [];
+    (function () { var n = 2, c = 0; function frac(x) { return (x - Math.floor(x)) * 4294967296 | 0; }
+      while (c < 64) { var p = true; for (var d = 2; d * d <= n; d++) if (n % d === 0) { p = false; break; } if (p) { if (c < 8) H0[c] = frac(Math.pow(n, 1 / 2)); K[c] = frac(Math.pow(n, 1 / 3)); c++; } n++; } })();
+    return function (bytes) {
+      var m = bytes.slice(), l = m.length * 8; m.push(128); while (m.length % 64 !== 56) m.push(0);
+      for (var i = 7; i >= 0; i--) m.push(i > 3 ? 0 : (l >>> (i * 8)) & 255);
+      var H = H0.slice(), w = new Array(64);
+      for (var o = 0; o < m.length; o += 64) {
+        for (i = 0; i < 16; i++) w[i] = m[o + i * 4] << 24 | m[o + i * 4 + 1] << 16 | m[o + i * 4 + 2] << 8 | m[o + i * 4 + 3];
+        for (i = 16; i < 64; i++) { var a = w[i - 15], b = w[i - 2];
+          var s0 = (a >>> 7 | a << 25) ^ (a >>> 18 | a << 14) ^ a >>> 3, s1 = (b >>> 17 | b << 15) ^ (b >>> 19 | b << 13) ^ b >>> 10; w[i] = w[i - 16] + s0 + w[i - 7] + s1 | 0; }
+        var A = H[0], B = H[1], C = H[2], D = H[3], E = H[4], F = H[5], G = H[6], X = H[7];
+        for (i = 0; i < 64; i++) {
+          var S1 = (E >>> 6 | E << 26) ^ (E >>> 11 | E << 21) ^ (E >>> 25 | E << 7), ch = E & F ^ ~E & G, t1 = X + S1 + ch + K[i] + w[i] | 0;
+          var S0 = (A >>> 2 | A << 30) ^ (A >>> 13 | A << 19) ^ (A >>> 22 | A << 10), mj = A & B ^ A & C ^ B & C, t2 = S0 + mj | 0;
+          X = G; G = F; F = E; E = D + t1 | 0; D = C; C = B; B = A; A = t1 + t2 | 0;
+        }
+        H = [H[0] + A | 0, H[1] + B | 0, H[2] + C | 0, H[3] + D | 0, H[4] + E | 0, H[5] + F | 0, H[6] + G | 0, H[7] + X | 0];
+      }
+      var out = []; H.forEach(function (h) { out.push(h >>> 24 & 255, h >>> 16 & 255, h >>> 8 & 255, h & 255); }); return out;
+    };
+  })();
+  function b58(a) {
+    var AL = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz", bytes = [0];
+    for (var i = 0; i < a.length; i++) { var v = AL.indexOf(a[i]); if (v < 0) return null;
+      var carry = v; for (var j = 0; j < bytes.length; j++) { carry += bytes[j] * 58; bytes[j] = carry & 255; carry >>= 8; }
+      while (carry) { bytes.push(carry & 255); carry >>= 8; } }
+    for (i = 0; i < a.length && a[i] === "1"; i++) bytes.push(0);
+    return bytes.reverse().slice(bytes.length > 1 && bytes[0] === 0 && a[0] !== "1" ? 1 : 0);
+  }
+  function b58check(a, len, versions) {
+    var b = b58(a); if (!b) return false;
+    while (b.length > len && b[0] === 0) b.shift();
+    if (b.length !== len || versions.indexOf(b[0]) < 0) return false;
+    var body = b.slice(0, len - 4), c = sha256(sha256(body));
+    for (var i = 0; i < 4; i++) if (c[i] !== b[len - 4 + i]) return false;
+    return true;
+  }
+  function tron(a) { return /^T[1-9A-HJ-NP-Za-km-z]{33}$/.test(a) && b58check(a, 25, [0x41]); }
+  // ---- TON user-friendly address (base64url, 36 bytes, CRC16-XMODEM)
+  function ton(a) {
+    if (!/^[A-Za-z0-9_-]{48}$/.test(a)) return false;
+    var s = atob(a.replace(/-/g, "+").replace(/_/g, "/")), b = [];
+    for (var i = 0; i < s.length; i++) b.push(s.charCodeAt(i));
+    if (b.length !== 36 || [0x11, 0x51, 0x91, 0xd1].indexOf(b[0]) < 0) return false;
+    var crc = 0; for (i = 0; i < 34; i++) { crc ^= b[i] << 8; for (var k = 0; k < 8; k++) crc = crc & 0x8000 ? (crc << 1 ^ 0x1021) & 0xffff : crc << 1 & 0xffff; }
+    return crc === (b[34] << 8 | b[35]);
+  }
+  var BY = { evm: evm, btc: btc, tron: tron, ton: ton };
+  return { check: function (kind, a) { try { return !!(BY[kind] && BY[kind](String(a || "").trim())); } catch (e) { return false; } }, keccak256: keccak256 };
+})();
+
+/* JinxQR: tiny offline QR encoder (byte mode, ECC M, v1-10) -> SVG */
+var JinxQR = (function () {
+  var T = { M: { e: [0, 10, 16, 26, 18, 24, 16, 18, 22, 22, 26], b: [0, 1, 1, 1, 2, 2, 4, 4, 4, 5, 5], f: 0 }, Q: { e: [0, 13, 22, 18, 26, 18, 24, 18, 22, 20, 24], b: [0, 1, 1, 2, 2, 4, 4, 6, 6, 8, 8], f: 3 }, H: { e: [0, 17, 28, 22, 16, 22, 28, 26, 26, 24, 28], b: [0, 1, 1, 2, 4, 4, 4, 5, 6, 8, 8], f: 2 } }, ECC, BLK, FL;
+  function raw(v) { var r = (16 * v + 128) * v + 64; if (v >= 2) { var n = Math.floor(v / 7) + 2; r -= (25 * n - 10) * n - 55; if (v >= 7) r -= 36; } return r; }
+  function dataCw(v) { return Math.floor(raw(v) / 8) - ECC[v] * BLK[v]; }
+  function mul(x, y) { var z = 0; for (var i = 7; i >= 0; i--) { z = (z << 1) ^ ((z >>> 7) * 0x11d); z ^= ((y >>> i) & 1) * x; } return z & 255; }
+  function divisor(d) { var r = []; for (var i = 0; i < d; i++) r.push(0); r[d - 1] = 1; var root = 1;
+    for (i = 0; i < d; i++) { for (var j = 0; j < d; j++) { r[j] = mul(r[j], root); if (j + 1 < d) r[j] ^= r[j + 1]; } root = mul(root, 2); } return r; }
+  function rem(data, dv) { var r = dv.map(function () { return 0; });
+    data.forEach(function (b) { var f = b ^ r.shift(); r.push(0); for (var i = 0; i < r.length; i++) r[i] ^= mul(dv[i], f); }); return r; }
+  function utf8(s) { var o = [], u = unescape(encodeURIComponent(s)); for (var i = 0; i < u.length; i++) o.push(u.charCodeAt(i)); return o; }
+  function align(v, size) { if (v === 1) return []; var n = Math.floor(v / 7) + 2, step = Math.ceil((v * 4 + 4) / (n * 2 - 2)) * 2, r = [6];
+    for (var p = size - 7; r.length < n; p -= step) r.splice(1, 0, p); return r; }
+  function encode(text, lvl) { var t = T[lvl] || T.M; ECC = t.e; BLK = t.b; FL = t.f;
+    var bytes = utf8(text), v = 1;
+    for (; v <= 10; v++) if (4 + (v < 10 ? 8 : 16) + bytes.length * 8 <= dataCw(v) * 8) break;
+    if (v > 10) return null;
+    var size = v * 4 + 17, M = [], F = [], x, y, i, j;
+    for (y = 0; y < size; y++) { M.push([]); F.push([]); for (x = 0; x < size; x++) { M[y].push(false); F[y].push(false); } }
+    function set(x, y, d) { M[y][x] = !!d; F[y][x] = true; }
+    for (i = 0; i < size; i++) { set(6, i, i % 2 === 0); set(i, 6, i % 2 === 0); }
+    [[3, 3], [size - 4, 3], [3, size - 4]].forEach(function (c) {
+      for (var dy = -4; dy <= 4; dy++) for (var dx = -4; dx <= 4; dx++) { var xx = c[0] + dx, yy = c[1] + dy, d = Math.max(Math.abs(dx), Math.abs(dy));
+        if (xx >= 0 && xx < size && yy >= 0 && yy < size) set(xx, yy, d !== 2 && d !== 4); } });
+    var ap = align(v, size), L = ap.length;
+    for (i = 0; i < L; i++) for (j = 0; j < L; j++) { if ((i === 0 && j === 0) || (i === 0 && j === L - 1) || (i === L - 1 && j === 0)) continue;
+      for (var ay = -2; ay <= 2; ay++) for (var ax = -2; ax <= 2; ax++) set(ap[i] + ax, ap[j] + ay, Math.max(Math.abs(ax), Math.abs(ay)) !== 1); }
+    function fmt(mask) { var d = (FL << 3) | mask, r = d; for (var k = 0; k < 10; k++) r = (r << 1) ^ ((r >>> 9) * 0x537); var b = ((d << 10) | r) ^ 0x5412;
+      function g(n) { return (b >>> n) & 1; }
+      for (k = 0; k <= 5; k++) set(8, k, g(k)); set(8, 7, g(6)); set(8, 8, g(7)); set(7, 8, g(8));
+      for (k = 9; k < 15; k++) set(14 - k, 8, g(k));
+      for (k = 0; k < 8; k++) set(size - 1 - k, 8, g(k)); for (k = 8; k < 15; k++) set(8, size - 15 + k, g(k)); set(8, size - 8, 1); }
+    fmt(0);
+    if (v >= 7) { var r7 = v; for (i = 0; i < 12; i++) r7 = (r7 << 1) ^ ((r7 >>> 11) * 0x1f25); var vb = (v << 12) | r7;
+      for (i = 0; i < 18; i++) { var bit = (vb >>> i) & 1, a = size - 11 + i % 3, b2 = Math.floor(i / 3); set(a, b2, bit); set(b2, a, bit); } }
+    // data bits
+    var bits = [], cap = dataCw(v) * 8;
+    function push(val, n) { for (var k = n - 1; k >= 0; k--) bits.push((val >>> k) & 1); }
+    push(4, 4); push(bytes.length, v < 10 ? 8 : 16); bytes.forEach(function (b) { push(b, 8); });
+    push(0, Math.min(4, cap - bits.length)); while (bits.length % 8) bits.push(0);
+    for (var pad = 0xec; bits.length < cap; pad ^= 0xec ^ 0x11) push(pad, 8);
+    var dat = []; for (i = 0; i < bits.length; i += 8) { var by = 0; for (j = 0; j < 8; j++) by = (by << 1) | bits[i + j]; dat.push(by); }
+    var nb = BLK[v], el = ECC[v], rc = Math.floor(raw(v) / 8), ns = nb - rc % nb, sl = Math.floor(rc / nb), dv = divisor(el), blocks = [], k2 = 0;
+    for (i = 0; i < nb; i++) { var d = dat.slice(k2, k2 + sl - el + (i < ns ? 0 : 1)); k2 += d.length; var e = rem(d, dv); if (i < ns) d.push(0); blocks.push(d.concat(e)); }
+    var cw = []; for (i = 0; i < blocks[0].length; i++) for (j = 0; j < nb; j++) if (i !== sl - el || j >= ns) cw.push(blocks[j][i]);
+    var n = 0;
+    for (var right = size - 1; right >= 1; right -= 2) { if (right === 6) right = 5;
+      for (var vert = 0; vert < size; vert++) for (j = 0; j < 2; j++) { x = right - j; var up = ((right + 1) & 2) === 0; y = up ? size - 1 - vert : vert;
+        if (!F[y][x] && n < cw.length * 8) { M[y][x] = ((cw[n >>> 3] >>> (7 - (n & 7))) & 1) === 1; n++; } } }
+    function msk(m, x, y) { switch (m) { case 0: return (x + y) % 2 === 0; case 1: return y % 2 === 0; case 2: return x % 3 === 0; case 3: return (x + y) % 3 === 0;
+      case 4: return (Math.floor(x / 3) + Math.floor(y / 2)) % 2 === 0; case 5: return x * y % 2 + x * y % 3 === 0; case 6: return (x * y % 2 + x * y % 3) % 2 === 0; default: return ((x + y) % 2 + x * y % 3) % 2 === 0; } }
+    function apply(m) { for (var yy = 0; yy < size; yy++) for (var xx = 0; xx < size; xx++) if (!F[yy][xx] && msk(m, xx, yy)) M[yy][xx] = !M[yy][xx]; }
+    function penalty() { var p = 0, dark = 0, yy, xx, rows = [];
+      for (yy = 0; yy < size; yy++) { var rs = "", cs = ""; for (xx = 0; xx < size; xx++) { rs += M[yy][xx] ? 1 : 0; cs += M[xx][yy] ? 1 : 0; if (M[yy][xx]) dark++; } rows.push(rs, cs); }
+      rows.forEach(function (s) { (s.match(/0{5,}|1{5,}/g) || []).forEach(function (r) { p += r.length - 2; }); p += 40 * ((s.match(/(?=10111010000|00001011101)/g) || []).length); });
+      for (yy = 0; yy < size - 1; yy++) for (xx = 0; xx < size - 1; xx++) { var c = M[yy][xx]; if (c === M[yy][xx + 1] && c === M[yy + 1][xx] && c === M[yy + 1][xx + 1]) p += 3; }
+      return p + Math.floor(Math.abs(dark * 20 - size * size * 10) / (size * size)) * 10; }
+    var best = 0, bp = Infinity;
+    for (var m = 0; m < 8; m++) { apply(m); fmt(m); var pp = penalty(); if (pp < bp) { bp = pp; best = m; } apply(m); }
+    apply(best); fmt(best);
+    return { size: size, version: v, mask: best, get: function (x, y) { return M[y][x]; } };
+  }
+  function svg(text, opt) { opt = opt || {}; var q = encode(text, opt.ecc); if (!q) return ""; opt = opt || {}; var b = 4, s = q.size + b * 2, d = "";
+    for (var y = 0; y < q.size; y++) for (var x = 0; x < q.size; x++) if (q.get(x, y)) d += "M" + (x + b) + "," + (y + b) + "h1v1h-1z";
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + s + " " + s + '" shape-rendering="crispEdges" role="img" aria-label="QR"><rect width="' + s + '" height="' + s + '" fill="' + (opt.bg || "#fff") + '"/><path d="' + d + '" fill="' + (opt.fg || "#000") + '"/></svg>'; }
+  return { encode: encode, svg: svg };
+})();
+
+var JinxCoinIcon = {
+  btc: '<circle cx="16" cy="16" r="16" fill="#F7931A"/><path fill="#fff" d="M22.6 14c.3-2-1.2-3-3.3-3.8l.7-2.7-1.6-.4-.7 2.6-1.3-.3.7-2.6-1.6-.4-.7 2.7-1-.3-2.3-.5-.4 1.7s1.2.3 1.2.3c.7.2.8.6.8 1l-1.9 7.5c-.1.2-.3.5-.8.4l-1.2-.3-.8 1.8 2.1.5 1.2.3-.7 2.8 1.6.4.7-2.7 1.3.3-.7 2.7 1.6.4.7-2.8c2.8.5 4.9.3 5.8-2.2.7-2-.1-3.2-1.5-3.9 1.1-.2 1.9-1 2.1-2.4zm-3.7 5.2c-.5 2-3.9.9-5 .6l.9-3.6c1.1.3 4.6.8 4.1 3zm.5-5.3c-.5 1.8-3.3.9-4.2.7l.8-3.2c.9.2 3.9.7 3.4 2.5z"/>',
+  eth: '<circle cx="16" cy="16" r="16" fill="#627EEA"/><g fill="#fff"><path fill-opacity=".6" d="M16.5 4v8.9l7.5 3.3z"/><path d="M16.5 4 9 16.2l7.5-3.3z"/><path fill-opacity=".6" d="M16.5 22v6l7.5-10.4z"/><path d="M16.5 28v-6L9 17.6z"/><path fill-opacity=".2" d="m16.5 20.6 7.5-4.4-7.5-3.3z"/><path fill-opacity=".6" d="m9 16.2 7.5 4.4v-7.7z"/></g>',
+  bnb: '<circle cx="16" cy="16" r="16" fill="#F3BA2F"/><path fill="#fff" d="M12.1 14.5 16 10.6l3.9 3.9 2.3-2.3L16 6l-6.2 6.2zm-6.1 1.5 2.3-2.3 2.3 2.3-2.3 2.3zm6.1 1.5L16 21.4l3.9-3.9 2.3 2.3L16 26l-6.2-6.2zm9.6-1.5 2.3-2.3 2.3 2.3-2.3 2.3zm-3.4 0L16 13.7 13.7 16l2.3 2.3z"/>',
+  trx: '<circle cx="16" cy="16" r="16" fill="#EB0029"/><path fill="#fff" d="M21.9 9.9 7.6 7.3l7.5 18.9 10.5-12.8zm-.2 1.2 2.2 2.1-6 1.1zm-5.1 2.9L10.3 8.8l10.3 1.9zm-.4.9-1 8.5-5.5-14zm1 .5 6.6-1.2-7.6 9.2z"/>',
+  usdt: '<circle cx="16" cy="16" r="16" fill="#26A17B"/><path fill="#fff" d="M17.9 17.9v0c-.1 0-.7.1-2 .1-1 0-1.7 0-2-.1v0c-3.9-.2-6.8-.9-6.8-1.7s2.9-1.5 6.8-1.7v2.7c.3 0 1 .1 2 .1 1.2 0 1.8-.1 1.9-.1v-2.7c3.9.2 6.8.9 6.8 1.7s-2.9 1.5-6.7 1.7m0-3.6v-2.4h5.4V8.3H8.6v3.6H14v2.4c-4.4.2-7.7 1.1-7.7 2.2s3.3 2 7.7 2.2V26h3.9v-7.3c4.4-.2 7.7-1.1 7.7-2.2s-3.3-2-7.7-2.2"/>',
+  gram: '<circle cx="16" cy="16" r="16" fill="#0098EA"/><path fill="#fff" d="M21.4 9H10.6c-2 0-3.2 2.1-2.2 3.8l6.6 11.5c.4.8 1.6.8 2 0l6.6-11.5c1-1.7-.2-3.8-2.2-3.8zm-6.3 11.9-1.4-2.8-3.5-6.2c-.2-.4.1-.9.5-.9h4.4zm7.2-9-3.4 6.2-1.4 2.8V10.9h4.3c.5 0 .8.5.5 1z"/>'
+};
+(function () {
+  "use strict";
+  var $ = function (s, r) { return (r || document).querySelector(s); }, $$ = function (s, r) { return [].slice.call((r || document).querySelectorAll(s)); };
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  /* refined 1.5px line icons, currentColor only */
+  var P = {
+    shield: '<path d="M12 3 5 5.8v5.4c0 4.3 3 8 7 9 4-1 7-4.7 7-9V5.8z"/><path d="m9.2 12 2 2 3.8-3.9"/>',
+    copy: '<rect x="8.5" y="8.5" width="11" height="11" rx="2"/><path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/>',
+    check: '<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+    x: '<path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/>',
+    qr: '<rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2.5v2.5M20 14v.01M14 20h.01M17 20h3v-3"/>',
+    alert: '<circle cx="12" cy="12" r="8.5"/><path d="M12 8v4.5M12 15.8v.01"/>',
+    globe: '<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.2 2.4 3.3 5.2 3.3 8.5s-1.1 6.1-3.3 8.5c-2.2-2.4-3.3-5.2-3.3-8.5S9.8 5.9 12 3.5z"/>',
+    scan: '<path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2M7 12h10"/>',
+    sun: '<circle cx="12" cy="12" r="3.8"/><path d="M12 3v1.8M12 19.2V21M5.6 5.6l1.3 1.3M17.1 17.1l1.3 1.3M3 12h1.8M19.2 12H21M5.6 18.4l1.3-1.3M17.1 6.9l1.3-1.3"/>',
+    moon: '<path d="M19.5 14.5A7.5 7.5 0 0 1 9.5 4.5a7.5 7.5 0 1 0 10 10z"/>',
+    chev: '<path d="m14.5 6-6 6 6 6"/>',
+    chat: '<path d="M5 18.5V7a2.5 2.5 0 0 1 2.5-2.5h9A2.5 2.5 0 0 1 19 7v6.5a2.5 2.5 0 0 1-2.5 2.5H8.5z"/><path d="M9 9.5h6M9 12.5h4"/>',
+    send: '<path d="m20 4-8.5 16-2.2-6.3L3 11.5z"/><path d="m9.3 13.7 4-4"/>',
+    lock: '<rect x="5" y="10.5" width="14" height="9.5" rx="2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/>',
+    wrench: '<path d="M14.5 6.5a4 4 0 0 0 5 5L13 18a2.1 2.1 0 0 1-3-3l6.5-6.5a4 4 0 0 1-2-2z"/><path d="M14.5 6.5 17 4"/>',
+    arrow: '<path d="M19 12H5m5-5-5 5 5 5"/>'
+  };
+  function ic(n, cls) { return '<svg class="ico' + (cls ? " " + cls : "") + '" viewBox="0 0 24 24" aria-hidden="true">' + (P[n] || "") + "</svg>"; }
+  function rgb(h) { var n = parseInt(h.slice(1), 16); return (n >> 16 & 255) + "," + (n >> 8 & 255) + "," + (n & 255); }
+  function shade(h, k) { var n = parseInt(h.slice(1), 16), f = function (v) { v = Math.round(k > 0 ? v + (255 - v) * k : v * (1 + k)); return ("0" + Math.max(0, Math.min(255, v)).toString(16)).slice(-2); };
+    return "#" + f(n >> 16 & 255) + f(n >> 8 & 255) + f(n & 255); }
+  /* official flat brand marks (no gloss, no cartoon) */
+  function coin(c) { var b = (window.JinxCoinIcon || {})[c.id];
+    if (!b) b = '<circle cx="16" cy="16" r="16" fill="' + c.color + '"/><text x="16" y="20.3" font-size="9" font-weight="700" text-anchor="middle" fill="#fff" font-family="system-ui,sans-serif">' + esc(c.symbol.slice(0, 4)) + "</text>";
+    return '<svg viewBox="0 0 32 32" aria-hidden="true">' + b + "</svg>"; }
+  /* JinX Care validation: an invalid entry is never displayed */
+  var KNOWN = { evm: 1, btc: 1, tron: 1, ton: 1 }, PREFIX = { evm: /^0x/, btc: /^(bc1|[13])/, tron: /^T/, ton: /^[EU]Q/ };
+  function clean(raw) { var out = [], issues = [], seen = {};
+    (raw && Array.isArray(raw.coins) ? raw.coins : []).forEach(function (c, i) { var why = "";
+      if (!c || typeof c !== "object") why = __T("ساختار نامعتبر");
+      else if (!/^[a-z0-9_-]{2,16}$/.test(c.id || "") || seen[c.id]) why = __T("شناسه تکراری یا نامعتبر");
+      else if (!KNOWN[c.kind]) why = __T("نوع شبکه ناشناخته");
+      else if (typeof c.address !== "string" || c.address !== c.address.trim() || !PREFIX[c.kind].test(c.address)) why = __T("آدرس با شبکه هم‌خوانی ندارد");
+      else if (!window.JinxAddr || !JinxAddr.check(c.kind, c.address)) why = __T("چک‌سام آدرس نامعتبر است");
+      else if (!c.network || !c.symbol || !c.name) why = __T("اطلاعات شبکه ناقص است");
+      if (c && typeof c === "object") { var id = /^[a-z0-9_-]{2,16}$/.test(c.id || "") && !seen[c.id] ? c.id : "x" + i; seen[id] = 1;
+        out.push(Object.freeze({ id: id, name: String(c.name || "?"), symbol: String(c.symbol || "?").toUpperCase(), network: String(c.network || ""), standard: String(c.standard || ""), kind: c.kind,
+          color: /^#[0-9a-f]{6}$/i.test(c.color || "") ? c.color : "#c9ae78", address: String(c.address || ""), ok: !why, why: why })); }
+      if (why) issues.push({ i: i, sym: c && c.symbol, why: why }); });
+    return { coins: Object.freeze(out), issues: issues }; }
+  function chunks(a) { var p = [], s = a.indexOf("0x") === 0 ? 2 : 0; if (s) p.push("0x"); for (var i = s; i < a.length; i += 4) p.push(a.slice(i, i + 4)); return p; }
+  function addrHtml(a) { var ch = chunks(a), f = ch[0] === "0x" ? 1 : 0, l = ch.length - 1; return ch.map(function (p, i) { return "<i" + (i === f || i === l ? ' class="k"' : "") + ">" + esc(p) + "</i>"; }).join(""); }
+  function netFull(c) { return c.network + (c.standard && c.standard !== c.network ? " (" + c.standard + ")" : ""); }
+  var ALGO = { evm: "EIP-55", btc: "Bech32", tron: "Base58Check", ton: "CRC16" };
+  window.__jd = { $: $, $$: $$, esc: esc, ic: ic, rgb: rgb, shade: shade, coin: coin, clean: clean, chunks: chunks, addrHtml: addrHtml, netFull: netFull, ALGO: ALGO };
+})();
+(function () {
+  "use strict";
+  var J = window.__jd, $ = J.$, $$ = J.$$, esc = J.esc, ic = J.ic, root = document.documentElement;
+  var CFG = window.JINX_DONATE || {}, D = J.clean(CFG), S = J.st = { cfg: CFG, coins: D.coins, issues: D.issues, good: D.coins.filter(function (c) { return c.ok; }), cur: null, mode: "", copyMode: "auto" };
+  if (D.issues.length && window.console) console.warn("[JinX Care] hidden entries:", D.issues);
+  J.byId = function (id) { for (var i = 0; i < S.coins.length; i++) if (S.coins[i].id === id) return S.coins[i]; return null; };
+  J.nets = function () { var m = {}; S.good.forEach(function (c) { m[J.netFull(c)] = 1; }); return Object.keys(m).length; };
+  /* theme */
+  J.theme = function (t, save) { if (t !== "light" && t !== "dark") t = "dark"; root.setAttribute("data-theme", t); var m = $('meta[name="theme-color"]'); if (m) m.content = t === "dark" ? "#0a0b0d" : "#f4f3ef";
+    $$(".thm").forEach(function (b) { b.innerHTML = ic(t === "dark" ? "sun" : "moon"); b.setAttribute("aria-label", t === "dark" ? __T("تم روشن") : __T("تم تیره")); });
+    if (save) try { localStorage.setItem("jinx-don-theme", t); } catch (e) {} };
+  J.toggleTheme = function () { J.theme(root.getAttribute("data-theme") === "dark" ? "light" : "dark", true); };
+  /* toast */
+  var tT = 0;
+  J.toast = function (msg, err) { var t = $("#toast"); t.className = "toast" + (err ? " err" : ""); t.querySelector(".ti").innerHTML = ic(err ? "x" : "check");
+    $("#tmsg").textContent = msg; void t.offsetWidth; t.classList.add("on"); clearTimeout(tT); tT = setTimeout(function () { t.classList.remove("on"); }, 2600); };
+  /* copy engine: iOS uses a contentEditable range, others a readonly textarea, both synchronous inside the tap;
+     the async Clipboard API is only a fallback, so a slow promise can never overwrite a newer copy */
+  var IOS = /iP(hone|od|ad)/.test(navigator.platform || "") || (/Mac/.test(navigator.platform || "") && navigator.maxTouchPoints > 1);
+  function legacy(t) { if (S.copyMode === "async") return false; var a = document.activeElement, sy = window.pageYOffset, ta = document.createElement("textarea"), ok = false;
+    ta.value = t; ta.style.cssText = "position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;font-size:16px;border:0;padding:0"; document.body.appendChild(ta);
+    try { if (IOS) { ta.contentEditable = "true"; ta.readOnly = false; var r = document.createRange(); r.selectNodeContents(ta); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); ta.setSelectionRange(0, t.length); }
+      else { ta.readOnly = true; try { ta.focus({ preventScroll: true }); } catch (x) {} ta.select(); ta.setSelectionRange(0, t.length); }
+      ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta); try { getSelection().removeAllRanges(); } catch (e) {} if (a && a.focus && a !== document.body) try { a.focus({ preventScroll: true }); } catch (e) {}
+    if (window.pageYOffset !== sy) try { window.scrollTo(window.pageXOffset, sy); } catch (e) {} return ok; }
+  var seq = 0;
+  J.copyText = function (t) { var my = ++seq; return new Promise(function (res) { if (legacy(t)) { res(true); return; }
+    if (!(navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext)) { res(false); return; }
+    var done = false, fin = function (v) { if (!done) { done = true; res(my === seq ? v : false); } };
+    setTimeout(function () { fin(false); }, 1200);                       /* some in-app browsers never answer */
+    try { navigator.clipboard.writeText(t).then(function () { fin(true); }, function () { fin(false); }); } catch (e) { fin(false); } }); };
+  J.selectAddr = function () { var el = $(".addr .ltr"); if (!el) return; var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  function btnState(b, cls, icon, label) { if (!b) return; var l = b.querySelector(".lbl"), k = b.__k || (b.__k = { l: l ? l.textContent : "", s: b.querySelector("svg").outerHTML });
+    b.classList.remove("done", "fail"); void b.offsetWidth; if (cls) b.classList.add(cls); b.querySelector("svg").outerHTML = ic(icon); if (l) l.textContent = label;
+    clearTimeout(b.__t); b.__t = setTimeout(function () { b.classList.remove("done", "fail"); b.querySelector("svg").outerHTML = k.s; if (l) l.textContent = k.l; }, 2200); }
+  J.copyAddr = function (b, c) { c = c || S.cur; if (!c) return Promise.resolve(false);
+    if (!JinxAddr.check(c.kind, c.address)) { J.toast(__T("خطای امنیتی: آدرس معتبر نیست، کپی انجام نشد"), true); return Promise.resolve(false); }
+    return J.copyText(c.address).then(function (ok) { S.lastCopy = { ok: ok, id: c.id, t: Date.now() };
+      if (ok) { btnState(b, "done", "check", __T("کپی شد")); J.toast(__T("آدرس ") + c.symbol + __T(" · شبکه‌ی ") + J.netFull(c) + __T(" کپی شد")); try { navigator.vibrate && navigator.vibrate(12); } catch (e) {} }
+      else { btnState(b, "fail", "x", __T("کپی دستی")); J.manual(c); } return ok; }); };
+  /* last resort: the exact address in a box, pre-selected (never split into chunks) */
+  J.manual = function (c) { if (!J.sheet) { J.selectAddr(); return; }
+    J.sheet(__T("کپی دستی آدرس ") + c.symbol, __T('<p style="margin-bottom:10px">مرورگر اجازه‌ی کپی خودکار نداد. متن زیر را نگه دارید و Copy را بزنید.</p><textarea class="mantx mono" readonly dir="ltr" spellcheck="false"></textarea>'));
+    var ta = document.querySelector("#sheet .mantx"); ta.value = c.address; setTimeout(function () { try { ta.focus(); ta.select(); ta.setSelectionRange(0, c.address.length); } catch (e) {} }, 80);
+    J.toast(__T("کپی خودکار مجاز نبود؛ آدرس آماده‌ی کپی دستی است"), true); };
+  J.copyNet = function () { var c = S.cur; return J.copyText(J.netFull(c)).then(function (ok) { J.toast(ok ? __T("نام شبکه کپی شد: ") + J.netFull(c) : __T("کپی نشد"), !ok); return ok; }); };
+  /* clipboard-hijack verification */
+  J.match = function (c, v) { var x = String(v || "").replace(/\s+/g, ""); if (!x) return null;
+    if (c.kind === "evm" ? (x === c.address || x === c.address.toLowerCase() || x === "0x" + c.address.slice(2).toUpperCase()) : x === c.address) return { ok: true };
+    var other = S.good.filter(function (o) { return o.address !== c.address && (o.kind === "evm" ? o.address.toLowerCase() === x.toLowerCase() : o.address === x); })[0], i = 0; while (i < x.length && x[i] === c.address[i]) i++;
+    return { ok: false, other: other, at: i + 1 }; };
+  J.verify = function (box, v) { var c = S.cur, r = box.querySelector(".vres"), m = J.match(c, v);
+    if (!m) { r.className = "vres"; r.innerHTML = ""; return; }
+    if (m.ok) { r.className = "vres show good"; r.innerHTML = ic("shield") + __T("<span>کاملاً مطابق است. می‌توانید روی شبکه‌ی ") + esc(J.netFull(c)) + __T(" ارسال کنید.</span>"); return; }
+    r.className = "vres show bad"; r.innerHTML = ic("alert") + "<span>" + (m.other ? __T("این آدرس مربوط به ") + esc(m.other.symbol) + __T(" است، نه ") + esc(c.symbol) + "." : __T("مطابقت ندارد (از کاراکتر <b class=\"ltr\">") + m.at + __T("</b>). ارسال نکنید و دوباره از همین صفحه کپی کنید.")) + "</span>"; };
+  J.verifyHtml = function () { return '<h3>' + ic("scan") + __T('تطبیق آدرس کپی‌شده</h3><p>آدرس را بچسبانید تا از عدم تغییر آن توسط بدافزار کلیپ‌بورد مطمئن شوید.</p>') +
+    __T('<div class="vf"><input class="vin" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Paste address" dir="ltr" aria-label="آدرس کپی‌شده">') +
+    '<button type="button" class="btn btn-g vpaste">' + ic("scan") + __T('<span class="lbl">چسباندن و تطبیق</span></button></div><div class="vres" role="status"></div>'); };
+  J.wireVerify = function (box) { var inp = box.querySelector(".vin"); inp.oninput = function () { J.verify(box, inp.value); };
+    box.querySelector(".vpaste").onclick = function () {
+      if (navigator.clipboard && navigator.clipboard.readText && window.isSecureContext) navigator.clipboard.readText().then(function (t) { inp.value = (t || "").trim(); J.verify(box, inp.value); if (!t) J.toast(__T("کلیپ‌بورد خالی است"), true); },
+        function () { inp.focus(); J.toast(__T("اجازه‌ی خواندن کلیپ‌بورد داده نشد؛ دستی بچسبانید"), true); });
+      else { inp.focus(); J.toast(__T("آدرس را دستی در کادر بچسبانید"), true); } }; };
+  J.qrHtml = function (c) { var s = ""; try { s = window.JinxQR ? JinxQR.svg(c.address, { fg: "#111", ecc: "H" }) : ""; } catch (e) {} return s ? '<div class="qrc">' + s + '<span class="mid">' + J.coin(c) + "</span></div>" : ""; };
+  J.sameAs = function (c) { return S.good.filter(function (o) { return o !== c && o.address === c.address; }).map(function (o) { return o.symbol; }); };
+  J.noteHtml = function (c) { var d = J.sameAs(c); return '<div class="note">' + ic("alert") + __T("<span>فقط <b>") + esc(c.symbol) + __T("</b> را روی شبکه‌ی <b>") + esc(J.netFull(c)) + __T("</b> ارسال کنید. تراکنش روی شبکه‌ی دیگر قابل بازگشت نیست.") +
+    (d.length ? __T(' این آدرس برای <b class="ltr">') + esc(d.join(", ")) + __T("</b> نیز معتبر است.") : "") + "</span></div>"; };
+  J.addrBlock = function (c) { return __T('<div><div class="fl"><span>آدرس کامل کیف پول</span><span><span class="mono ltr">') + c.address.length + __T("</span> کاراکتر</span></div>") +
+    __T('<div class="addr" title="برای انتخاب کلیک کنید"><span class="ltr">') + J.addrHtml(c.address) + "</span></div>" +
+    __T('<div class="ends"><span>ابتدا <b class="mono ltr">') + esc(c.address.slice(0, c.kind === "evm" ? 6 : 4)) + __T('</b></span><span>انتها <b class="mono ltr">') + esc(c.address.slice(-4)) + __T("</b></span><span>تأیید <b class=\"mono ltr\">") + J.ALGO[c.kind] + "</b></span></div></div>"; };
+  J.headHtml = function (c) { return '<div class="dh"><span class="ci">' + J.coin(c) + '</span><div class="tt"><h2>' + esc(c.name) + (c.symbol !== c.name.toUpperCase() ? '<span class="tag ltr">' + esc(c.symbol) + "</span>" : "") +
+    "</h2><small>" + esc(J.netFull(c)) + '</small></div><span class="stamp">' + ic("shield") + __T("تأییدشده</span></div>"); };
+  J.kvHtml = function (c) { return __T('<dl class="kv"><div><dt>شبکه</dt><dd>') + esc(c.network) + __T('</dd></div><div><dt>استاندارد</dt><dd class="mono ltr">') + esc(c.standard || c.network) + "</dd></div></dl>"; };
+})();
+(function () {
+  "use strict";
+  var J = window.__jd, S = J.st, $ = J.$, $$ = J.$$, esc = J.esc, ic = J.ic;
+  var brand = function () { return esc(S.cfg.brand || "Super JinX"); };
+  J.topHtml = function () { return '<header class="top"><div class="brand"><span class="mark ltr">SJ</span><span><b>' + brand() + __T('</b><small>Donation · حمایت مالی</small></span></div><div class="tr">') +
+    (S.mode === "D" ? '<span class="status"><i></i><span class="ltr">' + S.good.length + "/" + S.coins.length + __T("</span> آدرس تأییدشده</span>") : "") + (/^\/(donate|jinx-api\/donate)/.test(location.pathname) ? __T('<a class="ib back" href="/dashboard/" aria-label="بازگشت به پنل" title="بازگشت به پنل">') + ic("arrow") + "</a>" : "") + '<button type="button" class="ib thm"></button></div></header>'; };
+  J.introHtml = function () { return __T('<section class="intro"><div><span class="eyebrow">Support the project</span><h1>حمایت از توسعه‌ی <span class="ltr">') + brand() + "</span></h1><p>" + esc((window.__L === "en" && S.cfg.intro_en) || S.cfg.intro || "") + "</p></div>" +
+    __T('<dl class="facts"><div><dt>ارزهای فعال</dt><dd class="mono ltr">') + S.good.length + __T('</dd></div><div><dt>شبکه‌ها</dt><dd class="mono ltr">') + J.nets() + __T('</dd></div><div><dt>اعتبارسنجی</dt><dd class="mono ltr">Checksum · On-device</dd></div><div><dt>واسطه</dt><dd>ندارد؛ مستقیم به کیف پول</dd></div></dl></section>'); };
+  J.rowsHtml = function () { return S.coins.map(function (c) {
+    return '<button type="button" role="radio" class="row' + (c.ok ? "" : " off") + '" data-id="' + esc(c.id) + '" aria-checked="false" tabindex="-1"' + (c.ok ? "" : ' aria-disabled="true" title="' + esc(c.why) + '"') +
+      ' style="--tc:' + J.rgb(c.color) + '"><span class="ci">' + J.coin(c) + '</span><span class="nm"><b>' + esc(c.name) + "</b><small>" + (c.ok ? esc(c.network) : __T("غیرفعال · ") + esc(c.why)) + '</small></span><span class="tag ltr">' + (c.ok ? esc(c.standard || c.symbol) : "OFF") +
+      "</span>" + ic("chev", "chev") + "</button>"; }).join(""); };
+  J.procHtml = function () { return '<section class="proc">' + [[__T("انتخاب دارایی"), __T("ارزی را که در کیف پول یا صرافی دارید از فهرست انتخاب کنید.")], [__T("تطبیق شبکه"), __T("در کیف پول دقیقاً همان شبکه و استاندارد نمایش‌داده‌شده را انتخاب کنید.")], [__T("کپی و بازبینی"), __T("آدرس را کپی کنید و ابتدا و انتهای آن را پیش از ارسال تطبیق دهید.")]]
+    .map(function (s, i) { return '<div><span class="n ltr">0' + (i + 1) + "</span><b>" + s[0] + "</b><p>" + s[1] + "</p></div>"; }).join("") + "</section>"; };
+  J.footHtml = function () { return '<footer class="foot"><span>© <span class="ltr">' + new Date().getFullYear() + " " + brand() + __T("</span> · با سپاس از حمایت شما</span>") +
+    (/^https:\/\//.test(S.cfg.channel || "") ? '<a href="' + esc(S.cfg.channel) + __T('" target="_blank" rel="noopener noreferrer">کانال رسمی</a>') : "") + "</footer>"; };
+  /* ---------- desktop ---------- */
+  J.renderDesk = function () { return '<div class="wrap">' + J.topHtml() + J.introHtml() +
+    __T('<div class="desk"><aside class="side"><div class="lh"><span>دارایی‌ها</span><b class="ltr">') + S.good.length + __T(" Assets</b></div><div class=\"list\" id=\"list\" role=\"radiogroup\" aria-label=\"ارزها\">") + J.rowsHtml() + "</div></aside>" +
+    '<article class="detail" id="detail" aria-live="polite"></article></div>' + J.procHtml() + J.footHtml() + "</div>"; };
+  J.updateDesk = function (c) { var q = J.qrHtml(c);
+    $("#detail").innerHTML = '<div class="swap">' + J.headHtml(c) + '<div class="db">' + J.kvHtml(c) + J.noteHtml(c) + J.addrBlock(c) +
+      '<div class="acts"><button type="button" class="btn btn-p" id="cp">' + ic("copy") + __T('<span class="lbl">کپی آدرس</span><span class="bar-p"></span></button><button type="button" class="btn btn-g" id="cpn">') + ic("globe") + __T('<span class="lbl">کپی نام شبکه</span></button></div></div>') +
+      '<div class="split">' + (q ? '<div class="qrw">' + q + __T("<small>اسکن با اپلیکیشن کیف پول</small></div>") : "") + '<div class="vw" id="vbox">' + J.verifyHtml() + "</div></div></div>";
+    $("#cp").onclick = function () { J.copyAddr(this, c); }; $("#cpn").onclick = J.copyNet; $(".addr").onclick = J.selectAddr; J.wireVerify($("#vbox")); };
+  /* ---------- mobile ---------- */
+  J.renderMob = function () { return '<div class="wrap">' + J.topHtml() + J.introHtml() +
+    __T('<section class="sec"><div class="lh"><span>دارایی‌ها</span><b class="ltr">') + S.good.length + __T(" Assets</b></div><div class=\"list\" id=\"list\" role=\"radiogroup\" aria-label=\"ارزها\">") + J.rowsHtml() + "</div></section>" +
+    '<section class="sec"><article class="detail" id="detail" aria-live="polite"></article></section>' + J.procHtml() + J.footHtml() + "</div>" + '<div class="bar" id="bar"></div>'; };
+  J.updateMob = function (c) { var q = J.qrHtml(c);
+    $("#detail").innerHTML = '<div class="swap">' + J.headHtml(c) + '<div class="db">' + J.kvHtml(c) + J.noteHtml(c) + J.addrBlock(c) +
+      '<div class="tools">' + (q ? '<button type="button" class="tool" id="tq">' + ic("qr") + __T("کد QR</button>") : "") + '<button type="button" class="tool" id="tv">' + ic("scan") + __T('تطبیق آدرس</button><button type="button" class="tool" id="tn">') + ic("globe") + __T("کپی شبکه</button></div></div></div>");
+    $("#bar").innerHTML = '<span class="ci">' + J.coin(c) + '</span><span class="tx"><b>' + esc(c.name) + "</b><small>" + esc(J.netFull(c)) + __T('</small></span><button type="button" class="ib botb" aria-label="پشتیبان">') + ic("chat") + "</button>" +
+      '<button type="button" class="btn btn-p" id="cp">' + ic("copy") + __T('<span class="lbl">کپی آدرس</span><span class="bar-p"></span></button>');
+    $("#cp").onclick = function () { J.copyAddr(this, c); }; $(".addr").onclick = J.selectAddr; $("#tn").onclick = J.copyNet; $(".botb").onclick = function () { J.bot.open(); };
+    if (q) $("#tq").onclick = function () { J.sheet(__T("کد QR · ") + c.symbol, q + __T("<p>شبکه: <b>") + esc(J.netFull(c)) + "</b></p>"); };
+    $("#tv").onclick = function () { J.sheet(__T("تطبیق آدرس ") + c.symbol, '<div class="vw" id="vbox" style="padding:0">' + J.verifyHtml() + "</div>"); J.wireVerify($("#vbox")); }; };
+  /* bottom sheet */
+  var lastFocus = null;
+  J.sheet = function (title, html) { J.closeSheet(true); lastFocus = document.activeElement; var s = document.createElement("div"); s.className = "sheet"; s.id = "sheet";
+    s.setAttribute("role", "dialog"); s.setAttribute("aria-modal", "true"); s.setAttribute("aria-label", title);
+    s.innerHTML = '<div class="sh"><div class="grab"></div><div class="shh"><b>' + esc(title) + __T('</b><button type="button" class="ib x" aria-label="بستن">') + ic("x") + "</button></div>" + html + "</div>";
+    document.body.appendChild(s); document.body.style.overflow = "hidden"; requestAnimationFrame(function () { s.classList.add("on"); });
+    s.onclick = function (e) { if (e.target === s) J.closeSheet(); }; s.querySelector(".x").onclick = function () { J.closeSheet(); };
+    setTimeout(function () { var x = s.querySelector(".x"); x && x.focus({ preventScroll: true }); }, 50);
+    var sh = s.querySelector(".sh"), y0 = null;
+    sh.addEventListener("touchstart", function (e) { y0 = sh.scrollTop <= 0 ? e.touches[0].clientY : null; }, { passive: true });
+    sh.addEventListener("touchmove", function (e) { if (y0 == null) return; var d = e.touches[0].clientY - y0; if (d > 0) { sh.style.transition = "none"; sh.style.transform = "translateY(" + d + "px)"; } }, { passive: true });
+    sh.addEventListener("touchend", function (e) { if (y0 == null) return; var d = e.changedTouches[0].clientY - y0; sh.style.transition = ""; sh.style.transform = ""; y0 = null; if (d > 90) J.closeSheet(); }); };
+  J.closeSheet = function (instant) { var s = $("#sheet"); if (!s) return; s.id = ""; if (!J.bot || !J.bot.isOpen()) document.body.style.overflow = "";
+    if (instant) s.remove(); else { s.classList.remove("on"); setTimeout(function () { s.remove(); }, 360); }
+    if (lastFocus && lastFocus.focus) try { lastFocus.focus({ preventScroll: true }); } catch (e) {} };
+})();
+/* ================= JinX Care · language engine (on-device, no network) ================= */
+(function () {
+  "use strict";
+  var J = window.__jd;
+  /* normalize Persian/Arabic text: unify letters + digits, strip diacritics/ZWNJ/punctuation */
+  function norm(s) { return String(s || "").replace(/[\u064A\u0649]/g, "ی").replace(/\u0643/g, "ک").replace(/[\u0629]/g, "ه").replace(/[\u0623\u0625\u0622]/g, "ا").replace(/\u0624/g, "و")
+    .replace(/[\u06F0-\u06F9]/g, function (d) { return d.charCodeAt(0) - 0x6F0; }).replace(/[\u0660-\u0669]/g, function (d) { return d.charCodeAt(0) - 0x660; })
+    .replace(/[\u064B-\u065F\u0670\u0640]/g, "").replace(/[\u200c\u200d\u200e\u200f]/g, " ").toLowerCase()
+    .replace(/[.,!?؟،؛;:"'()\[\]{}«»<>\-_/\\|*+=~`@#$%^&]/g, " ").replace(/\s+/g, " ").trim(); }
+  function lev(a, b) { if (Math.abs(a.length - b.length) > 2) return 9; var p = [], i, j; for (j = 0; j <= b.length; j++) p[j] = j;
+    for (i = 1; i <= a.length; i++) { var q = [i]; for (j = 1; j <= b.length; j++) q[j] = Math.min(p[j] + 1, q[j - 1] + 1, p[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); p = q; } return p[b.length]; }
+  /* a keyword "hits" if it appears as a phrase, or (single words >=4 chars) within one typo of a token */
+  function hit(text, toks, kw) { kw = norm(kw); if (!kw) return 0; if ((" " + text + " ").indexOf(" " + kw + " ") >= 0) return 1;
+    if (kw.indexOf(" ") < 0 && kw.length >= 3 && toks.some(function (t) { return t.length > kw.length && t.indexOf(kw) === 0 && t.length - kw.length <= 3; })) return .9;
+    if (kw.indexOf(" ") < 0 && kw.length >= 4) for (var i = 0; i < toks.length; i++) if (toks[i].length >= 4 && lev(toks[i], kw) <= (kw.length >= 7 ? 2 : 1)) return .75;
+    return 0; }
+  /* entities */
+  var COIN = { bnb: ["bnb", "بی ان بی", "بی‌ان‌بی", "بایننس کوین", "bsc coin"], btc: ["btc", "bitcoin", "بیت کوین", "بیتکوین", "بیت"], trx: ["trx", "tron", "ترون"],
+    gram: ["gram", "ton", "toncoin", "گرم", "تون", "تون کوین"], usdt: ["usdt", "tether", "تتر", "دلار تتر"], eth: ["eth", "ethereum", "اتریوم", "اتر"] };
+  var NET = { bep20: ["bep20", "bep 20", "bsc", "bnb chain", "bnb smart chain", "اسمارت چین", "بی اس سی"], erc20: ["erc20", "erc 20", "اتریوم شبکه", "ethereum network", "شبکه اتریوم"],
+    trc20: ["trc20", "trc 20", "ترون شبکه", "شبکه ترون", "tron network"], ton: ["ton network", "شبکه تون", "jetton"], btc: ["bitcoin network", "شبکه بیت کوین", "segwit", "bech32", "lightning", "لایتنینگ"],
+    bep2: ["bep2", "bep 2", "bnb beacon"], sol: ["solana", "سولانا", "sol", "spl"], polygon: ["polygon", "matic", "پالیگان", "پلیگان"], arb: ["arbitrum", "آربیتروم", "arb"], op: ["optimism", "اپتیمیزم"], base: ["base chain", "بیس"], avax: ["avalanche", "avax", "آوالانچ"] };
+  var WALLET = { binance: ["binance", "بایننس"], trust: ["trust", "trust wallet", "تراست"], metamask: ["metamask", "متامسک", "متا مسک"], tonkeeper: ["tonkeeper", "تون کیپر", "تونکیپر"],
+    okx: ["okx", "او کی ایکس"], ir: ["نوبیتکس", "nobitex", "والکس", "wallex", "رمزینکس", "ramzinex", "اکسیر", "excoino", "bitpin", "بیت پین", "آبان تتر", "abantether", "صرافی ایرانی"], tg: ["telegram wallet", "ولت تلگرام", "کیف پول تلگرام", "wallet تلگرام"] };
+  function ent(map, text, toks) { var best = null, bs = 0; Object.keys(map).forEach(function (k) { map[k].forEach(function (w) { var s = hit(text, toks, w); if (w.length <= 3 && s < (/[a-z]/.test(w) ? 1 : .9)) s = 0; if (s > bs) { bs = s; best = k; } }); }); return bs >= .75 ? best : null; }
+  /* address-like tokens inside any sentence */
+  function addrs(raw) { var m = String(raw || "").match(/0x[0-9a-fA-F]{20,}|bc1[02-9ac-hj-np-z]{8,}|[13][1-9A-HJ-NP-Za-km-z]{25,34}|T[1-9A-HJ-NP-Za-km-z]{25,40}|[EU]Q[A-Za-z0-9_-]{30,}/g); return m || []; }
+  function pos(map, k, text) { var b = 1e9; map[k].forEach(function (w) { var i = text.indexOf(norm(w)); if (i >= 0 && i < b) b = i; }); return b; }
+  function entAll(map, text, toks) { return Object.keys(map).filter(function (k) { return map[k].some(function (w) { var s = hit(text, toks, w); if (w.length <= 3 && s < (/[a-z]/.test(w) ? 1 : .9)) s = 0; return s >= .75; }); }).sort(function (x, y) { return pos(map, x, text) - pos(map, y, text); }); }
+  J.nlu = { coins: function (t, k) { return entAll(COIN, t, k); }, norm: norm, lev: lev, hit: hit, coin: function (t, k) { return ent(COIN, t, k); }, net: function (t, k) { return ent(NET, t, k); }, wallet: function (t, k) { return ent(WALLET, t, k); }, addrs: addrs };
+})();
+/* ================= JinX Care · knowledge + intents ================= */
+(function () {
+  "use strict";
+  var J = window.__jd, esc = J.esc;
+  /* per-network facts (conservative, "usually" wording; no live data is claimed) */
+  J.KB = {
+    bnb: { time: __T("معمولاً چند ثانیه"), fee: __T("بسیار کم (با BNB پرداخت می‌شود)"), gas: "BNB", memo: false, wrong: ["BEP2", "ERC20", "opBNB"] },
+    usdt: { time: __T("معمولاً چند ثانیه"), fee: __T("بسیار کم (کارمزد با BNB در کیف پول فرستنده پرداخت می‌شود)"), gas: "BNB", memo: false, wrong: ["TRC20", "ERC20", "TON", "Solana", "Polygon"] },
+    eth: { time: __T("معمولاً کمتر از یک دقیقه"), fee: __T("متغیر و گاهی بالا (با ETH پرداخت می‌شود)"), gas: "ETH", memo: false, wrong: ["Arbitrum", "Optimism", "Base", "BEP20"] },
+    btc: { time: __T("حدود ۱۰ دقیقه برای اولین تأیید").replace(/۱۰/, "10"), fee: __T("متغیر؛ به شلوغی شبکه بستگی دارد"), gas: "BTC", memo: false, wrong: ["Lightning", "BEP20 (BTCB)", "BEP2"] },
+    trx: { time: __T("معمولاً چند ثانیه"), fee: __T("بسیار کم (Bandwidth/Energy شبکه‌ی TRON)"), gas: "TRX", memo: false, wrong: ["BEP20", "ERC20"] },
+    gram: { time: __T("معمولاً چند ثانیه"), fee: __T("بسیار کم (با TON پرداخت می‌شود)"), gas: "TON", memo: false, wrong: ["BEP20", "ERC20"] }
+  };
+  var NETNAME = { bep20: "BEP20 (BNB Smart Chain)", erc20: "ERC20 (Ethereum)", trc20: "TRC20 (TRON)", ton: "TON", btc: "Bitcoin", bep2: "BEP2 (BNB Beacon)", sol: "Solana", polygon: "Polygon", arb: "Arbitrum", op: "Optimism", base: "Base", avax: "Avalanche" };
+  /* does network entity n match the coin's real network? */
+  function netOk(c, n) { var m = { bnb: "bep20", usdt: "bep20", eth: "erc20", trx: "trc20", gram: "ton", btc: "btc" }[c.id];
+    if (!m) { var s = (c.standard || c.network).toLowerCase(); return s.indexOf(n) >= 0; } return m === n || (c.id === "trx" && n === "trc20"); }
+  var W = {
+    binance: __T("در Binance: Wallet ← Withdraw ← ارز را انتخاب کنید ← آدرس را بچسبانید ← در بخش Network دقیقاً <b>{net}</b> را بزنید ← مقدار و تأیید."),
+    trust: __T("در Trust Wallet: روی <b>{sym}</b> با برچسب شبکه‌ی <b>{net}</b> بزنید ← Send ← آدرس را بچسبانید. اگر چند {sym} با شبکه‌های مختلف دارید، همانی را بزنید که برچسب {net} دارد."),
+    metamask: __T("در MetaMask: بالای کیف پول شبکه را روی <b>{net}</b> بگذارید ← Send ← آدرس را بچسبانید. برای کارمزد باید کمی <b>{gas}</b> در همان شبکه داشته باشید."),
+    tonkeeper: __T("در Tonkeeper: Send ← آدرس را بچسبانید ← مقدار. برای این آدرس کامنت/Memo لازم نیست."),
+    okx: __T("در OKX: Assets ← Withdraw ← On-chain ← آدرس را بچسبانید ← Network را دقیقاً <b>{net}</b> انتخاب کنید."),
+    ir: __T("در صرافی‌های ایرانی: بخش برداشت ← ارز ← شبکه‌ی <b>{net}</b> ← آدرس را بچسبانید. فیلد Memo/Tag را خالی بگذارید؛ این آدرس به آن نیاز ندارد."),
+    tg: __T("در Wallet تلگرام: Send ← ارز ← External wallet/آدرس ← شبکه‌ی <b>{net}</b> را انتخاب و آدرس را بچسبانید.")
+  };
+  function fill(t, c) { return t.replace(/\{net\}/g, esc(J.netFull(c))).replace(/\{sym\}/g, esc(c.symbol)).replace(/\{gas\}/g, esc((J.KB[c.id] || {}).gas || c.symbol)); }
+  /* intents: weighted keywords; the best score wins, ties above threshold are answered together */
+  J.INTENTS = [
+    { id: "network", w: ["شبکه", "network", "چین", "chain", "کدوم شبکه", "کدام شبکه", "روی چه شبکه", "با چه شبکه", "استاندارد"], a: function (c, e) {
+      if (e.net && !netOk(c, e.net)) return [__T("<b>خیر.</b> آدرس ") + esc(c.symbol) + __T(" ما فقط روی شبکه‌ی <b>") + esc(J.netFull(c)) + __T("</b> است. ارسال با <b>") + esc(NETNAME[e.net] || e.net) + __T("</b> به این آدرس باعث از دست رفتن دارایی می‌شود."), [["copynet", __T("کپی شبکه‌ی درست")]]];
+      if (e.net) return [__T("<b>بله، درست است.</b> ") + esc(c.symbol) + __T(" را روی <b>") + esc(J.netFull(c)) + __T("</b> ارسال کنید."), [["copy", __T("کپی آدرس ") + c.symbol]]];
+      var kb = J.KB[c.id] || {}; return [__T("برای <b>") + esc(c.symbol) + __T("</b> فقط شبکه‌ی <b>") + esc(J.netFull(c)) + "</b>." + (kb.wrong ? __T(" این شبکه‌ها <b>قابل قبول نیستند</b>: <span class=\"ltr\">") + esc(kb.wrong.join(__T("، "))) + "</span>." : ""), [["copynet", __T("کپی نام شبکه")], ["copy", __T("کپی آدرس")]]]; } },
+    { id: "copy", w: ["کپی", "copy", "کپی کنم", "کپی نمیشه", "کپی نمی شه", "آدرس بده", "آدرس رو بده", "آدرس چیه", "ادرس", "آدرس", "address", "ولت", "wallet address"], a: function (c) {
+      return [__T("آدرس <b>") + esc(c.symbol) + __T("</b> روی شبکه‌ی <b>") + esc(J.netFull(c)) + "</b>:" + '<span class="mono ltr">' + esc(c.address) + "</span>", [["copy", __T("کپی آدرس")], ["qr", "QR"], ["copynet", __T("کپی شبکه")]]]; } },
+    { id: "verify", w: ["تطبیق", "مطمئن", "درسته", "صحیح", "verify", "check", "بدافزار", "عوض شده", "عوض میشه", "هک", "clipper", "کلیپبورد", "کلیپ بورد"], a: function () {
+      return [__T("آدرس کپی‌شده را همین‌جا بچسبانید تا حرف‌به‌حرف با آدرس رسمی تطبیق بدهم. همچنین ابتدا و انتهای آدرس را با صفحه مقایسه کنید."), []]; } },
+    { id: "wrong", w: ["اشتباه", "wrong", "برگشت", "برگردون", "گم شد", "از دست", "نرسید", "پس بگیرم", "اشتباهی"], a: function (c) {
+      return [__T("تراکنش بلاک‌چین قابل بازگشت نیست. اگر روی شبکه‌ای غیر از <b>") + esc(J.netFull(c)) + __T("</b> ارسال شده، شناسه‌ی تراکنش (TxID) را از کیف پول یا صرافی بردارید و از طریق کانال رسمی پیگیری کنید. اگر هنوز تأیید نشده، فعلاً کاری انجام ندهید."), [["channel", __T("کانال رسمی")], ["txid", __T("TxID چیست؟")]]]; } },
+    { id: "qr", w: ["qr", "کیو آر", "کیوآر", "اسکن", "scan", "بارکد"], a: function () { return [__T("کد QR روی همین دستگاه ساخته می‌شود و دقیقاً همان آدرس است. اگر اسکن نشد، نور صفحه را بیشتر کنید یا آدرس را کپی کنید."), [["qr", __T("نمایش QR")]]]; } },
+    { id: "fee", w: ["کارمزد", "fee", "هزینه", "گس", "gas", "ارزون", "ارزان", "کمترین", "حداقل", "مبلغ", "چقدر", "minimum", "سریع", "سرعت", "زمان", "طول میکشه", "کی میرسه", "تایید", "confirm"], a: function (c) {
+      var kb = J.KB[c.id] || {}; return ["<b>" + esc(c.symbol) + " · " + esc(J.netFull(c)) + __T("</b><br>زمان: ") + esc(kb.time || __T("متغیر")) + __T("<br>کارمزد: ") + esc(kb.fee || __T("متغیر")) + __T("<br>حداقل مبلغی برای حمایت تعیین نشده است. کم‌هزینه‌ترین گزینه‌ها معمولاً TRON، BNB Smart Chain و TON هستند."), [["coins", __T("مقایسه‌ی همه")]]]; } },
+    { id: "memo", w: ["memo", "ممو", "تگ", "tag", "comment", "کامنت", "destination tag", "یادداشت"], a: function () { return [__T("برای هیچ‌کدام از این آدرس‌ها <b>Memo/Tag لازم نیست</b>. اگر صرافی اجباری کرد، خالی بگذارید یا گزینه‌ی «بدون Memo» را بزنید."), []]; } },
+    { id: "same", w: ["یکی", "یکیه", "مشابه", "تکراری", "same", "شبیه"], a: function (c) { var d = J.sameAs(c); return [d.length ? __T("بله، آدرس <b>") + esc(c.symbol) + __T("</b> و <b class=\"ltr\">") + esc(d.join(", ")) + __T("</b> یکی است چون هر دو روی BNB Smart Chain هستند. هر دو را روی همین شبکه بفرستید.") : __T("آدرس ") + esc(c.symbol) + __T(" اختصاصی است و با ارز دیگری مشترک نیست."), []]; } },
+    { id: "safe", w: ["امن", "امنیت", "secure", "safe", "کلاهبرداری", "scam", "معتبر", "اعتماد", "واقعی"], a: function () { return [__T("همه‌ی آدرس‌ها پیش از نمایش با الگوریتم رسمی شبکه‌ی خودشان بررسی می‌شوند (EIP-55، Bech32، Base58Check و CRC16) و آدرس تأییدنشده اصلاً نمایش داده نمی‌شود. صفحه هیچ اتصال خارجی ندارد."), [["diag", __T("بررسی کامل")]]]; } },
+    { id: "txid", w: ["txid", "tx id", "hash", "هش", "رسید", "شناسه تراکنش", "پیگیری", "رهگیری"], a: function () { return [__T("TxID (Hash) شناسه‌ی یکتای تراکنش است و در تاریخچه‌ی کیف پول یا صرافی، جزئیات همان برداشت دیده می‌شود. برای پیگیری کافی است همین شناسه را ارسال کنید."), []]; } },
+    { id: "how", w: ["چطور", "چجوری", "چگونه", "how", "آموزش", "راهنما", "مراحل", "واریز", "بفرستم", "ارسال کنم", "حمایت کنم", "دونیت", "donate"], a: function (c, e) {
+      if (e.wallet) return [fill(W[e.wallet], c), [["copy", __T("کپی آدرس")], ["copynet", __T("کپی شبکه")]]];
+      return [__T("1. ارز را انتخاب کنید (الان: <b>") + esc(c.symbol) + __T("</b>)<br>2. آدرس را کپی کنید<br>3. در کیف پول/صرافی شبکه‌ی <b>") + esc(J.netFull(c)) + __T("</b> را انتخاب کنید<br>4. ابتدا و انتهای آدرس را تطبیق دهید و ارسال کنید."),
+        [["w:binance", "Binance"], ["w:trust", "Trust Wallet"], ["w:ir", __T("صرافی ایرانی")], ["w:metamask", "MetaMask"]]]; } },
+    { id: "who", w: ["کی هستی", "تو کی", "چی هستی", "ربات", "bot", "کمک", "help", "راهنمایی", "چیکار میکنی"], a: function () { return [__T("من <b>JinX Care</b> هستم، دستیار همین صفحه. می‌توانم شبکه‌ی درست هر ارز را بگویم، آدرس بدهم، آدرس کپی‌شده را تطبیق بدهم، مراحل ارسال در Binance، Trust Wallet، MetaMask و صرافی‌های ایرانی را توضیح دهم و صفحه را عیب‌یابی کنم."), [["coins", __T("فهرست ارزها")], ["diag", __T("عیب‌یابی")]]]; } },
+    { id: "hello", w: ["سلام", "hi", "hello", "درود", "وقت بخیر", "خسته نباشی"], a: function () { return [__T("سلام، در خدمتم. نام ارز را بنویسید یا سؤالتان را بپرسید."), []]; } },
+    { id: "thanks", w: ["ممنون", "مرسی", "thanks", "thank", "سپاس", "دمت گرم", "عالی"], a: function () { return [__T("خواهش می‌کنم. از حمایت شما سپاسگزاریم."), []]; } },
+    { id: "diag", w: ["عیب", "خطا", "باگ", "مشکل", "کار نمیکنه", "کار نمی کنه", "خراب", "error", "bug", "تعمیر", "درست کن"], a: null },
+    { id: "list", w: ["لیست", "فهرست", "همه ارزها", "چه ارزهایی", "کدوم ارزا", "کدام ارزها", "list", "coins"], a: null }
+  ];
+  J.netOk = netOk; J.NETNAME = NETNAME; J.WALLET_HOW = W; J.fillHow = fill;
+})();
+/* ================= JinX Care · dialog manager, self-test, UI ================= */
+(function () {
+  "use strict";
+  var J = window.__jd, S = J.st, $ = J.$, esc = J.esc, ic = J.ic, N = J.nlu, open = false, booted = false, lastFocus = null, busy = 0;
+  var LOW = { "آدرس": 1, "ادرس": 1, "address": 1, "چقدر": 1, "زمان": 1, "تایید": 1, "یکی": 1, "واقعی": 1, "کمک": 1, "عالی": 1, "ربات": 1, "bot": 1, "سریع": 1, "check": 1, "مبلغ": 1, "شبیه": 1, "درست کن": 1, "چین": 1, "ولت": 1 };
+  S.ctx = { intent: null, n: 0 };
+  function score(text, toks) { return J.INTENTS.map(function (it) { var s = 0; it.w.forEach(function (w) { var h = N.hit(text, toks, w); if (h) s = Math.max(s, h * (LOW[w] ? .5 : 1)) + (s ? .15 : 0); }); return { it: it, s: s }; })
+    .sort(function (a, b) { return b.s - a.s; }); }
+  J.understand = function (raw) { var text = N.norm(raw), toks = text.split(" ").filter(Boolean), e = { coins: N.coins(text, toks).filter(function (id) { var c = J.byId(id); return c && c.ok; }), net: N.net(text, toks), wallet: N.wallet(text, toks), addrs: N.addrs(raw) };
+    var sc = score(text, toks); if (e.net && e.coins.length) sc.forEach(function (x) { if (x.it.id === "network") x.s += 1.2; }); if (e.wallet) sc.forEach(function (x) { if (x.it.id === "how") x.s += 1; }); sc.sort(function (a, b) { return b.s - a.s; });
+    var top = sc[0].s >= .7 ? sc.filter(function (x, i) { return i < 2 && x.s >= .7 && x.s >= sc[0].s - .12 && x.it.a; }) : [];
+    if (e.net && top.length && top[0].it.id === "network") top = top.slice(0, 1);
+    if (top.length === 2 && (top[1].it.id === "how" || top[1].it.id === "verify") && top[0].it.id === "network") top = top.slice(0, 1);
+    if (sc[0].s >= .7 && !sc[0].it.a) top = [sc[0]];
+    return { text: text, e: e, top: top.map(function (x) { return x.it; }), best: sc[0] }; };
+  function el() { return $("#bot"); }
+  function scroll() { var m = $("#bm"); if (m) m.scrollTop = m.scrollHeight; }
+  function add(who, html, acts) { var d = document.createElement("div"); d.className = "msg " + who; d.innerHTML = html + (acts && acts.length ? '<div class="ma">' + acts.map(function (a) { return '<button type="button" data-act="' + esc(a[0]) + '">' + esc(a[1]) + "</button>"; }).join("") + "</div>" : "");
+    var m = $("#bm"); m.appendChild(d); while (m.children.length > 80) m.removeChild(m.firstChild); scroll(); return d; }
+  var Q = Promise.resolve();
+  function say(html, acts, delay) { busy++; Q = Q.then(function () { return new Promise(function (res) { var t = document.createElement("div"); t.className = "msg b typing"; t.setAttribute("aria-label", __T("در حال نوشتن")); t.innerHTML = "<i></i><i></i><i></i>"; $("#bm").appendChild(t); scroll();
+    setTimeout(function () { t.remove(); add("b", html, acts); busy--; res(); }, delay == null ? 320 + Math.min(420, html.length) : delay); }); }); }
+  function card(c) { return "<b>" + esc(c.name) + (c.symbol !== c.name.toUpperCase() ? ' <span class="ltr">' + esc(c.symbol) + "</span>" : "") + "</b> · " + esc(J.netFull(c)) + '<span class="mono ltr">' + esc(c.address) + "</span>"; }
+  function checkAddr(a) { var raw = a.replace(/\s+/g, ""), kind = ["evm", "btc", "tron", "ton"].filter(function (k) { return JinxAddr.check(k, raw); })[0], c = S.cur;
+    var hits = S.good.filter(function (o) { return o.kind === "evm" ? o.address.toLowerCase() === raw.toLowerCase() && (raw === o.address || raw === raw.toLowerCase() || raw.slice(2) === raw.slice(2).toUpperCase()) : o.address === raw; });
+    if (hits.length) { var on = hits.indexOf(c) >= 0; return [__T("این آدرس <b>دقیقاً مطابق</b> آدرس رسمی ") + hits.map(function (h) { return "<b class=\"ltr\">" + esc(h.symbol) + "</b> (" + esc(J.netFull(h)) + ")"; }).join(__T(" و ")) + __T(" است.") + (on ? __T(" با خیال راحت ارسال کنید.") : __T(" توجه: ارز انتخاب‌شده‌ی فعلی ") + esc(c.symbol) + __T(" است.")), on ? [] : [["sel:" + hits[0].id, __T("رفتن به ") + hits[0].symbol]]]; }
+    var near = S.good.filter(function (o) { return o.address.slice(0, 6).toLowerCase() === raw.slice(0, 6).toLowerCase(); })[0];
+    if (kind) return [__T("این آدرس از نظر ساختار معتبر است (") + ({ evm: "EVM", btc: "Bitcoin", tron: "TRON", ton: "TON" })[kind] + __T(") اما <b>با هیچ‌کدام از آدرس‌های رسمی ما مطابقت ندارد</b>.") + (near ? __T(" ابتدای آن شبیه آدرس ") + esc(near.symbol) + __T(" است ولی بقیه فرق دارد؛ این نشانه‌ی رایج بدافزار کلیپ‌بورد است.") : "") + __T(" به آن ارسال نکنید."), [["copy", __T("کپی آدرس درست ") + c.symbol]]];
+    return [__T("این آدرس <b>نامعتبر</b> است (چک‌سام یا طول آن درست نیست). احتمالاً ناقص کپی شده یا یک حرف آن تغییر کرده است."), [["copy", __T("کپی دوباره‌ی آدرس ") + c.symbol]]]; }
+  function answer(text) { var t = String(text || "").trim().slice(0, 600); if (!t) return; add("u", esc(t));
+    var u = J.understand(t), e = u.e, c = S.cur, nt = N.norm(t), offC = N.coins(nt, nt.split(" ")).map(J.byId).filter(function (o) { return o && !o.ok; });
+    if (offC.length && !e.coins.length) { say(__T("آدرس <b class=\"ltr\">") + esc(offC[0].symbol) + __T("</b> در حال حاضر <b>غیرفعال</b> است چون در اعتبارسنجی خودکار رد شد (") + esc(offC[0].why) + __T("). برای امنیت شما نمایش داده نمی‌شود؛ لطفاً از ارزهای فعال استفاده کنید."), [["coins", __T("ارزهای فعال")]]); return; }
+    if (e.addrs.length) { e.addrs.slice(0, 3).forEach(function (a) { var r = checkAddr(a); say(r[0], r[1]); }); return; }
+    if (u.top.length && u.top[0].id === "diag") { diag(); return; }
+    if (u.top.length && u.top[0].id === "list" && !e.coins.length) { act("coins"); return; }
+    var coins = e.coins.map(J.byId); if (coins.length === 1 && coins[0] !== c) { J.select(coins[0], "bot"); c = coins[0]; }
+    var intents = u.top.filter(function (i) { return i.a; });
+    if (!intents.length && coins.length && S.ctx.intent) intents = [S.ctx.intent];        /* follow-up: «بیت‌کوین چی؟» */
+    if (!intents.length && coins.length) intents = [J.INTENTS[1]];                          /* just a coin name → its address */
+    if (intents.length) { S.ctx.intent = intents[0];
+      (coins.length > 1 ? coins : [c]).forEach(function (cc) { intents.forEach(function (it) { var r = it.a(cc, e); say((coins.length > 1 ? '<b class="ltr">' + esc(cc.symbol) + "</b> · " : "") + r[0], r[1]); }); }); return; }
+    var guess = u.best && u.best.s > .3 && u.best.it.a ? u.best.it : null;
+    say(__T("مطمئن نیستم منظورتان را درست فهمیده باشم.") + (guess ? __T(" آیا درباره‌ی موضوع زیر می‌پرسید؟") : __T(" می‌توانید نام ارز (مثلاً «تتر» یا «BTC») را بنویسید، آدرس را برای تطبیق بچسبانید، یا یکی از گزینه‌ها را بزنید.")),
+      guess ? [["i:" + guess.id, label(guess.id)], ["coins", __T("فهرست ارزها")]] : [["i:network", __T("کدام شبکه؟")], ["i:how", __T("مراحل ارسال")], ["coins", __T("فهرست ارزها")]]); }
+  function label(id) { return { network: __T("شبکه‌ی درست"), copy: __T("آدرس"), verify: __T("تطبیق آدرس"), wrong: __T("ارسال اشتباه"), qr: "QR", fee: __T("کارمزد و زمان"), memo: "Memo / Tag", same: __T("آدرس مشترک"), safe: __T("امنیت"), txid: "TxID", how: __T("مراحل ارسال"), who: __T("قابلیت‌ها"), hello: __T("سلام"), thanks: __T("تشکر") }[id] || id; }
+  function act(a) { var c = S.cur;
+    if (a === "copy") J.copyAddr($("#cp"), c).then(function (ok) { add("b", ok ? __T("آدرس <b>") + esc(c.symbol) + __T("</b> کپی شد. در کیف پول شبکه‌ی <b>") + esc(J.netFull(c)) + __T("</b> را انتخاب کنید.") : __T("مرورگر اجازه‌ی کپی نداد. آدرس روی صفحه انتخاب شد؛ نگه دارید و Copy را بزنید:") + '<span class="mono ltr">' + esc(c.address) + "</span>"); });
+    else if (a === "copynet") J.copyNet().then(function (ok) { if (ok) add("b", __T("نام شبکه کپی شد: <b>") + esc(J.netFull(c)) + "</b>"); });
+    else if (a === "coins") say(__T("ارزها و شبکه‌ها:<ul>") + S.good.map(function (o) { var k = J.KB[o.id] || {}; return '<li><span><b class="ltr">' + esc(o.symbol) + "</b> · " + esc(J.netFull(o)) + (k.fee ? __T('<br><small style="color:var(--tx3)">کارمزد: ') + esc(k.fee) + "</small>" : "") + "</span></li>"; }).join("") + "</ul>", S.good.map(function (o) { return ["sel:" + o.id, o.symbol]; }));
+    else if (a === "qr") { var q = S.mode === "M" ? $("#tq") : $(".qrw"); if (!q) { add("b", __T("QR در این مرورگر در دسترس نیست؛ از کپی استفاده کنید.")); return; } close(); if (S.mode === "M") setTimeout(function () { q.click(); }, 300); else q.scrollIntoView({ behavior: "smooth", block: "center" }); }
+    else if (a === "diag") diag();
+    else if (a === "channel") { if (/^https:\/\//.test(S.cfg.channel || "")) window.open(S.cfg.channel, "_blank", "noopener"); else add("b", __T("کانال رسمی هنوز تنظیم نشده است.")); }
+    else if (a === "txid") { var r = J.INTENTS.filter(function (i) { return i.id === "txid"; })[0].a(c); say(r[0], r[1]); }
+    else if (a.indexOf("w:") === 0) say(J.fillHow(J.WALLET_HOW[a.slice(2)] || "", c), [["copy", __T("کپی آدرس")], ["copynet", __T("کپی شبکه")]]);
+    else if (a.indexOf("i:") === 0) { var it = J.INTENTS.filter(function (i) { return i.id === a.slice(2); })[0]; if (it && it.a) { S.ctx.intent = it; var rr = it.a(c, {}); say(rr[0], rr[1]); } }
+    else if (a.indexOf("sel:") === 0) { var t = J.byId(a.slice(4)); if (t && t.ok) { J.select(t, "bot"); say(card(t), [["copy", __T("کپی آدرس")], ["copynet", __T("کپی شبکه")], ["i:network", __T("نکات شبکه")]], 250); } } }
+  J.botAct = act;
+  /* ---- self-test + auto-repair ---- */
+  J.integrity = function () { var c = S.cur, a = $(".addr .ltr"); return !!(c && a && a.textContent === c.address && JinxAddr.check(c.kind, c.address)); };
+  function diag() { var R = [], fixed = [];
+    var algo = false; try { algo = JinxAddr.keccak256("") === "c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470" && JinxAddr.check("btc", "bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq") && !JinxAddr.check("btc", "bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdx") && JinxAddr.check("tron", "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t") && JinxAddr.check("evm", "0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed") && !JinxAddr.check("evm", "0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAeD"); } catch (e) {}
+    R.push([algo, __T("موتور اعتبارسنجی (بردارهای آزمون رسمی)")]);
+    var bad = S.coins.filter(function (o) { return !o.ok; }); R.push([!bad.length, __T("آدرس‌ها: ") + S.good.length + __T(" از ") + S.coins.length + __T(" معتبر") + (bad.length ? __T(" (غیرفعال: ") + bad.map(function (o) { return o.symbol; }).join(__T("، ")) + ")" : "")]);
+    var qr = false; try { qr = !!(window.JinxQR && JinxQR.encode(S.cur.address).size >= 21); } catch (e) {} R.push([qr, __T("تولید کد QR")]);
+    var integ = J.integrity(); if (!integ) { J.select(S.cur, "force"); integ = J.integrity(); if (integ) fixed.push(__T("نمایش آدرس از نو ساخته شد")); } R.push([integ, __T("تطابق آدرس نمایش‌داده‌شده با منبع")]);
+    var exec = false; try { exec = !!(document.queryCommandSupported && document.queryCommandSupported("copy")); } catch (e) {}
+    var asyncOk = !!(navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext);
+    if (S.lastCopy && !S.lastCopy.ok && asyncOk && S.copyMode !== "async") { S.copyMode = "async"; fixed.push(__T("روش کپی به Clipboard API تغییر کرد")); }
+    R.push([exec || asyncOk, __T("دسترسی کپی") + (exec || asyncOk ? " (" + [exec ? __T("مستقیم") : "", asyncOk ? "Clipboard API" : ""].filter(Boolean).join(" + ") + ")" : __T(" (فقط انتخاب دستی)"))]);
+    var th = document.documentElement.getAttribute("data-theme"); if (th !== "dark" && th !== "light") { J.theme("dark", true); fixed.push(__T("تم بازنشانی شد")); }
+    var st = true; try { localStorage.setItem("jinx-t", "1"); localStorage.removeItem("jinx-t"); } catch (e) { st = false; } R.push([true, __T("ذخیره‌ی تنظیمات") + (st ? "" : __T(" (غیرفعال؛ بی‌اثر بر عملکرد)"))]);
+    var W = document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1; R.push([W, __T("چیدمان صفحه (بدون بیرون‌زدگی)")]);
+    R.push([true, __T("اتصال خارجی: ندارد (کاملاً روی دستگاه)")]);
+    var allOk = R.every(function (r) { return r[0]; });
+    say(__T("<b>نتیجه‌ی بررسی خودکار</b><ul>") + R.map(function (r) { return '<li><span class="' + (r[0] ? "ok" : "no") + '">' + (r[0] ? ic("check") : ic("x")) + "</span><span>" + esc(r[1]) + "</span></li>"; }).join("") + "</ul>" +
+      (fixed.length ? __T("<b>تعمیر خودکار:</b> ") + esc(fixed.join(__T("، "))) + "." : allOk ? __T("همه‌چیز سالم است.") : __T("موارد ناموفق روی امنیت آدرس‌ها اثری ندارند؛ آدرس نامعتبر هرگز نمایش داده نمی‌شود.")), [], 700); }
+  J.heal = function () { if (S.cur && !J.integrity()) { J.select(S.cur, "force"); if (!J.integrity() && window.__jdFail) window.__jdFail(new Error("integrity")); } };
+  var CHIPS = [["i:network", __T("کدام شبکه؟")], ["i:how", __T("مراحل ارسال")], ["i:verify", __T("تطبیق آدرس")], ["i:fee", __T("کارمزد و زمان")], ["coins", __T("همه‌ی ارزها")], ["i:wrong", __T("ارسال اشتباه")], ["i:memo", __T("Memo لازم است؟")], ["diag", __T("عیب‌یابی")]];
+  function build() { if (booted) return; booted = true;
+    var b = document.createElement("section"); b.className = "bot"; b.id = "bot"; b.setAttribute("role", "dialog"); b.setAttribute("aria-label", __T("پشتیبان JinX Care")); b.setAttribute("aria-hidden", "true"); b.inert = true;
+    b.innerHTML = '<div class="bh"><span class="av">' + ic("chat") + __T('</span><div class="t"><b>JinX Care</b><small><i></i>دستیار هوشمند · روی همین دستگاه</small></div><button type="button" class="ib" id="bdiag" aria-label="عیب‌یابی" title="عیب‌یابی">') + ic("wrench") + __T('</button><button type="button" class="ib" id="bx" aria-label="بستن">') + ic("x") + "</button></div>" +
+      '<div class="bm" id="bm" aria-live="polite"></div><div class="bq" id="bq">' + CHIPS.map(function (q) { return '<button type="button" data-act="' + q[0] + '">' + q[1] + "</button>"; }).join("") + "</div>" +
+      __T('<form class="bi" id="bf" autocomplete="off" novalidate><input id="bin" maxlength="600" enterkeyhint="send" placeholder="سؤال یا آدرس را بنویسید…" aria-label="پیام"><button type="submit" aria-label="ارسال">') + ic("send") + "</button></form>";
+    document.body.appendChild(b); var sc = document.createElement("div"); sc.className = "scrim"; sc.id = "scrim"; sc.onclick = close; document.body.appendChild(sc);
+    $("#bx").onclick = close; $("#bdiag").onclick = function () { add("u", __T("عیب‌یابی خودکار")); diag(); };
+    $("#bf").onsubmit = function (e) { e.preventDefault(); var v = $("#bin").value; $("#bin").value = ""; answer(v); };
+    $("#bq").onclick = function (e) { var q = e.target.closest("button"); if (!q) return; add("u", esc(q.textContent)); act(q.dataset.act); };
+    $("#bm").onclick = function (e) { var x = e.target.closest("[data-act]"); if (x) act(x.dataset.act); };
+    b.addEventListener("keydown", function (e) { if (e.key !== "Tab") return; var f = [].slice.call(b.querySelectorAll("button,input")).filter(function (x) { return x.offsetParent !== null; }); if (!f.length) return;
+      var i = f.indexOf(document.activeElement); if (e.shiftKey && i <= 0) { e.preventDefault(); f[f.length - 1].focus(); } else if (!e.shiftKey && i === f.length - 1) { e.preventDefault(); f[0].focus(); } });
+    say(__T("سلام، من <b>JinX Care</b> هستم. ارز فعلی: <b class=\"ltr\">") + esc(S.cur.symbol) + __T("</b> روی شبکه‌ی <b>") + esc(J.netFull(S.cur)) + __T("</b>.<br>سؤالتان را به فارسی یا انگلیسی بنویسید؛ مثلاً «تتر رو با TRC20 بفرستم؟». آدرس را هم می‌توانید برای تطبیق همین‌جا بچسبانید."), [], 200); }
+  function show() { if (!S.cur) return; build(); lastFocus = document.activeElement; open = true; var b = el(); b.inert = false; b.classList.add("on"); b.setAttribute("aria-hidden", "false"); $("#scrim").classList.add("on");
+    var f = $("#fab"); if (f) f.setAttribute("aria-expanded", "true"); if (S.mode === "M") document.body.style.overflow = "hidden";
+    setTimeout(function () { (S.mode === "D" ? $("#bin") : $("#bx")).focus({ preventScroll: true }); }, 60); }
+  function close() { if (!open) return; open = false; var b = el(); b.classList.remove("on"); b.setAttribute("aria-hidden", "true"); b.inert = true; $("#scrim").classList.remove("on");
+    var f = $("#fab"); if (f) f.setAttribute("aria-expanded", "false"); if (!$("#sheet")) document.body.style.overflow = "";
+    if (lastFocus && lastFocus.focus && document.contains(lastFocus)) try { lastFocus.focus({ preventScroll: true }); } catch (e) {} }
+  J.bot = { open: show, close: close, isOpen: function () { return open; }, ask: answer, act: act, diag: diag, busy: function () { return busy; } };
+})();
+
+(function () { var J = window.__jd, X = {"network": ["which network", "what network", "blockchain", "standard"], "copy": ["give address", "send me the address", "wallet", "copy failed", "cant copy", "can't copy"], "verify": ["match", "compare", "is this correct", "is it correct", "changed", "malware", "clipboard", "hacked", "correct"], "wrong": ["mistake", "refund", "lost", "wrong network", "sent wrong", "recover", "not received", "didnt arrive", "didn't arrive", "missing"], "qr": ["qr code", "barcode"], "fee": ["cost", "cheap", "cheapest", "how much", "time", "fast", "speed", "how long", "confirmation", "fees"], "memo": ["need memo", "need tag"], "same": ["same address", "shared", "identical"], "safe": ["security", "trust", "legit", "is it safe", "phishing", "scammer"], "txid": ["transaction id", "transaction hash", "tx hash"], "how": ["steps", "how to send", "guide", "tutorial", "send", "support", "pay", "how do i"], "who": ["what can you do", "features", "who are you"], "hello": ["hey", "good morning", "salam"], "thanks": ["thx", "thank you", "appreciate"], "diag": ["not working", "broken", "problem", "issue", "fix", "diagnose"], "list": ["all coins", "currencies", "assets", "which coins"]}; if (J && J.INTENTS) J.INTENTS.forEach(function (i) { if (X[i.id]) i.w = i.w.concat(X[i.id]); }); })();
+(function () {
+  "use strict";
+  var J = window.__jd, S = J.st, $ = J.$, $$ = J.$$, root = document.documentElement, mq = matchMedia("(min-width:1024px)");
+  function row(c) { return $('.row[data-id="' + c.id + '"]'); }
+  J.select = function (c, user) { if (!c || !c.ok) return; var changed = S.cur !== c; S.cur = c;
+    var n = parseInt(c.color.slice(1), 16), L = (.299 * (n >> 16 & 255) + .587 * (n >> 8 & 255) + .114 * (n & 255)) / 255;
+    root.style.setProperty("--cr", J.rgb(c.color)); root.style.setProperty("--ck", J.shade(c.color, L > .6 ? -.5 : -.3));
+    $$(".row").forEach(function (b) { var on = b.dataset.id === c.id; b.setAttribute("aria-checked", on); b.tabIndex = on ? 0 : -1; });
+    if (location.hash.slice(1) !== c.id) try { history.replaceState(null, "", "#" + c.id); } catch (e) {}
+    if (changed || user === "force") { (S.mode === "D" ? J.updateDesk : J.updateMob)(c); if (user !== "force") setTimeout(J.heal, 0); }
+    if (user === true && S.mode === "M") { var d = $("#detail"); if (d) { var y = d.getBoundingClientRect().top + window.pageYOffset - 72; window.scrollTo({ top: y, behavior: "smooth" }); } } };
+  J.step = function (d) { var i = S.good.indexOf(S.cur); J.select(S.good[(i + d + S.good.length) % S.good.length], "kbd"); };
+  function wire() { $$(".row").forEach(function (b) { b.onclick = function () { var c = J.byId(b.dataset.id); if (!c || !c.ok) { J.toast(__T("این ارز به‌دلیل آدرس نامعتبر غیرفعال است"), true); return; } J.select(c, true); }; });
+    $("#list").addEventListener("keydown", function (e) { var k = e.key, d = { ArrowDown: 1, ArrowLeft: 1, ArrowUp: -1, ArrowRight: -1 }[k];
+      if (k === "Home" || k === "End") { e.preventDefault(); J.select(S.good[k === "Home" ? 0 : S.good.length - 1], "kbd"); } else if (d) { e.preventDefault(); J.step(d); } else return; var r = row(S.cur); r && r.focus(); });
+    $$(".thm").forEach(function (b) { b.onclick = J.toggleTheme; }); }
+  function fab() { if ($("#fab") || !S.good.length) return; var f = document.createElement("button"); f.type = "button"; f.className = "fab"; f.id = "fab"; f.setAttribute("aria-haspopup", "dialog"); f.setAttribute("aria-expanded", "false"); f.setAttribute("aria-label", __T("پشتیبان JinX Care")); f.innerHTML = J.ic("chat") + __T("<span>پشتیبان JinX Care</span><i></i>");
+    f.onclick = function () { J.bot.isOpen() ? J.bot.close() : J.bot.open(); }; document.body.appendChild(f); }
+  function mount() { var m = mq.matches ? "D" : "M"; if (m === S.mode) return; S.mode = m; J.closeSheet(true); if (J.bot.isOpen()) J.bot.close();
+    document.body.className = m; $("#app").innerHTML = m === "D" ? J.renderDesk() : J.renderMob(); J.theme(root.getAttribute("data-theme")); wire(); fab();
+    if (!S.good.length) { $("#detail").innerHTML = '<div class="db"><div class="note">' + J.ic("alert") + __T("<span>در حال حاضر آدرس معتبری برای نمایش وجود ندارد.</span></div></div>"); return; }
+    var c = S.cur || J.byId(location.hash.slice(1)); J.select(c && c.ok ? c : S.good[0], "force"); J.heal(); }
+  J.start = function () { var t = null; try { t = localStorage.getItem("jinx-don-theme") || localStorage.getItem("chakra-ui-color-mode"); } catch (e) {} root.setAttribute("data-theme", t === "light" ? "light" : "dark"); mount();
+    mq.addEventListener ? mq.addEventListener("change", mount) : mq.addListener(mount);
+    addEventListener("hashchange", function () { var c = J.byId(location.hash.slice(1)); if (c && c.ok && c !== S.cur) J.select(c, false); });
+    /* copying by hand from the address box always gives the exact address (no spaces / line breaks between groups) */
+    document.addEventListener("copy", function (e) { try { var s = getSelection(); if (!s || !s.rangeCount || !S.cur) return; var n = s.anchorNode, el = n && (n.nodeType === 1 ? n : n.parentElement);
+      if (el && el.closest && el.closest(".addr,.wc-addr") && e.clipboardData) { e.clipboardData.setData("text/plain", S.cur.address); e.preventDefault(); J.toast(__T("آدرس ") + S.cur.symbol + __T(" کپی شد")); } } catch (x) {} });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") { $("#toast").classList.remove("on"); if ($("#sheet")) J.closeSheet(); else J.bot.close(); } }); };
+})();
+(function () { try { window.__jd.start(); } catch (e) { window.__jdFail && window.__jdFail(e); } })();
+</script>
+</body>
+</html>

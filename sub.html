@@ -1,0 +1,1290 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="theme-color" content="#050507">
+<meta name="color-scheme" content="dark light">
+<title>Super JinX</title>
+<style>
+@font-face{font-family:"Vazirmatn";src:url("/jinx-fonts/Vazirmatn-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Vazirmatn";src:url("/jinx-fonts/Vazirmatn-Medium.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Vazirmatn";src:url("/jinx-fonts/Vazirmatn-Bold.woff2") format("woff2");font-weight:700;font-display:swap}
+:root{--a:#8b7cf6;--a2:#c4b5fd;--c:#5eead4;--gold:#e9c987;--gold2:#b8925a;--tg:#2aabee;--ok:#34d399;--warn:#fbbf24;--bad:#fb7185;--info:#60a5fa;--off:#94a3b8;--e:cubic-bezier(.22,.9,.24,1);--sp:cubic-bezier(.34,1.56,.64,1)}
+[data-theme=dark]{--bg:#050507;--dev:#0a0a10;--s1:rgba(255,255,255,.03);--s2:rgba(255,255,255,.05);--s3:rgba(255,255,255,.085);--line:rgba(255,255,255,.07);--line2:rgba(255,255,255,.13);--t1:#f6f4ee;--t2:#a9a7b6;--t3:#6d6b7d;--glow:1}
+[data-theme=light]{--bg:#efece4;--dev:#fbfaf6;--s1:rgba(30,24,10,.03);--s2:rgba(30,24,10,.05);--s3:rgba(30,24,10,.08);--line:rgba(30,24,10,.08);--line2:rgba(30,24,10,.15);--t1:#16140f;--t2:#5d5a52;--t3:#8f8b80;--glow:.45;--gold:#a57a33;--gold2:#7d5a22}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{background:var(--bg);-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:14px;scroll-padding-bottom:96px}
+html.lock,html.lock body{overflow:hidden}
+body{min-height:100vh;background:var(--bg);color:var(--t1);font-family:"Vazirmatn",-apple-system,"Segoe UI",Roboto,Tahoma,sans-serif;font-size:14px;line-height:1.65;font-variant-numeric:tabular-nums;overflow-x:hidden;transition:none}
+.ltr{direction:ltr;unicode-bidi:isolate}
+button,a{font:inherit;color:inherit}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+/* ================= atmosphere: aurora + grain (no lines) ================= */
+.amb{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,transparent 0,transparent 70px,#000 260px);mask-image:linear-gradient(to bottom,transparent 0,transparent 70px,#000 260px)}
+.amb i{position:absolute;border-radius:50%;opacity:var(--glow);will-change:transform}
+.amb .a1{left:-28vw;top:4vh;width:100vw;height:80vh;background:radial-gradient(closest-side,rgba(139,124,246,.34),transparent 70%);animation:au1 22s var(--e) infinite alternate}
+.amb .a2{right:-32vw;top:12vh;width:85vw;height:72vh;background:radial-gradient(closest-side,rgba(233,201,135,.2),transparent 70%);animation:au2 26s var(--e) infinite alternate}
+.amb .a3{left:8vw;bottom:-32vh;width:95vw;height:65vh;background:radial-gradient(closest-side,rgba(94,234,212,.14),transparent 70%);animation:au1 30s var(--e) infinite alternate-reverse}
+.amb .a4{right:-10vw;bottom:8vh;width:60vw;height:55vh;background:radial-gradient(closest-side,rgba(244,114,182,.13),transparent 70%);animation:au2 34s var(--e) infinite alternate-reverse}
+/* slow galaxy swirl + perspective floor: the "wow" layer, cheap (two gradients, transform only) */
+.amb .neb{position:absolute;left:50%;top:44%;width:150vmax;height:150vmax;margin:-75vmax 0 0 -75vmax;border-radius:50%;opacity:calc(.5*var(--glow));background:conic-gradient(from 0deg,transparent 0 12%,rgba(139,124,246,.14) 20%,transparent 30% 46%,rgba(233,201,135,.1) 56%,transparent 66% 80%,rgba(94,234,212,.1) 88%,transparent 96%);-webkit-mask-image:radial-gradient(closest-side,transparent 18%,#000 46%,transparent 72%);mask-image:radial-gradient(closest-side,transparent 18%,#000 46%,transparent 72%);animation:spin 90s linear infinite;will-change:transform}
+.amb .floor{position:absolute;left:-50%;right:-50%;bottom:-6vh;height:46vh;opacity:calc(.35*var(--glow));background-image:linear-gradient(rgba(196,181,253,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(196,181,253,.22) 1px,transparent 1px);background-size:56px 56px;transform:perspective(420px) rotateX(62deg);transform-origin:50% 100%;-webkit-mask-image:linear-gradient(to top,#000,transparent 85%);mask-image:linear-gradient(to top,#000,transparent 85%);animation:floor 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes floor{to{background-position:0 56px,0 0}}
+[data-theme=light] .amb .floor{background-image:linear-gradient(rgba(125,90,34,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(125,90,34,.16) 1px,transparent 1px)}
+[data-theme=light] .amb .neb{opacity:.35}
+.amb .gr{position:absolute;inset:-50%;opacity:calc(.07*var(--glow));background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.amb .dust{position:absolute;inset:0;opacity:calc(.6*var(--glow));background-image:radial-gradient(1px 1px at 12% 18%,#fff8,transparent),radial-gradient(1px 1px at 78% 12%,#fff6,transparent),radial-gradient(1.4px 1.4px at 62% 44%,#e9c98799,transparent),radial-gradient(1px 1px at 28% 66%,#fff5,transparent),radial-gradient(1.2px 1.2px at 88% 72%,#c4b5fd88,transparent),radial-gradient(1px 1px at 44% 90%,#fff4,transparent);animation:tw 6s ease-in-out infinite alternate}
+@keyframes au1{to{transform:translate(12vw,8vh) scale(1.15)}}@keyframes au2{to{transform:translate(-10vw,10vh) scale(1.1)}}@keyframes tw{to{opacity:calc(.25*var(--glow))}}
+.paused *,.paused *::before,.paused *::after{animation-play-state:paused!important}
+/* ================= ignition intro (auto-removes even if JS dies) ================= */
+.intro{position:fixed;inset:0;z-index:80;display:grid;place-items:center;background:var(--bg);animation:ig-out .5s var(--e) 1.15s forwards;pointer-events:none}
+.intro .ig{width:84px;height:84px;color:var(--gold);filter:drop-shadow(0 0 22px rgba(233,201,135,.55))}
+.intro .ig path{stroke-dasharray:220;stroke-dashoffset:220;animation:draw .9s var(--e) forwards}.intro .ig .sg-j{animation-delay:.18s}.intro .ig .sg-bolt{animation-delay:.36s}
+.intro p{position:absolute;top:calc(50% + 62px);left:0;right:0;text-align:center;font:600 10px/1 ui-monospace,Menlo,monospace;letter-spacing:6px;color:var(--t3);opacity:0;animation:fadein .5s .45s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}@keyframes fadein{to{opacity:1}}@keyframes ig-out{to{opacity:0;visibility:hidden}}
+html.seen .intro{display:none}
+/* ================= layout: phone · tablet · real desktop website ================= */
+.device{position:relative;z-index:1;width:100%;max-width:480px;margin:0 auto;min-height:100vh;padding:max(16px,calc(env(safe-area-inset-top) + 8px)) max(16px,env(safe-area-inset-right)) calc(104px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+.stack{display:flex;flex-direction:column;gap:14px}
+.cols,.col{display:contents}
+.dnav{display:none}
+/* tablet: wider single column, no fake device frame */
+@media (min-width:600px){.device{max-width:720px;padding:max(22px,calc(env(safe-area-inset-top) + 8px)) max(24px,env(safe-area-inset-right)) calc(110px + env(safe-area-inset-bottom)) max(24px,env(safe-area-inset-left))}.stack{gap:16px}}
+/* desktop: full website - sticky header with section links, two real columns, no dock */
+@media (min-width:900px){
+  html:not(.vm) .device{max-width:1320px;padding:0 40px 48px;min-height:100vh}
+  html:not(.vm) .stack{gap:22px}
+  html:not(.vm) .top{position:sticky;top:0;z-index:30;margin:0 calc(50% - 50vw);padding:16px max(40px,calc(50vw - 50%))!important;background:var(--bg);border-bottom:0}
+  html:not(.vm) .top::after{content:"";position:absolute;left:0;right:0;top:100%;height:24px;pointer-events:none;background:linear-gradient(var(--bg),transparent);opacity:.9}
+  html:not(.vm) .dnav{display:flex;gap:4px;margin-inline:auto;padding:4px;border-radius:14px;border:1px solid var(--line);background:var(--s1)}
+  html:not(.vm) .dnav a{display:flex;align-items:center;gap:7px;height:36px;padding:0 14px;border-radius:10px;text-decoration:none;color:var(--t2);font-size:13px;font-weight:600;transition:color .2s,background .2s}
+  html:not(.vm) .dnav a svg{width:16px;height:16px}
+  html:not(.vm) .dnav a:hover{color:var(--t1);background:var(--s2)}
+  html:not(.vm) .dnav a.on{color:var(--gold);background:rgba(233,201,135,.1)}
+  html:not(.vm) .cols{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:26px;align-items:start}
+  html:not(.vm) .col{display:flex;flex-direction:column;gap:18px;min-width:0}
+  html:not(.vm){scroll-padding-top:92px}
+  html:not(.vm) .cl{position:sticky;top:92px}
+  html:not(.vm) .dock{display:none!important}
+  html:not(.vm) .toast{bottom:28px}
+  html:not(.vm) .uname{font-size:30px}
+  html:not(.vm) .list .row{padding:12px 14px}
+  html:not(.vm) #s-cfg .list{display:grid;grid-template-columns:1fr;gap:10px}
+}
+@media (min-width:1360px){
+  html:not(.vm) .cols{grid-template-columns:minmax(0,440px) minmax(0,1fr)}
+  html:not(.vm) #s-cfg .list{grid-template-columns:1fr 1fr}
+}
+@media (min-width:900px) and (max-height:760px){
+  html:not(.vm) .cl{position:static}
+}
+html.lite .top{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--bg)}
+.rise{opacity:0;transform:translateY(14px) scale(.985);animation:rise .7s var(--e) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+/* ================= top bar ================= */
+.top{display:flex;align-items:center;justify-content:space-between;padding:4px 2px}
+.brand{display:flex;align-items:center;gap:11px}
+.mark{width:40px;height:40px;color:var(--gold);flex-shrink:0;filter:drop-shadow(0 0 8px rgba(233,201,135,.45))}[data-theme=light] .mark{filter:none}
+.word{display:block;font-size:15px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:linear-gradient(90deg,var(--gold),#fff6dc 40%,var(--gold) 60%,var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;background-size:200% 100%;animation:shine 6s linear infinite;padding:1px 3px 1px 0;transform:translateZ(0)}
+[data-theme=light] .word{background-image:linear-gradient(90deg,var(--gold2),var(--gold) 45%,#d9b26a 55%,var(--gold2))}
+@keyframes shine{to{background-position:-200% 0}}
+.brand small{display:block;font-size:10.5px;color:var(--t3);margin-top:-1px}
+.tools{display:flex;gap:7px}
+.ib{position:relative;overflow:hidden;height:38px;min-width:38px;padding:0 11px;border-radius:13px;border:1px solid var(--line2);color:var(--t2);cursor:pointer;font:700 11.5px/1 ui-monospace,Menlo,monospace;letter-spacing:1px;
+  background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.01)),var(--s1);box-shadow:0 1px 0 rgba(255,255,255,.07) inset,0 8px 18px -12px rgba(0,0,0,.8);
+  display:inline-flex;align-items:center;justify-content:center;transition:color .2s,border-color .25s,box-shadow .3s,transform .18s var(--sp)}
+@media (hover:hover){.ib:hover{color:var(--gold);border-color:rgba(233,201,135,.45);box-shadow:0 0 0 3px rgba(233,201,135,.1)}}
+.ib:active{transform:scale(.9)}.ib svg{width:17px;height:17px;transition:transform .5s var(--sp)}.ib[data-a=theme]:active svg{transform:rotate(100deg)}
+/* ================= the pass ================= */
+.pass-wrap{perspective:900px}
+.pass{--rx:0deg;--ry:0deg;--mx:50%;--my:30%;--acc:var(--gold);position:relative;overflow:hidden;isolation:isolate;border-radius:28px;color:#f6f4ee;transform:rotateX(var(--rx)) rotateY(var(--ry)) translateZ(0);transform-style:preserve-3d;transition:transform .5s var(--e);
+  background:radial-gradient(140% 90% at 100% 0%,#2a2263 0%,transparent 55%),radial-gradient(120% 80% at 0% 100%,#3a2a12 0%,transparent 60%),linear-gradient(155deg,#16131f,#08070c 70%);
+  box-shadow:0 1px 0 rgba(255,255,255,.14) inset,0 0 0 1px rgba(233,201,135,.22) inset,0 40px 70px -34px rgba(0,0,0,.95),0 0 70px -24px rgba(139,124,246,calc(.65*var(--glow)))}
+.pass.tilt{transition:transform .08s linear}
+.pass.st-expired,.pass.st-limited{--acc:var(--bad)}.pass.st-disabled{--acc:var(--off)}.pass.st-on_hold{--acc:var(--info)}
+.foil{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.55;mix-blend-mode:color-dodge;
+  background:linear-gradient(115deg,transparent 20%,rgba(255,120,200,.25) 32%,rgba(120,200,255,.3) 42%,rgba(160,255,200,.22) 52%,rgba(255,230,140,.28) 62%,transparent 75%);background-size:250% 250%;background-position:var(--mx) var(--my);animation:foil 9s ease-in-out infinite alternate}
+@keyframes foil{from{background-position:0% 30%}to{background-position:100% 70%}}
+.pass.tilt .foil{animation:none}
+.glare{position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(420px circle at var(--mx) var(--my),rgba(255,255,255,.16),transparent 45%)}
+.wm{position:absolute;z-index:0;width:210px;height:210px;inset-inline-end:-46px;top:-30px;color:rgba(233,201,135,.13);transform:rotate(-12deg)}
+.pass>div{position:relative;z-index:1}
+.p-top{display:flex;justify-content:space-between;align-items:center;padding:20px 20px 0}
+.p-lbl{font:700 10.5px/1 ui-monospace,Menlo,monospace;letter-spacing:4px;color:var(--gold);padding:7px 10px;border-radius:9px;border:1px solid rgba(233,201,135,.35);background:rgba(233,201,135,.07)}
+.chip{display:inline-flex;align-items:center;gap:7px;height:28px;padding:0 12px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap;background:rgba(0,0,0,.35);border:1px solid currentColor;box-shadow:0 0 18px -5px currentColor}
+.chip i{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 10px currentColor}
+.s-active{color:var(--ok)}.s-limited{color:var(--warn)}.s-expired{color:var(--bad)}.s-disabled{color:var(--off)}.s-on_hold{color:var(--info)}
+.s-active i{animation:beat 2.2s ease-in-out infinite}@keyframes beat{50%{opacity:.35;transform:scale(.75)}}
+.p-mid{padding:22px 20px 20px}
+.p-mid small,.stub small{display:block;font-size:10.5px;color:rgba(246,244,238,.5)}
+.uname{font-size:25px;font-weight:700;line-height:1.25;letter-spacing:.3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-shadow:0 0 30px rgba(196,181,253,.35)}
+.serial{margin-top:8px;font:600 11.5px/1 ui-monospace,Menlo,monospace;letter-spacing:2.5px;color:rgba(246,244,238,.62)}
+.serial span{background:linear-gradient(90deg,rgba(246,244,238,.5),#fff,rgba(246,244,238,.5));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 5s linear infinite}
+.perf{height:22px;margin:0 -11px;position:relative;z-index:1;background:radial-gradient(circle 11px at 0 50%,var(--dev) 10.5px,transparent 11px),radial-gradient(circle 11px at 100% 50%,var(--dev) 10.5px,transparent 11px)}
+@media (max-width:599px){.perf{background:radial-gradient(circle 11px at 0 50%,var(--bg) 10.5px,transparent 11px),radial-gradient(circle 11px at 100% 50%,var(--bg) 10.5px,transparent 11px)}}
+.perf::after{content:"";position:absolute;left:24px;right:24px;top:50%;border-top:2px dotted rgba(233,201,135,.28)}
+.stub{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:10px;padding:14px 20px 20px}
+.stub>div{min-width:0}
+.stub b{display:flex;align-items:baseline;gap:5px;font-size:26px;font-weight:700;line-height:1.2;color:#fff;white-space:nowrap}
+[dir=rtl] .stub b.ltr{justify-content:flex-end}.stub>div+div{padding-inline-start:10px;border-inline-start:1px solid rgba(255,255,255,.08)}
+.stub b em{font-style:normal;font-size:12px;font-weight:600;color:var(--acc)}
+.stub b.sm{font-size:13px;font-weight:600;line-height:1.5;margin-top:6px;display:block;white-space:normal;overflow-wrap:anywhere}
+.cd{font-variant-numeric:tabular-nums;color:var(--acc)!important}
+/* ================= banners ================= */
+.banner{display:flex;gap:10px;align-items:center;padding:12px 14px;border-radius:18px;font-size:12.5px;border:1px solid}
+.banner svg{width:18px;height:18px;flex-shrink:0}.banner .grow{font-weight:600}
+.banner.bad{color:var(--bad);background:rgba(251,113,133,.08);border-color:rgba(251,113,133,.3)}
+.banner.warn{color:var(--warn);background:rgba(251,191,36,.08);border-color:rgba(251,191,36,.28)}
+.banner.info{color:var(--info);background:rgba(96,165,250,.08);border-color:rgba(96,165,250,.28)}
+/* ================= telemetry ================= */
+.tele{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:8px}
+.tl{position:relative;overflow:hidden;padding:11px 10px 10px;border-radius:18px;background:var(--s1);border:1px solid var(--line);text-align:center;min-width:0}[data-theme=light] .tl{background:#fff;box-shadow:0 8px 22px -18px rgba(60,40,10,.45)}[data-theme=light] .tl span{color:var(--t2)}
+.tl span{display:block;font-size:10.5px;color:var(--t3);white-space:nowrap}
+.tl b{display:flex;align-items:center;justify-content:center;gap:6px;font-size:14px;font-weight:700;margin-top:2px;white-space:nowrap;position:relative;z-index:1}
+.tl b i{width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 10px currentColor}
+.spark{position:absolute;inset:auto 0 0 0;width:100%;height:12px;opacity:.7;z-index:0}
+.tl.has-sp{padding-bottom:15px}
+.spark polyline{fill:none;stroke:var(--c);stroke-width:1.6;vector-effect:non-scaling-stroke;stroke-linejoin:round;filter:drop-shadow(0 0 3px rgba(94,234,212,.7))}
+.on-c{color:var(--ok)}.off-c{color:var(--t2)}.mid-c{color:var(--warn)}.bad-c{color:var(--bad)}
+/* ================= channel portal (hero CTA) ================= */
+.portal{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;gap:14px;padding:16px 14px;border-radius:24px;color:#fff;text-decoration:none;transform:translateZ(0);
+  background:linear-gradient(135deg,#0b84d0 0%,#2aabee 42%,#5a5df0 100%);
+  box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 0 0 1px rgba(255,255,255,.1) inset,0 20px 40px -16px rgba(42,171,238,.85),0 0 50px -16px rgba(42,171,238,calc(.8*var(--glow)));transition:transform .3s var(--sp),box-shadow .3s var(--e)}
+.portal .aur{position:absolute;inset:-40%;z-index:-1;background:conic-gradient(from var(--ang,0deg),transparent,rgba(255,255,255,.28),transparent 30%,rgba(165,243,252,.3),transparent 60%);animation:edge 7s linear infinite}
+.portal::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-20deg);animation:sheen 4s var(--e) infinite}
+@property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes edge{to{--ang:360deg}}@keyframes sheen{0%,60%{left:-60%}100%{left:140%}}
+.orb{position:relative;width:52px;height:52px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;background:rgba(255,255,255,.2);box-shadow:0 0 0 1px rgba(255,255,255,.35) inset,0 8px 20px -6px rgba(0,0,0,.35)}
+.orb svg{width:25px;height:25px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.25))}
+.orb i{position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(255,255,255,.4);animation:ring 2.6s var(--e) infinite}.orb .o2{animation-delay:1.3s}
+@keyframes ring{0%{opacity:.9;transform:scale(.85)}100%{opacity:0;transform:scale(1.35)}}
+.ptx{flex:1;min-width:0}.ptx b{display:block;font-size:16.5px;font-weight:700;letter-spacing:.1px;text-shadow:0 1px 8px rgba(0,0,0,.2)}
+.ptx small{display:block;font-size:11.5px;opacity:.92;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ptx .pd{opacity:.75;font-size:11px;white-space:normal;line-height:1.5}
+.live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#a7f3d0;box-shadow:0 0 8px #6ee7b7;margin-inline-end:6px;vertical-align:1px;animation:beat 2s ease-in-out infinite}
+.portal .go{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 14px;border-radius:13px;font-size:12.5px;font-weight:800;background:#fff;color:#0b7cc2;flex-shrink:0;box-shadow:0 8px 18px -8px rgba(0,0,0,.45);transition:transform .3s var(--sp)}
+.portal .go svg{width:15px;height:15px;transition:transform .3s var(--sp)}[dir=rtl] .portal .go svg{transform:scaleX(-1)}
+@media (hover:hover){.portal:hover{transform:translateY(-3px) scale(1.01);box-shadow:0 1px 0 rgba(255,255,255,.45) inset,0 28px 50px -16px rgba(42,171,238,1),0 0 70px -14px rgba(42,171,238,.8)}
+  .portal:hover .go svg{transform:translateX(4px)}[dir=rtl] .portal:hover .go svg{transform:scaleX(-1) translateX(4px)}}
+.portal:active{transform:scale(.97)}.portal:active .go{transform:scale(.92)}.portal:focus-visible{outline:2px solid #fff;outline-offset:3px}
+/* ================= panels ================= */
+.panel{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));border:1px solid var(--line);border-radius:24px;padding:16px}
+[data-theme=light] .panel{background:#fff;box-shadow:0 10px 30px -22px rgba(60,40,10,.4)}
+.ph{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.ph h2{font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:9px}
+.ph h2 svg{width:18px;height:18px;color:var(--gold)}
+.ph .aux{font-size:11px;color:var(--t3);font-family:ui-monospace,Menlo,monospace}
+/* reactor rings */
+.reactor{display:flex;align-items:center;gap:16px}
+.rings{position:relative;width:128px;height:128px;flex-shrink:0}
+.rings svg{width:100%;height:100%;transform:rotate(-90deg)}
+.rt{fill:none;stroke:var(--s3);stroke-width:9}
+.rv,.rv2{fill:none;stroke-linecap:round;transition:stroke-dashoffset 1.4s var(--e)}
+.rv{stroke-width:9;stroke:var(--gold);filter:drop-shadow(0 0 5px rgba(233,201,135,calc(.8*var(--glow))))}
+.rv2{stroke-width:6;stroke:var(--a);filter:drop-shadow(0 0 5px rgba(139,124,246,calc(.8*var(--glow))))}
+.rv.r-warn,.rv2.r-warn{stroke:var(--warn)}.rv.r-bad,.rv2.r-bad{stroke:var(--bad)}
+.core{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.core b{font-size:24px;font-weight:700;line-height:1}.core small{font-size:10.5px;color:var(--t3);margin-top:3px}
+.legend{flex:1;min-width:0;display:flex;flex-direction:column;gap:12px}
+.lg{display:grid;grid-template-columns:auto 1fr;column-gap:8px;align-items:center}
+.lg i{width:9px;height:9px;border-radius:3px;grid-row:span 2}.lg .d1{background:var(--gold);box-shadow:0 0 8px var(--gold)}.lg .d2{background:var(--a);box-shadow:0 0 8px var(--a)}
+.lg span{font-size:11px;color:var(--t3)}.lg b{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:start;justify-self:start}[dir=rtl] .lg b.ltr{text-align:right;justify-self:start}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.fact{padding:11px 12px;border-radius:15px;background:var(--s2);border:1px solid var(--line);min-width:0}
+.fact span{display:block;font-size:10.5px;color:var(--t3)}.fact b{display:block;font-size:12.5px;font-weight:600;margin-top:1px;white-space:normal;overflow-wrap:anywhere;line-height:1.45}
+/* link field (tap to copy) */
+.field{width:100%;display:flex;align-items:center;gap:10px;height:50px;padding:0 14px;border-radius:15px;background:var(--s2);border:1px dashed rgba(233,201,135,.35);cursor:pointer;text-align:start;transition:border-color .25s,background .25s,transform .15s var(--sp)}
+@media (hover:hover){.field:hover{border-color:rgba(233,201,135,.7);background:var(--s3)}}
+.field:active{transform:scale(.985)}
+.field code{flex:1;min-width:0;font:12.5px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;direction:ltr;text-align:left}
+.field .hint{font-size:10.5px;color:var(--gold);white-space:nowrap;flex-shrink:0}
+.field svg{width:16px;height:16px;flex-shrink:0;color:var(--ok)}.field.ok{border-color:var(--ok);border-style:solid;background:rgba(52,211,153,.08)}.field.ok .hint{color:var(--ok)}
+/* ================= buttons ================= */
+.btns{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:8px;margin-top:10px}.btns.two{grid-template-columns:1fr 1fr;margin-top:14px}
+.b{--bh:46px;position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:var(--bh);padding:0 15px;border-radius:15px;
+  border:1px solid var(--line2);color:var(--t1);font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap;user-select:none;-webkit-user-select:none;overflow:hidden;touch-action:manipulation;
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.015)),var(--s1);
+  box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 -1px 0 rgba(0,0,0,.3) inset,0 8px 18px -12px rgba(0,0,0,.8);
+  transition:transform .18s var(--sp),border-color .25s,box-shadow .3s var(--e),background .25s,color .2s}
+[data-theme=light] .b{background:linear-gradient(180deg,#fff,#f4f1ea);box-shadow:0 1px 0 #fff inset,0 6px 14px -10px rgba(60,40,10,.45)}
+.b svg{width:16px;height:16px;flex-shrink:0;position:relative;z-index:1;transition:transform .35s var(--sp)}
+.b>span{position:relative;z-index:1}
+@media (hover:hover){.b:hover{transform:translateY(-1px);border-color:rgba(233,201,135,.5);box-shadow:0 1px 0 rgba(255,255,255,.1) inset,0 0 0 3px rgba(233,201,135,.1),0 12px 24px -14px rgba(233,201,135,.5)}.b:hover svg{transform:scale(1.12)}}
+.b:active{transform:scale(.95);box-shadow:0 2px 8px rgba(0,0,0,.4) inset;transition-duration:.07s}
+.b:focus-visible,.ib:focus-visible,.seg button:focus-visible,.field:focus-visible,.dock a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.b.pri{color:#1a1206;border-color:rgba(255,240,200,.4);background:linear-gradient(135deg,#f6e2b0 0%,#e9c987 40%,#c99a52 100%);
+  box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 -2px 0 rgba(120,80,20,.25) inset,0 12px 26px -12px rgba(233,201,135,.85),0 0 24px -10px rgba(233,201,135,calc(.9*var(--glow)))}
+.b.pri::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-70%;z-index:0;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:sheen 5.5s var(--e) infinite}
+@media (hover:hover){.b.pri:hover{border-color:#fff3d0;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 16px 32px -12px rgba(233,201,135,1),0 0 0 3px rgba(233,201,135,.2)}}
+.b.ok,.b.pri.ok{background:linear-gradient(180deg,rgba(52,211,153,.25),rgba(52,211,153,.1))!important;border-color:rgba(52,211,153,.65)!important;color:var(--ok)!important;box-shadow:0 0 0 3px rgba(52,211,153,.12),0 0 24px -6px rgba(52,211,153,.9)!important}
+.b.ok svg{animation:pop .45s var(--sp)}@keyframes pop{0%{transform:scale(.2) rotate(-30deg);opacity:0}100%{transform:none;opacity:1}}
+.b.busy{pointer-events:none}.b.busy svg,.spin svg{animation:rot .8s linear infinite}@keyframes rot{to{transform:rotate(360deg)}}
+.b[disabled]{opacity:.6;pointer-events:none}
+.rp{position:absolute;z-index:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;pointer-events:none;background:currentColor;opacity:.25;transform:scale(0);animation:rp .6s var(--e) forwards}
+.portal .rp{background:#fff;opacity:.35;z-index:-1}
+@keyframes rp{to{transform:scale(30);opacity:0}}
+.b.sm{--bh:36px;padding:0 12px;font-size:12px;border-radius:12px}.b.ic{width:40px;--bh:40px;padding:0;border-radius:13px}.b.full{width:100%}
+.upd{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:11.5px;color:var(--t3)}.upd svg{width:14px;height:14px;flex-shrink:0}.upd .grow{flex:1;min-width:0}
+/* ================= rows ================= */
+.list{display:flex;flex-direction:column;gap:8px}
+.row{display:flex;align-items:center;gap:11px;padding:10px 10px;border-radius:17px;background:var(--s1);border:1px solid var(--line);transition:border-color .25s,background .25s}
+@media (hover:hover){.row:hover{border-color:var(--line2);background:var(--s2)}}
+.glyph{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;flex-shrink:0;font-weight:800;font-size:15px;color:var(--gold);background:linear-gradient(145deg,rgba(233,201,135,.16),rgba(233,201,135,.04));border:1px solid rgba(233,201,135,.25)}
+.grow{flex:1;min-width:0}
+.grow b{display:block;font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.grow small{display:block;font-size:11px;color:var(--t3)}
+.tag{display:inline-block;margin-inline-start:6px;padding:0 7px;border-radius:6px;font-size:9.5px;font-weight:700;color:var(--gold);border:1px solid rgba(233,201,135,.45);vertical-align:2px}
+.acts{display:flex;gap:6px;flex-shrink:0}
+.app .grow b{display:flex;align-items:center;gap:6px}.app .grow b{overflow:hidden}.app .grow b .ltr{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.app .tag{vertical-align:0;line-height:1.5}
+.cfg .grow b{font-weight:500;unicode-bidi:plaintext}
+.cfg .grow small{text-align:start;margin-top:2px}
+.idx{font:700 12px/1 ui-monospace,Menlo,monospace;color:var(--gold);width:28px;height:40px;display:grid;place-items:center;flex-shrink:0;border-inline-end:1px solid var(--line)}
+.pr{display:inline-block;font:700 9.5px/1.6 ui-monospace,Menlo,monospace;letter-spacing:1px;text-transform:uppercase;padding:0 6px;border-radius:5px;color:var(--a2);background:rgba(139,124,246,.13)}
+.pr-vmess{color:#7dd3fc;background:rgba(56,189,248,.12)}.pr-trojan{color:#fda4af;background:rgba(251,113,133,.12)}.pr-ss{color:#86efac;background:rgba(52,211,153,.12)}
+.pgc{display:inline-block;margin-inline-start:6px;font-size:10px;font-weight:700;line-height:1.6;padding:0 7px;border-radius:5px;color:var(--t2);background:var(--s3);font-variant-numeric:tabular-nums}
+.pgc.on{color:#86efac;background:rgba(52,211,153,.12)}.pgc.mid{color:#fcd34d;background:rgba(251,191,36,.12)}.pgc.bad{color:#fca5a5;background:rgba(248,113,113,.12)}
+.pick{display:inline-block;margin-inline-start:6px;font-size:10px;font-weight:800;line-height:1.6;padding:0 7px;border-radius:5px;color:#1a1033;background:linear-gradient(90deg,#fcd34d,#f9a8d4)}
+.ptip{display:flex;align-items:center;gap:10px;margin-top:12px;padding:10px 12px;border-radius:12px;background:var(--s2);border:1px dashed var(--s3)}
+.ptip>svg{flex:none;width:18px;height:18px;opacity:.8}.ptip b{display:block;font-size:12.5px}.ptip small{display:block;font-size:11px;opacity:.7;line-height:1.7}
+.ptip code{display:inline-block;max-width:100%;margin-top:4px;font-size:11.5px;padding:1px 6px;border-radius:5px;background:var(--s3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;vertical-align:bottom}
+@media (max-width:440px){.ptip{flex-wrap:wrap}.ptip .grow{flex:1 1 calc(100% - 30px)}.ptip .b{width:100%;justify-content:center}}
+.ptip .grow{min-width:0}.ptip .b{flex:none}
+.ops{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 10px}
+.ops .opl{flex:none;font-size:11.5px;font-weight:700;color:var(--t2);margin-inline-end:2px}
+.ops button{flex:none;height:30px;padding:0 11px;border-radius:999px;border:1px solid var(--line2);background:var(--s2);color:var(--t2);font:inherit;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+.ops button.on{color:#1a1033;border-color:transparent;background:linear-gradient(135deg,#f6e2b0,#c99a52)}
+.ops button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.row.cfg.fit{box-shadow:inset 3px 0 0 #c99a52}[dir=rtl] .row.cfg.fit{box-shadow:inset -3px 0 0 #c99a52}
+.fitb{display:inline-block;margin-inline-start:6px;font-size:10px;font-weight:800;line-height:1.6;padding:0 7px;border-radius:5px;color:#c99a52;background:rgba(201,154,82,.14)}
+[data-theme=light] .fitb{color:#7a5a1e;background:rgba(201,154,82,.2)}
+.rtb{display:inline-block;margin-inline-start:6px;font-size:10px;font-weight:700;line-height:1.6;padding:0 7px;border-radius:5px;color:var(--t2);background:var(--s3)}
+.rt-relay{color:#86efac;background:rgba(52,211,153,.12)}.rt-cdn{color:#fcd34d;background:rgba(251,191,36,.12)}.rt-direct{color:var(--a2);background:rgba(139,124,246,.13)}.rt-frag{color:#7dd3fc;background:rgba(56,189,248,.12)}.rt-reality{color:#f9a8d4;background:rgba(236,72,153,.13)}[data-theme=light] .pr{color:#5b3fd6;background:rgba(91,63,214,.1)}[data-theme=light] .pr-vmess{color:#0369a1;background:rgba(3,105,161,.1)}[data-theme=light] .pr-trojan{color:#be123c;background:rgba(190,18,60,.09)}[data-theme=light] .pr-ss{color:#047857;background:rgba(4,120,87,.1)}[data-theme=light] .rt-relay{color:#047857;background:rgba(4,120,87,.1)}[data-theme=light] .rt-cdn{color:#92610a;background:rgba(180,120,10,.13)}[data-theme=light] .rt-direct{color:#5b3fd6;background:rgba(91,63,214,.1)}[data-theme=light] .rt-frag{color:#0369a1;background:rgba(3,105,161,.1)}[data-theme=light] .rt-reality{color:#be185d;background:rgba(190,24,93,.1)}
+.empty{text-align:center;color:var(--t3);font-size:12.5px;padding:12px 0 4px}
+/* segmented with sliding light */
+.seg{position:relative;display:grid;grid-template-columns:repeat(var(--n),1fr);padding:4px;border-radius:15px;background:var(--s2);border:1px solid var(--line);margin-bottom:12px}
+.seg .ind{position:absolute;top:4px;bottom:4px;inset-inline-start:4px;width:calc((100% - 8px)/var(--n));border-radius:11px;background:linear-gradient(135deg,#f6e2b0,#c99a52);box-shadow:0 8px 18px -8px rgba(233,201,135,.9),0 1px 0 rgba(255,255,255,.6) inset;transform:translateX(calc(var(--k)*100%));transition:transform .45s var(--sp)}
+[dir=rtl] .seg .ind{transform:translateX(calc(var(--k)*-100%))}
+.seg button{position:relative;z-index:1;height:36px;border:0;border-radius:11px;background:transparent;color:var(--t2);font-size:12.5px;font-weight:700;cursor:pointer;transition:color .3s}
+.seg button.on{color:#1a1206}.seg button:active{transform:scale(.95)}
+/* ================= care bot ================= */
+.bot{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.bav{position:relative;width:46px;height:46px;border-radius:16px;display:grid;place-items:center;flex-shrink:0;color:#fff;background:linear-gradient(145deg,#34d399,#0ea5e9);box-shadow:0 0 0 1px rgba(255,255,255,.15) inset,0 8px 22px -8px rgba(52,211,153,calc(.9*var(--glow)))}
+.bav svg{width:22px;height:22px}
+.bav::after{content:"";position:absolute;right:-2px;top:-2px;width:11px;height:11px;border-radius:50%;background:var(--ok);border:2px solid var(--dev);box-shadow:0 0 8px var(--ok)}
+.bav.warn{background:linear-gradient(145deg,#fbbf24,#f97316)}.bav.warn::after{background:var(--warn)}.bav.bad{background:linear-gradient(145deg,#fb7185,#e11d48)}.bav.bad::after{background:var(--bad)}
+.bav.run svg{animation:beat 1.1s ease-in-out infinite}
+.bot .grow b{white-space:normal}
+.term{height:118px;overflow:hidden;margin-bottom:12px;padding:10px 12px;border-radius:15px;background:#030305;border:1px solid var(--line);font:11px/1.75 ui-monospace,Menlo,monospace;color:#8b8a99;display:flex;flex-direction:column;justify-content:flex-end;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 40%);mask-image:linear-gradient(180deg,transparent,#000 40%)}
+[data-theme=light] .term{background:#16140f}
+.term p{display:flex;gap:6px;direction:ltr;text-align:left;white-space:nowrap;overflow:hidden;flex:0 0 auto;min-height:1.75em;line-height:1.75;animation:fadein .3s forwards}.term p>span{flex-shrink:0}.term p>.msg{font-family:"Vazirmatn",-apple-system,"Segoe UI",Tahoma,sans-serif;font-size:11.5px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;direction:rtl;text-align:left;unicode-bidi:isolate}[lang=en] .term p>.msg{direction:ltr;unicode-bidi:plaintext;text-align:start}
+.term i{font-style:normal;color:var(--gold);flex-shrink:0}.term .ok{color:#34d399}.term .warn{color:#fbbf24}.term .bad{color:#fb7185}
+.term p:last-child::after{content:"▍";flex-shrink:0;color:var(--gold);animation:beat 1s steps(1) infinite}
+.steps{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.step{display:flex;gap:11px;align-items:flex-start}
+.step b{width:24px;height:24px;border-radius:8px;display:grid;place-items:center;flex-shrink:0;font:700 11px/1 ui-monospace,Menlo,monospace;color:var(--gold);background:rgba(233,201,135,.09);border:1px solid rgba(233,201,135,.25)}
+.step p{font-size:12.5px;color:var(--t2);padding-top:1px}
+.chk{display:flex;flex-direction:column;gap:2px;margin-bottom:12px;max-height:56vh;overflow:auto}
+.ck{display:flex;align-items:center;gap:10px;padding:9px 4px;border-top:1px solid var(--line);font-size:12.5px;opacity:0;transform:translateY(6px);animation:rise .4s var(--e) forwards}
+.ck:first-child{border-top:0}
+.ck i{width:22px;height:22px;border-radius:8px;display:grid;place-items:center;flex-shrink:0;font-style:normal;font-size:12px;font-weight:700}
+.ck.ok i{color:var(--ok);background:rgba(52,211,153,.13)}.ck.warn i{color:var(--warn);background:rgba(251,191,36,.13)}.ck.bad i{color:var(--bad);background:rgba(251,113,133,.13)}
+.ck .grow b{font-weight:600;font-size:12.5px;white-space:normal}.ck .grow small{white-space:normal}
+.safe{padding:14px;border-radius:18px;border:1px solid var(--line2);background:var(--s1)}
+.safe h1{font-size:15px;margin-bottom:6px}.safe p{font-size:12px;color:var(--t2);margin-bottom:10px}
+.safe .row{margin-bottom:6px}.safe code{flex:1;min-width:0;font:11px/1.3 ui-monospace,Menlo,monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;direction:ltr}
+/* ================= footer + dock ================= */
+.foot{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 0 0;color:var(--t3)}
+.foot .fs{width:26px;height:26px;color:var(--gold);opacity:.8}
+.foot span{font:700 10px/1 ui-monospace,Menlo,monospace;letter-spacing:4px;text-transform:uppercase}.foot small{font-size:10.5px}
+.demo{font-size:11px;text-align:center;color:var(--gold);border:1px dashed rgba(233,201,135,.45);border-radius:12px;padding:7px 10px}
+.dock{position:fixed;z-index:40;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));transform:translateX(-50%);width:calc(100% - 32px);max-width:370px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:6px;border-radius:22px;
+  background:rgba(14,13,20,.72);border:1px solid rgba(255,255,255,.1);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 20px 40px -12px rgba(0,0,0,.7),0 1px 0 rgba(255,255,255,.08) inset}
+[data-theme=light] .dock{background:rgba(255,253,248,.82);border-color:rgba(30,24,10,.1);box-shadow:0 16px 34px -14px rgba(60,40,10,.4)}
+.dock a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;height:48px;border-radius:16px;text-decoration:none;color:var(--t3);font-size:10px;font-weight:700;transition:color .25s,background .3s var(--e),transform .2s var(--sp)}
+.dock a svg{width:19px;height:19px;transition:transform .35s var(--sp)}
+.dock a.on{color:var(--gold);background:rgba(233,201,135,.1)}.dock a.on svg{transform:translateY(-1px) scale(1.08);filter:drop-shadow(0 0 6px rgba(233,201,135,.6))}
+.dock a:active{transform:scale(.9)}
+@media (hover:hover){.dock a:not(.on):hover{color:var(--t1)}}
+/* ================= sheet / toast ================= */
+.sheet{position:fixed;inset:0;z-index:50;display:flex;align-items:flex-end;justify-content:center;background:rgba(3,3,6,.7);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.sheet.on{opacity:1;visibility:visible}
+.sbox{width:100%;max-width:400px;margin:10px;padding:18px;border-radius:28px;background:var(--dev);border:1px solid var(--line2);transform:translateY(30px) scale(.98);transition:transform .4s var(--sp);box-shadow:0 0 70px -14px rgba(233,201,135,calc(.35*var(--glow)))}
+.sheet.on .sbox{transform:none}
+.sbox h3{font-size:13.5px;font-weight:600;text-align:center;margin-bottom:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;unicode-bidi:plaintext}
+.qr{background:#fff;border-radius:20px;padding:14px;aspect-ratio:1/1;display:grid;place-items:center;margin-bottom:12px;box-shadow:0 0 0 4px rgba(233,201,135,.3)}
+.qr img{width:100%;height:100%;object-fit:contain;display:block}.qr p{color:#555;font-size:12px;text-align:center;padding:10px}
+.manual{width:100%;height:120px;resize:none;border-radius:14px;border:1px solid var(--line2);background:var(--s2);color:var(--t1);padding:10px;font:12px/1.5 ui-monospace,Menlo,monospace;direction:ltr;margin-bottom:10px}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));z-index:60;pointer-events:none;transform:translate(-50%,16px) scale(.96);opacity:0;visibility:hidden;max-width:calc(100% - 32px);
+  display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border-radius:15px;font-size:13px;font-weight:600;color:var(--t1);background:var(--dev);border:1px solid var(--line2);
+  box-shadow:0 16px 40px rgba(0,0,0,.45),0 0 24px -8px rgba(52,211,153,.6);transition:all .3s var(--sp)}
+.toast.on{opacity:1;visibility:visible;transform:translate(-50%,0)}.toast svg{width:16px;height:16px;flex-shrink:0;color:var(--ok)}
+.toast.err{box-shadow:0 16px 40px rgba(0,0,0,.45),0 0 24px -8px rgba(251,113,133,.6)}.toast.err svg{color:var(--bad)}
+@media (min-width:640px){.sheet{align-items:center}}
+@media (max-width:370px){.app .b.pri{padding:0 9px;gap:5px}.app .glyph{width:34px;height:34px}.row{gap:9px}.btns{grid-template-columns:1fr 1fr}.btns .b:first-child{grid-column:1/-1}.btns.two .b:first-child{grid-column:auto}.stub{grid-template-columns:1fr 1fr}.stub>div:first-child{grid-column:1/-1}
+  .tele{grid-template-columns:1fr 1fr}.tele .wide{grid-column:1/-1;order:-1}.rings{width:108px;height:108px}.portal .go span,.portal .go{padding:0 10px}}
+html.lite .amb i,html.lite .amb .dust,html.lite .amb .neb,html.lite .amb .floor,html.lite .foil,html.lite .b.pri::after,html.lite .portal::after,html.lite .portal .aur,html.lite .word,html.lite .serial span{animation:none!important}
+html.lite .dock,html.lite .sheet{-webkit-backdrop-filter:none;backdrop-filter:none}html.lite .dock{background:var(--dev)}html.lite .amb .gr{display:none}
+html.fixx #app,html.fixx .device{overflow-x:hidden}
+html.jx-sw *,html.jx-sw *::before,html.jx-sw *::after{transition:none!important}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-new(root){z-index:2}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rise{opacity:1;transform:none}.intro{display:none}}
+</style>
+</head>
+<body>
+<div class="amb" aria-hidden="true"><span class="neb"></span><i class="a1"></i><i class="a2"></i><i class="a3"></i><i class="a4"></i><span class="floor"></span><span class="dust"></span><span class="gr"></span></div>
+<div class="intro" id="jx-intro" aria-hidden="true"><svg class="ig" viewBox="0 0 64 64" fill="none"><path class="sg-hex" d="M32 3 57 17.5v29L32 61 7 46.5v-29Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path class="sg-j" d="M38 16v20.5a8.5 8.5 0 0 1-17 0" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path class="sg-bolt" d="M33 24 27 33h6l-3 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><p>SUPER JINX</p></div>
+<script>try{if(sessionStorage.getItem("jx-seen"))document.documentElement.classList.add("seen");sessionStorage.setItem("jx-seen","1")}catch(e){}</script>
+<script>try{localStorage.removeItem("jx-view")}catch(e){}</script>
+<script id="jinx-data" type="application/json">{"username": {{ user.username|tojson }}, "status": {{ user.status|string|tojson }}, "used": {{ (user.used_traffic or 0)|tojson }}, "limit": {{ (user.data_limit or 0)|tojson }}, "expire": {{ (user.expire or 0)|tojson }}, "reset": {{ (user.data_limit_reset_strategy|string)|tojson }}, "online": {{ ((user.online_at|string) if user.online_at else "")|tojson }}, "hold": {{ (user.on_hold_expire_duration or 0)|tojson }}, "links": {{ (user.links or [])|tojson }}, "sub": {{ (user.subscription_url or "")|tojson }}}</script>
+<div class="device"><main class="stack" id="app"></main></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-t"><div class="sbox"><h3 id="sh-t"></h3><div id="sh-q"></div><button type="button" class="b full" id="sh-x"></button></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+
+/* ===================================================================================
+   Pure functions (no DOM): model, texts, icons, HTML. Latin digits only, all escaped.
+   =================================================================================== */
+function JinxTextBase(fa) {
+  return fa ? {
+    brandSub: "اشتراک اختصاصی", member: "عضو", remaining: "حجم باقی‌مانده", unlimited: "نامحدود", until: "اعتبار تا", noexp: "بدون انقضا",
+    usage: "مصرف", data: "حجم", time: "زمان باقی‌مانده", used: "مصرف شده", left: "باقی‌مانده", days: "روز", hours: "ساعت", ended: "به پایان رسیده",
+    total: "حجم کل", expires: "تاریخ انقضا", reset: "ریست حجم", online: "آخرین اتصال", never: "هنوز متصل نشده", hold: "شروع با اولین اتصال",
+    resetMap: { no_reset: "ندارد", day: "روزانه", week: "هفتگی", month: "ماهانه", year: "سالانه" },
+    st: { active: "فعال", limited: "حجم تمام شده", expired: "منقضی شده", disabled: "غیرفعال", on_hold: "در انتظار" },
+    bn: { limited: "حجم اشتراک تمام شده است. برای تمدید در کانال پیام بده.", expired: "اعتبار اشتراک به پایان رسیده است. برای تمدید در کانال پیام بده.",
+          disabled: "این اشتراک غیرفعال است.", on_hold: "اشتراک با اولین اتصال شروع می‌شود.", near: "کمتر از ۱۵٪ حجم یا ۳ روز از اعتبار باقی مانده است." },
+    view: "نمای کامپیوتر / موبایل", viewD: "نمای کامپیوتر", viewM: "نمای موبایل",
+    link: "لینک اشتراک", copy: "کپی لینک", copied: "کپی شد", qr: "QR", share: "اشتراک",
+    auto: "به‌روزرسانی خودکار در برنامه‌ها هر {h} ساعت", synced: "دریافت", refresh: "به‌روزرسانی",
+    apps: "افزودن به برنامه", add: "افزودن", get: "دریافت", rec: "پیشنهادی", tabs: { android: "Android", ios: "iOS", windows: "Windows" },
+    cfgs: "کانفیگ‌ها", copyAll: "کپی همه", dlAll: "دانلود فایل", empty: "کانفیگی برای این اشتراک وجود ندارد",
+    guide: "راهنمای اتصال", g: ["از بخش «افزودن به برنامه» برنامه‌ی مناسب دستگاهت را دریافت کن.", "روی «افزودن» بزن تا اشتراک خودکار اضافه شود.",
+      "در برنامه تست پینگ بگیر و سریع‌ترین کانفیگ را انتخاب کن.", "برای دریافت تغییرات، «به‌روزرسانی اشتراک» را در برنامه بزن."],
+    join: "عضویت در کانال", joinD: "اخبار، سرورهای جدید و اطلاعیه‌ها", joinGo: "عضویت", liveTag: "رسمی",
+    conn: "اتصال", connOn: "متصل", connRecent: "اخیراً", connOff: "آفلاین", ping: "پینگ سرور", count: "کانفیگ",
+    bot: "پشتیبان هوشمند", botD: "صفحه، سرور و اتصال را خودکار بررسی و مشکلات را رفع می‌کند", botIdle: "در حال بررسی خودکار…", botRun: "عیب‌یابی",
+    demo: "پیش‌نمایش با داده‌ی نمونه — روی سرور اطلاعات واقعی نمایش داده می‌شود"
+  } : {
+    brandSub: "Private subscription", member: "Member", remaining: "Data remaining", unlimited: "Unlimited", until: "Valid until", noexp: "No expiry",
+    usage: "Usage", data: "Data", time: "Time left", used: "used", left: "left", days: "days", hours: "hours", ended: "Ended",
+    total: "Total data", expires: "Expiry date", reset: "Data reset", online: "Last online", never: "Not connected yet", hold: "Starts on first connection",
+    resetMap: { no_reset: "None", day: "Daily", week: "Weekly", month: "Monthly", year: "Yearly" },
+    st: { active: "Active", limited: "Limited", expired: "Expired", disabled: "Disabled", on_hold: "On hold" },
+    bn: { limited: "Your data is used up. Message us in the channel to renew.", expired: "Your subscription has expired. Message us in the channel to renew.",
+          disabled: "This subscription is disabled.", on_hold: "The subscription starts on your first connection.", near: "Less than 15% of data or 3 days of validity left." },
+    view: "Desktop / mobile view", viewD: "Desktop view", viewM: "Mobile view",
+    link: "Subscription link", copy: "Copy link", copied: "Copied", qr: "QR", share: "Share",
+    auto: "Apps auto-update every {h} hours", synced: "Fetched", refresh: "Refresh",
+    apps: "Add to an app", add: "Add", get: "Get", rec: "Best", tabs: { android: "Android", ios: "iOS", windows: "Windows" },
+    cfgs: "Configs", copyAll: "Copy all", dlAll: "Download", empty: "This subscription has no configs",
+    guide: "How to connect", g: ["Get a suitable app from “Add to an app”.", "Tap “Add” to import the subscription automatically.",
+      "Run a ping test in the app and pick the fastest config.", "Tap “Update subscription” in the app to receive changes."],
+    join: "Join our channel", joinD: "News, new servers and announcements", joinGo: "Join", liveTag: "Official",
+    conn: "Connection", connOn: "Online", connRecent: "Recently", connOff: "Offline", ping: "Server ping", count: "Configs",
+    bot: "Smart support", botD: "Checks the page, server and connection and fixes problems automatically", botIdle: "Running automatic check…", botRun: "Diagnose",
+    demo: "Preview with sample data — real data is shown on the server"
+  };
+}
+var JINX_P = {
+  logo: "m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z",
+  chart: "M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z",
+  link: "M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244",
+  copy: "M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184",
+  qr: "M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 3.75 9.375v-4.5ZM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 0 1-1.125-1.125v-4.5ZM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 13.5 9.375v-4.5ZM6.75 6.75h.75v.75h-.75v-.75ZM6.75 16.5h.75v.75h-.75v-.75ZM16.5 6.75h.75v.75h-.75v-.75ZM13.5 13.5h.75v.75h-.75v-.75ZM13.5 19.5h.75v.75h-.75v-.75ZM19.5 13.5h.75v.75h-.75v-.75ZM19.5 19.5h.75v.75h-.75v-.75ZM16.5 16.5h.75v.75h-.75v-.75Z",
+  share: "M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15m0-3-3-3m0 0-3 3m3-3V15",
+  sync: "M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99",
+  monitor: "M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25",
+  device: "M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3",
+  layers: "M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3",
+  book: "M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25",
+  warn: "M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z",
+  info: "m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z",
+  plus: "M12 4.5v15m7.5-7.5h-15",
+  down: "M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3",
+  arrow: "M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3",
+  sun: "M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z",
+  moon: "M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+};
+JINX_P.spark = "M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z";
+JINX_P.shield = "M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z";
+function JinxIcon(n) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="' + (JINX_P[n] || "") + '"/></svg>'; }
+function JinxLat(s) { return String(s).replace(/[۰-۹]/g, function (d) { return "۰۱۲۳۴۵۶۷۸۹".indexOf(d); }).replace(/[٠-٩]/g, function (d) { return "٠١٢٣٤٥٦٧٨٩".indexOf(d); }); }
+function JinxEsc(s) { return JinxLat(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+
+/* model: every exact value the page and the buttons use */
+function JinxModel(D, o) {
+  D = D && typeof D === "object" ? D : {};
+  var fa = o.lang === "fa", T = JinxText(fa), cfg = o.cfg || {}, GB = 1073741824;
+  var key = function (s) { return String(s == null ? "" : s).split(".").pop().toLowerCase(); };
+  function size(b) {
+    b = Number(b); if (!isFinite(b) || b < 0) b = 0;
+    var u = [["TB", 1099511627776], ["GB", GB], ["MB", 1048576], ["KB", 1024]];
+    for (var i = 0; i < u.length; i++) if (b >= u[i][1]) {
+      var v = (b / u[i][1]).toFixed(b / u[i][1] >= 100 ? 0 : 2);
+      if (v.indexOf(".") >= 0) v = v.replace(/0+$/, "").replace(/\.$/, "");
+      return { v: v, u: u[i][0], s: v + " " + u[i][0] };
+    }
+    return { v: "0", u: "MB", s: "0 MB" };
+  }
+  function date(ts, withTime) {
+    var d = new Date(ts); if (isNaN(d.getTime())) return "";
+    var op = { year: "numeric", month: "long", day: "numeric" }; if (withTime) { op.hour = "2-digit"; op.minute = "2-digit"; }
+    try { return JinxLat(d.toLocaleString(fa ? "fa-IR-u-nu-latn" : "en-GB", op)); } catch (e) { return d.toISOString().slice(0, 16).replace("T", " "); }
+  }
+  function remark(link) {
+    try {
+      if (/^vmess:\/\//i.test(link)) {
+        var b = link.slice(8).split("#")[0].replace(/-/g, "+").replace(/_/g, "/"); while (b.length % 4) b += "=";
+        var j = JSON.parse(decodeURIComponent(escape(atob(b)))); if (j && j.ps) return String(j.ps);
+      }
+      var h = link.indexOf("#"); if (h >= 0) { var r = decodeURIComponent(link.slice(h + 1).replace(/\+/g, " ")); if (r) return r; }
+    } catch (e) {}
+    return (link.split("://")[0] || "config").toUpperCase();
+  }
+  var m = { T: T, fa: fa, cfg: cfg, size: size, date: date };
+  m.status = key(D.status || "active"); if (!T.st[m.status]) m.status = "active";
+  m.used = Math.max(0, Number(D.used) || 0); m.limit = Math.max(0, Number(D.limit) || 0); m.exp = Number(D.expire) || 0; if (!isFinite(m.exp) || m.exp < 0) m.exp = 0;
+  m.pUsed = m.limit > 0 ? Math.min(100, m.used / m.limit * 100) : 0;
+  m.left = m.limit > 0 ? Math.max(0, m.limit - m.used) : 0;
+  m.hasTime = m.exp > 0;
+  var ms = m.hasTime ? m.exp * 1000 - o.now : 0, days = Math.floor(ms / 86400000), hrs = Math.floor((ms % 86400000) / 3600000);
+  m.untilTxt = m.hasTime ? (date(m.exp * 1000, false) || T.noexp) : (Number(D.hold) > 0 ? T.hold : T.noexp);
+  m.timeTxt = !m.hasTime ? (Number(D.hold) > 0 ? Math.round(Number(D.hold) / 86400) + " " + T.days : T.unlimited)
+            : ms <= 0 ? T.ended : days >= 1 ? days + " " + T.days + (days < 7 && hrs > 0 ? " · " + hrs + " " + T.hours : "") : Math.max(1, hrs) + " " + T.hours;
+  m.pTime = !m.hasTime ? 0 : ms <= 0 ? 100 : Math.max(0, Math.min(100, 100 - ms / (30 * 86400000) * 100));
+  m.near = m.status === "active" && ((m.limit > 0 && 100 - m.pUsed < 15) || (m.hasTime && ms > 0 && ms < 3 * 86400000));
+  m.resetTxt = T.resetMap[key(D.reset)] || T.resetMap.no_reset;
+  m.onlineTxt = T.never; m.conn = "off";
+  if (D.online) {
+    var os = String(D.online).trim().replace(" ", "T").replace(/(\.\d{3})\d+/, "$1");
+    if (!/[zZ]|[+-]\d\d:?\d\d$/.test(os)) os += "Z";
+    var od = new Date(os);
+    if (!isNaN(od.getTime())) { m.onlineTxt = date(od.getTime(), true); var ago = o.now - od.getTime(); m.conn = ago < 3 * 60000 ? "on" : ago < 3600000 ? "recent" : "off"; }
+  }
+  var s = typeof D.sub === "string" ? D.sub : "";
+  m.sub = /^https?:\/\//i.test(s) ? s : s ? o.origin + (s.charAt(0) === "/" ? "" : "/") + s : o.here;
+  m.links = (Array.isArray(D.links) ? D.links : []).filter(function (l) { return typeof l === "string" && /^[a-z0-9+.-]+:\/\/\S/i.test(l); });
+  m.remarks = m.links.map(remark);
+  m.protos = m.links.map(function (l) { return (l.split("://")[0] || "").toLowerCase(); });
+  m.nets = m.links.map(function (l) {
+    var n = "";
+    try {
+      if (/^vmess:\/\//i.test(l)) { var b = l.slice(8).split("#")[0].replace(/-/g, "+").replace(/_/g, "/"); while (b.length % 4) b += "="; n = String((JSON.parse(atob(b)) || {}).net || ""); }
+      else { var q = (l.split("?")[1] || "").split("#")[0].match(/(?:^|&)type=([^&]*)/i); n = q ? decodeURIComponent(q[1]) : ""; }
+    } catch (e) {}
+    n = n.toLowerCase();
+    return n === "httpupgrade" ? "HU" : n === "xhttp" || n === "splithttp" ? "XHTTP" : n === "ws" ? "WS" : n === "grpc" ? "gRPC" : n ? n.slice(0, 6).toUpperCase() : "";
+  });
+  /* route of each config (for the badge only; the name stays exactly as the panel sends it) */
+  var here = String(o.origin || "").replace(/^https?:\/\//i, "").split(/[:/]/)[0].toLowerCase();
+  m.routes = m.links.map(function (l) {
+    try {
+      var addr = "", sni = "", frag = /[?&]fragment=/i.test(l);
+      if (/^vmess:\/\//i.test(l)) {
+        var b = l.slice(8).split("#")[0].replace(/-/g, "+").replace(/_/g, "/"); while (b.length % 4) b += "=";
+        var j = JSON.parse(decodeURIComponent(escape(atob(b)))) || {}; addr = String(j.add || ""); sni = String(j.sni || j.host || ""); frag = frag || !!j.fragment;
+      } else {
+        var rest = l.split("://")[1] || "", hp = rest.split(/[?#/]/)[0]; hp = hp.slice(hp.lastIndexOf("@") + 1);
+        addr = hp.charAt(0) === "[" ? hp.slice(1, hp.indexOf("]")) : hp.split(":")[0];
+        var q = (l.split("?")[1] || "").split("#")[0], mm = q.match(/(?:^|&)sni=([^&]*)/i) || q.match(/(?:^|&)host=([^&]*)/i); sni = mm ? decodeURIComponent(mm[1]) : "";
+      }
+      addr = addr.toLowerCase(); sni = sni.toLowerCase();
+      if (frag) return "frag";
+      if (/[?&]security=reality/i.test(l) || /"tls"\s*:\s*"reality"/i.test(l)) return "reality";
+      if (here && addr === here) return "direct";
+      var ip = /^\d{1,3}(\.\d{1,3}){3}$/.test(addr) || addr.indexOf(":") >= 0;
+      if (ip) return here && sni === here ? "relay" : "cdn";
+      if (here && addr === here) return "direct";
+      return addr ? "cdn" : "other";
+    } catch (e) { return "other"; }
+  });
+  /* 🌐 mirrors are this same server on another domain name */
+  m.routes = m.routes.map(function (r, i) { return /\uD83C\uDF10 Mirror/.test(String(m.remarks[i] || "")) ? "direct" : r; });
+  /* our pick: Reality, else the lightest direct transport (HTTPUpgrade), else the first one */
+  m.rec = (function () { var i;
+    for (i = 0; i < m.routes.length; i++) if (m.routes[i] === "reality") return i;
+    for (i = 0; i < m.routes.length; i++) if (m.routes[i] === "direct" && m.nets[i] === "HU") return i;
+    for (i = 0; i < m.routes.length; i++) if (m.routes[i] === "direct") return i;
+    return m.links.length ? 0 : -1; })();
+  var NAME = cfg.brand || "Super JinX", E = encodeURIComponent, b64 = "";
+  try { b64 = btoa(m.sub); } catch (x) {}
+  m.name = NAME;
+  m.apps = {
+    android: [
+      { n: "v2rayNG", d: "v2rayng://install-sub?url=" + E(m.sub) + "&name=" + E(NAME), g: "https://github.com/2dust/v2rayNG/releases/latest", r: 1 },
+      { n: "Hiddify", d: "hiddify://import/" + m.sub + "#" + E(NAME), g: "https://github.com/hiddify/hiddify-app/releases/latest" },
+      { n: "Clash Meta", d: "clash://install-config?url=" + E(m.sub) + "&name=" + E(NAME), g: "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/latest" }],
+    ios: [
+      { n: "Streisand", d: "streisand://import/" + m.sub + "#" + E(NAME), g: "https://apps.apple.com/app/streisand/id6450534064", r: 1 },
+      { n: "V2Box", d: "v2box://install-sub?url=" + E(m.sub) + "&name=" + E(NAME), g: "https://apps.apple.com/app/v2box-v2ray-client/id6446814690" },
+      { n: "Hiddify", d: "hiddify://import/" + m.sub + "#" + E(NAME), g: "https://apps.apple.com/app/hiddify-proxy-vpn/id6596777532" },
+      { n: "Shadowrocket", d: b64 ? "sub://" + b64 + "#" + E(NAME) : "", g: "https://apps.apple.com/app/shadowrocket/id932747118" }],
+    windows: [
+      { n: "Hiddify", d: "hiddify://import/" + m.sub + "#" + E(NAME), g: "https://github.com/hiddify/hiddify-app/releases/latest", r: 1 },
+      { n: "v2rayN", d: "", g: "https://github.com/2dust/v2rayN/releases/latest" },
+      { n: "Clash Verge", d: "clash://install-config?url=" + E(m.sub) + "&name=" + E(NAME), g: "https://github.com/clash-verge-rev/clash-verge-rev/releases/latest" }]
+  };
+  m.plats = (cfg.platforms || ["android", "ios", "windows"]).filter(function (p) { return m.apps[p]; });
+  if (!m.plats.length) m.plats = ["android"];
+  return m;
+}
+
+/* 📶 operator guide: which configs fit which operator best (the same table as the README). Order = try first. */
+var JX_OPS = [
+  { k: "all", fa: "همه", en: "All" },
+  { k: "mci", fa: "همراه اول", en: "MCI", c: ["Turbo Iran", "Ghost Anti-Filter", "Ninja Stealth", "Warp Speed", "Cloud Storm", "Swift Shield", "Meteor"] },
+  { k: "mtn", fa: "ایرانسل", en: "Irancell", c: ["Turbo Iran", "Rocket", "Lightning", "Swift Shield", "Quantum", "Hyper Drive", "Reality Pulse"] },
+  { k: "tci", fa: "مخابرات", en: "TCI", c: ["Turbo Iran", "Rocket", "Lightning", "Vortex", "Reality Pulse", "Quantum", "Ghost Anti-Filter"] },
+  { k: "rtl", fa: "رایتل", en: "Rightel", c: ["Turbo Iran", "Swift Shield", "Meteor", "Warp Speed", "Ninja Stealth", "Cloud Storm"] },
+  { k: "wifi", fa: "وای‌فای", en: "Wi-Fi", c: ["Turbo Iran", "Rocket", "Lightning", "Hyper Drive", "Quantum", "Reality Pulse", "Dark Matter"] }
+];
+function jxOp(k) { for (var i = 0; i < JX_OPS.length; i++) if (JX_OPS[i].k === k) return JX_OPS[i]; return JX_OPS[0]; }
+/* rank of a config for this operator: 0..n = recommended (lower = try first), -1 = not in its list */
+function jxRank(op, remark) { var o = jxOp(op); if (!o.c) return -1; var n = cfgName(remark);
+  for (var i = 0; i < o.c.length; i++) if (n.indexOf(o.c[i]) >= 0) return i; return -1; }
+/* config list: panel order for "all"; for an operator its recommended configs come first (in that order) */
+function JinxCfgList(m, op) {
+  var E = JinxEsc, I = JinxIcon, T = m.T, h = "", o = jxOp(op), idx = m.links.map(function (_, i) { return i; }), top = -1;
+  if (o.c) { var r = idx.map(function (i) { return jxRank(op, m.remarks[i]); });
+    idx.sort(function (a, b) { var x = r[a] < 0 ? 999 : r[a], y = r[b] < 0 ? 999 : r[b]; return x - y || a - b; });
+    if (idx.length && r[idx[0]] >= 0) top = idx[0]; }
+  var pick = o.c ? top : m.rec;
+  if (!m.links.length) h += '<div class="empty">' + E(T.empty) + '</div>';
+  idx.forEach(function (i, n) {
+    var fit = !!o.c && jxRank(op, m.remarks[i]) >= 0;
+    h += '<div class="row cfg' + (fit ? " fit" : "") + '"><span class="idx ltr">' + (n < 9 ? "0" : "") + (n + 1) + '</span><span class="grow"><b title="' + E(m.remarks[i]) + '">' + E(cfgName(m.remarks[i])) + '</b><small><span class="pr pr-' + E(m.protos[i].slice(0, 6) || "cfg") + ' ltr">' + E(m.protos[i].slice(0, 6) || "cfg") + (m.nets[i] ? " · " + E(m.nets[i]) : "") + '</span><span class="rtb rt-' + E(m.routes[i]) + '">' + E(T.rt[m.routes[i]] || T.rt.other) + '</span>' +
+         (m.routes[i] === "direct" || m.routes[i] === "frag" ? '<span class="pgc ltr" data-pg="1">…</span>' : '') +
+         (i === pick ? '<span class="pick">' + E(o.c ? (m.fa ? "⭐ اول این رو بزن" : "⭐ Try first") : (m.fa ? "⭐ پیشنهاد جینکس" : "⭐ JinX pick")) + '</span>' :
+          fit ? '<span class="fitb">' + E(m.fa ? "مناسب " + o.fa : "Good on " + o.en) + '</span>' : '') + '</small></span><span class="acts">' +
+         '<button type="button" class="b ic" data-a="qr-cfg" data-i="' + i + '" aria-label="QR">' + I("qr") + '</button>' +
+         '<button type="button" class="b ic pri" data-a="copy-cfg" data-i="' + i + '" aria-label="' + E(T.copy) + '">' + I("copy") + '</button></span></div>';
+  });
+  return h;
+}
+function JinxOps(m, op) {
+  var E = JinxEsc, h = '<div class="ops" role="radiogroup" aria-label="' + E(m.fa ? "اپراتور شما" : "Your operator") + '"><span class="opl">' + E(m.fa ? "اپراتورت:" : "Operator:") + '</span>';
+  JX_OPS.forEach(function (o) { h += '<button type="button" role="radio" aria-checked="' + (o.k === op) + '" class="' + (o.k === op ? "on" : "") + '" data-a="op" data-v="' + o.k + '">' + E(m.fa ? o.fa : o.en) + '</button>'; });
+  return h + '</div>';
+}
+
+/* config name on the card: "brand ✦ 🚀 Turbo Iran · VLESS" -> "🚀 Turbo Iran" (protocol + route are shown as badges) */
+function cfgName(r) { r = String(r || ""); var p = r.split(" \u2726 "); if (p.length < 2) return r; var n = p.slice(1).join(" \u2726 "), k = n.lastIndexOf(" \u00b7 "); n = (k > 0 ? n.slice(0, k) : n).trim(); return n || p[0]; }
+/* ---------- v7 texts on top of the base texts ---------- */
+function JinxText(fa) {
+  var b = JinxTextBase(fa), x = fa ? {
+    pass: "JINX PASS", access: "دسترسی اختصاصی", holder: "صاحب اشتراک", serial: "شماره‌ی پاس", left2: "باقی‌مانده", exp2: "انقضا", cd: "زمان",
+    reactor: "هسته‌ی مصرف", dataRing: "حجم", timeRing: "زمان", ofTotal: "از", telemetry: "وضعیت زنده",
+    portal: "عضویت در کانال", portalD: "سرورهای جدید، اطلاعیه‌ها و پشتیبانی", portalGo: "ورود به کانال",
+    dPass: "پاس", dCfg: "کانفیگ", dApps: "برنامه", dCare: "پشتیبان", care: "JinX Care", careSub: "ربات پشتیبان خودکار",
+    sig: "طراحی و ساخت اختصاصی", tapCopy: "برای کپی بزن", freq: "فرکانس‌ها",
+    rt: { relay: "رله ایران", cdn: "CDN", direct: "مستقیم", frag: "فرگمنت", reality: "ریالیتی", other: "کانفیگ" }
+  } : {
+    pass: "JINX PASS", access: "Private access", holder: "Pass holder", serial: "Pass no.", left2: "Remaining", exp2: "Expires", cd: "Time",
+    reactor: "Usage core", dataRing: "Data", timeRing: "Time", ofTotal: "of", telemetry: "Live status",
+    portal: "Join our channel", portalD: "New servers, announcements and support", portalGo: "Open channel",
+    dPass: "Pass", dCfg: "Configs", dApps: "Apps", dCare: "Care", care: "JinX Care", careSub: "Automatic support bot",
+    sig: "Crafted exclusively", tapCopy: "Tap to copy", freq: "Frequencies",
+    rt: { relay: "Iran relay", cdn: "CDN", direct: "Direct", frag: "Fragment", reality: "Reality", other: "Config" }
+  };
+  for (var k in x) b[k] = x[k];
+  return b;
+}
+JINX_P.home = "m2.25 12 8.954-8.955a1.126 1.126 0 0 1 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25";
+JINX_P.signal = "M9.348 14.652a3.75 3.75 0 0 1 0-5.304m5.304 0a3.75 3.75 0 0 1 0 5.304m-7.425 2.121a6.75 6.75 0 0 1 0-9.546m9.546 0a6.75 6.75 0 0 1 0 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z";
+
+/* unique-looking but stable pass number from the username */
+function JinxSerial(s) {
+  s = String(s || "jinx"); var h1 = 0x811c9dc5, h2 = 0x1505;
+  for (var i = 0; i < s.length; i++) { var c = s.charCodeAt(i); h1 = Math.imul(h1 ^ c, 16777619) >>> 0; h2 = ((h2 << 5) + h2 + c) >>> 0; }
+  var x = ("00000000" + h1.toString(16)).slice(-8).toUpperCase(), y = ("00000000" + h2.toString(16)).slice(-4).toUpperCase();
+  return "JX-" + x.slice(0, 4) + "-" + x.slice(4) + "-" + y;
+}
+/* the JinX sigil: J + lightning inside a hex, drawn with strokes */
+function JinxSigil(cls) {
+  return '<svg class="' + cls + '" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path class="sg-hex" d="M32 3 57 17.5v29L32 61 7 46.5v-29Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>' +
+         '<path class="sg-j" d="M38 16v20.5a8.5 8.5 0 0 1-17 0" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>' +
+         '<path class="sg-bolt" d="M33 24 27 33h6l-3 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+}
+
+function JinxApps(m, tab, fa) {
+  var T = m.T, E = JinxEsc, I = JinxIcon, h = "";
+  if (!m.apps[tab]) tab = m.plats[0];
+  m.apps[tab].forEach(function (a) {
+    h += '<div class="row app"><span class="glyph ltr">' + E(a.n.charAt(0)) + '</span><span class="grow"><b><span class="ltr">' + E(a.n) + '</span></b><small>' + E(T.tabs[tab]) +
+         (a.r ? '<span class="tag">' + E(T.rec) + '</span>' : "") + '</small></span><span class="acts">' +
+         (a.d ? '<a class="b sm pri" data-a="deep" href="' + E(a.d) + '">' + I("plus") + '<span>' + E(T.add) + '</span></a>' : "") +
+         '<a class="b ic" href="' + E(a.g) + '" target="_blank" rel="noopener noreferrer" aria-label="' + E(T.get) + '" title="' + E(T.get) + '">' + I("down") + '</a></span></div>';
+  });
+  return h;
+}
+
+function JinxRender(D, o) {
+  var m = JinxModel(D, o), T = m.T, cfg = m.cfg, E = JinxEsc, I = JinxIcon;
+  var tab = m.plats.indexOf(o.tab) >= 0 ? o.tab : m.plats[0];
+  var A = o.animate ? " rise" : "", dl = 0;
+  var rise = function () { if (!o.animate) return ""; dl += 0.06; return ' style="animation-delay:' + dl.toFixed(2) + 's"'; };
+  var big = m.limit > 0 ? m.size(m.left) : null;
+  var C = 326.73, ringOff = function (p) { return (C * (1 - Math.max(0, Math.min(100, p)) / 100)).toFixed(2); };
+  var pData = m.limit > 0 ? 100 - m.pUsed : 100, pTime = m.hasTime ? 100 - m.pTime : 100;
+  var tone = function (p) { return p <= 10 ? "bad" : p <= 25 ? "warn" : "ok"; };
+  var h = "";
+  if (o.demo) h += '<div class="demo' + A + '">' + E(T.demo) + '</div>';
+
+  /* top bar */
+  h += '<header class="top' + A + '"' + rise() + '><div class="brand">' + JinxSigil("mark") +
+       '<span><b class="word ltr">' + E(m.name) + '</b><small>' + E(T.access) + '</small></span></div>' +
+       '<nav class="dnav" aria-label="Sections">' + [["s-pass", "home", T.dPass], ["s-cfg", "signal", T.dCfg], ["s-apps", "device", T.dApps], ["s-care", "shield", T.dCare]].map(function (x, k) {
+         return '<a href="#' + x[0] + '" data-a="nav" data-v="' + x[0] + '"' + (k ? "" : ' class="on"') + '>' + I(x[1]) + '<span>' + E(x[2]) + '</span></a>'; }).join("") + '</nav>' +
+       '<div class="tools"><button type="button" class="ib" data-a="lang" aria-label="Language">' + (m.fa ? "EN" : "FA") + '</button>' +
+       '<button type="button" class="ib" data-a="theme" aria-label="Theme">' + I(o.theme === "light" ? "moon" : "sun") + '</button></div></header>';
+
+  h += '<div class="cols"><div class="col cl">';
+  /* the pass */
+  h += '<section class="pass-wrap' + A + '" id="s-pass"' + rise() + '><div class="pass st-' + m.status + '" id="jx-pass">' +
+       '<span class="foil" aria-hidden="true"></span><span class="glare" aria-hidden="true"></span>' + JinxSigil("wm") +
+       '<div class="p-top"><span class="p-lbl ltr">' + E(T.pass) + '</span><span class="chip s-' + m.status + '"><i></i>' + E(T.st[m.status]) + '</span></div>' +
+       '<div class="p-mid"><small>' + E(T.holder) + '</small><div class="uname ltr">' + E(D && D.username || "-") + '</div>' +
+       '<div class="serial ltr"><span>' + E(JinxSerial(D && D.username)) + '</span></div></div>' +
+       '<div class="perf" aria-hidden="true"></div>' +
+       '<div class="stub"><div><small>' + E(T.left2) + '</small><b class="ltr">' + (big ? '<span data-count="' + E(big.v) + '">' + E(big.v) + '</span><em>' + E(big.u) + '</em>' : "∞") + '</b></div>' +
+       '<div><small>' + E(T.exp2) + '</small><b class="sm">' + E(m.hasTime ? m.untilTxt : T.noexp) + '</b></div>' +
+       '<div><small>' + E(T.cd) + '</small><b class="sm cd" id="jx-cd">' + E(m.timeTxt) + '</b></div></div></div></section>';
+
+  var bkey = m.status !== "active" ? m.status : (m.near ? "near" : "");
+  if (bkey) h += '<div class="banner ' + (bkey === "expired" || bkey === "limited" ? "bad" : bkey === "on_hold" ? "info" : "warn") + A + '"' + rise() + '>' +
+       I(bkey === "on_hold" ? "info" : "warn") + '<span class="grow">' + E(T.bn[bkey]) + '</span></div>';
+
+  /* telemetry */
+  var cc = m.conn === "on" ? "on-c" : m.conn === "recent" ? "mid-c" : "off-c";
+  h += '<div class="tele' + A + '"' + rise() + '>' +
+       '<div class="tl"><span>' + E(T.conn) + '</span><b class="' + cc + '"><i></i>' + E(m.conn === "on" ? T.connOn : m.conn === "recent" ? T.connRecent : T.connOff) + '</b></div>' +
+       '<div class="tl wide has-sp"><span>' + E(T.ping) + '</span><b id="jx-ping" class="ltr off-c">' + (o.ping == null ? "…" : o.ping < 0 ? "—" : E(o.ping + " ms")) + '</b>' +
+       '<svg class="spark" id="jx-spark" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,20 100,20"/></svg></div>' +
+       '<div class="tl"><span>' + E(T.count) + '</span><b class="ltr">' + m.links.length + '</b></div></div>';
+
+  /* channel portal */
+  if (cfg.channel) h += '<a class="portal' + A + '"' + rise() + ' href="' + E(cfg.channel) + '" target="_blank" rel="noopener noreferrer">' +
+       '<span class="aur" aria-hidden="true"></span>' +
+       '<span class="orb"><i class="o1"></i><i class="o2"></i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.66a1.5 1.5 0 0 0-2.04-1.4L2.98 9.93c-1.2.47-1.18 2.18.04 2.62l4.2 1.52 1.62 5.15c.27.86 1.35 1.13 1.99.5l2.32-2.27 4.2 3.1c.86.63 2.08.16 2.3-.88l2.29-14.01ZM9.37 13.64l8.22-6.06c.25-.18.55.15.34.37l-6.62 6.98a1.2 1.2 0 0 0-.3.6l-.42 2.38-1.22-4.27Z"/></svg></span>' +
+       '<span class="ptx"><b>' + E(T.portal) + '</b><small><span class="live-dot"></span><span class="ltr">' + E(cfg.channelHandle || "") + '</span></small><small class="pd">' + E(T.portalD) + '</small></span>' +
+       '<span class="go">' + E(T.joinGo) + I("arrow") + '</span></a>';
+
+  /* reactor: two rings */
+  h += '<section class="panel' + A + '"' + rise() + '><div class="ph"><h2>' + I("chart") + E(T.reactor) + '</h2><span class="aux">' + E(T.st[m.status]) + '</span></div>' +
+       '<div class="reactor"><div class="rings"><svg viewBox="0 0 120 120" aria-hidden="true">' +
+       '<circle class="rt" cx="60" cy="60" r="52"/><circle class="rv r-' + tone(pData) + '" cx="60" cy="60" r="52" stroke-dasharray="' + C + '" stroke-dashoffset="' + C + '" data-off="' + ringOff(pData) + '"/>' +
+       '<circle class="rt" cx="60" cy="60" r="40" style="stroke-width:6"/><circle class="rv2 r-' + tone(pTime) + '" cx="60" cy="60" r="40" stroke-dasharray="251.33" stroke-dashoffset="251.33" data-off="' + (251.33 * (1 - pTime / 100)).toFixed(2) + '"/></svg>' +
+       '<div class="core"><b class="ltr">' + (m.limit > 0 ? Math.round(pData) + "%" : "∞") + '</b><small>' + E(T.left) + '</small></div></div>' +
+       '<div class="legend"><div class="lg"><i class="d1"></i><span>' + E(T.dataRing) + '</span><b class="ltr">' + E(m.size(m.used).s) + ' / ' + (m.limit > 0 ? E(m.size(m.limit).s) : "∞") + '</b></div>' +
+       '<div class="lg"><i class="d2"></i><span>' + E(T.timeRing) + '</span><b>' + E(m.timeTxt) + '</b></div></div></div>' +
+       '<div class="facts">' +
+       '<div class="fact"><span>' + E(T.total) + '</span><b class="ltr" style="text-align:start">' + E(m.limit > 0 ? m.size(m.limit).s : T.unlimited) + '</b></div>' +
+       '<div class="fact"><span>' + E(T.expires) + '</span><b>' + E(m.hasTime ? m.untilTxt : T.noexp) + '</b></div>' +
+       '<div class="fact"><span>' + E(T.reset) + '</span><b>' + E(m.resetTxt) + '</b></div>' +
+       '<div class="fact"><span>' + E(T.online) + '</span><b>' + E(m.onlineTxt) + '</b></div></div></section>';
+
+  h += '</div><div class="col cr">';
+  /* subscription link */
+  h += '<section class="panel' + A + '"' + rise() + '><div class="ph"><h2>' + I("link") + E(T.link) + '</h2></div>' +
+       '<button type="button" class="field" data-a="copy-sub" data-done="' + E(T.copied) + '" aria-label="' + E(T.copy) + '"><code>' + E(m.sub) + '</code><span class="hint">' + E(T.tapCopy) + '</span></button><div class="btns">' +
+       '<button type="button" class="b pri" data-a="copy-sub" data-done="' + E(T.copied) + '">' + I("copy") + '<span>' + E(T.copy) + '</span></button>' +
+       '<button type="button" class="b" data-a="qr-sub">' + I("qr") + '<span>' + E(T.qr) + '</span></button>' +
+       '<button type="button" class="b" data-a="share">' + I("share") + '<span>' + E(T.share) + '</span></button></div>' +
+       '<div class="upd">' + I("sync") + '<span class="grow">' + E(T.auto.replace("{h}", String(Number(cfg.updateHours) || 6))) + ' · ' + E(T.synced) + ' ' + E(m.date(o.loadedAt || o.now, true)) + '</span>' +
+       '<button type="button" class="b sm" data-a="reload">' + I("sync") + '<span>' + E(T.refresh) + '</span></button></div></section>';
+
+  /* configs (panel order, one per row) */
+  h += '<section class="panel' + A + '" id="s-cfg"' + rise() + '><div class="ph"><h2>' + I("signal") + E(T.cfgs) + '</h2><span class="aux ltr">' + m.links.length + '</span></div>' + (m.links.length > 1 ? JinxOps(m, o.op) : '') + '<div class="list" id="jx-cfgs">';
+  h += JinxCfgList(m, o.op);
+  h += '</div>';
+  if (m.links.length) h += '<div class="ptip">' + I("signal") + '<span class="grow"><b>' + E(m.fa ? "پینگ دقیق‌تر در v2rayNG" : "More accurate ping in v2rayNG") + '</b><small>' +
+       E(m.fa ? "تنظیمات ← آدرس تست تأخیر واقعی ← این آدرس را بگذار (یک رفت‌وبرگشت کمتر، عدد واقعی‌تر)" : "Settings → real delay test URL → use this address (one round trip less, a truer number)") +
+       '</small><code class="ltr">http://cp.cloudflare.com/</code></span><button type="button" class="b sm" data-a="copy-test" data-done="' + E(T.copied) + '">' + I("copy") + '<span>' + E(T.copy) + '</span></button></div>';
+  if (m.links.length) h += '<div class="btns two">' +
+       '<button type="button" class="b" data-a="copy-all" data-done="' + E(T.copied) + '">' + I("copy") + '<span>' + E(T.copyAll) + '</span></button>' +
+       '<button type="button" class="b" data-a="download" data-done="' + E(T.dlAll) + '">' + I("down") + '<span>' + E(T.dlAll) + '</span></button></div>';
+  h += '</section>';
+
+  /* apps */
+  h += '<section class="panel' + A + '" id="s-apps"' + rise() + '><div class="ph"><h2>' + I("device") + E(T.apps) + '</h2></div>' +
+       '<div class="seg" role="tablist" style="--n:' + m.plats.length + ';--k:' + m.plats.indexOf(tab) + '"><span class="ind" aria-hidden="true"></span>';
+  m.plats.forEach(function (p) { h += '<button type="button" role="tab" aria-selected="' + (p === tab) + '" class="' + (p === tab ? "on" : "") + '" data-a="tab" data-v="' + E(p) + '">' + E(T.tabs[p]) + '</button>'; });
+  h += '</div><div class="list" id="jx-apps">' + JinxApps(m, tab, m.fa) + '</div></section>';
+
+  /* care bot */
+  h += '<section class="panel care' + A + '" id="s-care"' + rise() + '><div class="ph"><h2>' + I("shield") + '<span class="ltr">' + E(T.care) + '</span></h2><span class="aux ltr" id="jx-bot-t">24/7</span></div>' +
+       '<div class="bot"><span class="bav run" id="jx-bav">' + I("spark") + '</span><span class="grow"><b id="jx-bot-s">' + E(T.botIdle) + '</b><small>' + E(T.botD) + '</small></span></div>' +
+       '<div class="term ltr" id="jx-term" aria-live="polite"><p><i>›</i> jinx-care boot</p></div>' +
+       '<button type="button" class="b pri full" data-a="diag">' + I("shield") + '<span>' + E(T.botRun) + '</span></button>' +
+       '<div class="steps">';
+  T.g.forEach(function (s, i) { h += '<div class="step"><b class="ltr">' + (i + 1) + '</b><p>' + E(s) + '</p></div>'; });
+  h += '</div></section>';
+
+  h += '</div></div>';
+  h += '<footer class="foot">' + JinxSigil("fs") + '<span class="ltr">' + E(m.name) + '</span><small>' + E(T.sig) + '</small></footer>';
+
+  /* dock */
+  h += '<nav class="dock" aria-label="Sections">' +
+       '<a href="#s-pass" data-a="nav" data-v="s-pass" class="on">' + I("home") + '<span>' + E(T.dPass) + '</span></a>' +
+       '<a href="#s-cfg" data-a="nav" data-v="s-cfg">' + I("signal") + '<span>' + E(T.dCfg) + '</span></a>' +
+       '<a href="#s-apps" data-a="nav" data-v="s-apps">' + I("device") + '<span>' + E(T.dApps) + '</span></a>' +
+       '<a href="#s-care" data-a="nav" data-v="s-care">' + I("shield") + '<span>' + E(T.dCare) + '</span></a></nav>';
+  return h;
+}
+
+/* =====================================================================================
+   Super JinX · premium subscription page  (v7 · JinX Pass · self-healing)
+   Edit JINX_CONFIG to change brand / channel / platforms later.
+   ===================================================================================== */
+var JINX_CONFIG = {
+  brand: "Super JinX",
+  brandFa: "جینکس",
+  channel: "https://t.me/Super_Jinx",
+  channelHandle: "@Super_Jinx",
+  updateHours: 6,                        /* keep equal to SUB_UPDATE_INTERVAL in start.sh */
+  platforms: ["android", "ios", "windows"]
+};
+
+/* computer or phone layout right now (auto by width, or the saved choice) */
+function isDesk() { try { return window.matchMedia("(min-width:900px)").matches; } catch (e) { return window.innerWidth >= 900; } }
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var root = document.documentElement;
+
+  /* ---------- data ---------- */
+  var raw = $("jinx-data").textContent, D = null, DEMO = false;
+  try { D = JSON.parse(raw); } catch (e) { D = null; }
+  if (!D || typeof D !== "object" || raw.indexOf("{" + "{") >= 0) {
+    DEMO = true;
+    var t0 = Math.floor(Date.now() / 1000);
+    D = { username: "ali_jinx", status: "active", used: 14.62 * 1073741824, limit: 50 * 1073741824, expire: t0 + 23 * 86400 + 5 * 3600 + 17 * 60,
+      reset: "month", online: new Date(Date.now() - 40000).toISOString(), hold: 0, sub: "/sub/demo",
+      links: ["vless://demo@5.6.7.8:443?type=ws&security=tls&sni=" + location.hostname + "#" + encodeURIComponent("جینکس | 𝗝𝗶𝗻𝗫 ✦ 🚀 Turbo Iran · JinX Core"),
+        "vless://demo@104.16.1.1:443?type=ws&security=tls&sni=cf.example.com#" + encodeURIComponent("جینکس | 𝗝𝗶𝗻𝗫 ✦ 🌩 Cloud Storm 443 · XHTTP"),
+        "vless://demo@" + (location.hostname || "panel.example.com") + ":443?type=ws&security=tls#" + encodeURIComponent("جینکس | 𝗝𝗶𝗻𝗫 ✦ 🇳🇱 Amsterdam Rocket · JinX Core"),
+        "vless://demo@" + (location.hostname || "panel.example.com") + ":443?type=ws&security=tls&fragment=10-20%2C10-20%2Ctlshello#" + encodeURIComponent("جینکس | 𝗝𝗶𝗻𝗫 ✦ 👻 Ghost Anti-Filter · JinX Core"),
+        "trojan://demo@" + (location.hostname || "panel.example.com") + ":443?type=ws&security=tls#" + encodeURIComponent("جینکس | 𝗝𝗶𝗻𝗫 ✦ 🔱 Trident · Trojan")] };
+  }
+  var S = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  var ua = navigator.userAgent || "";
+  var st = {
+    theme: S.get("jx-theme") === "light" ? "light" : "dark",
+    lang: S.get("jx-lang") === "en" ? "en" : "fa",
+    tab: /iphone|ipad|ipod/i.test(ua) || (/macintosh/i.test(ua) && "ontouchend" in document) ? "ios" : /windows/i.test(ua) ? "windows" : "android",
+    ping: null, pings: [], loadedAt: Date.now(),
+    op: jxOp(S.get("jx-op")).k
+  };
+  if (JINX_CONFIG.platforms.indexOf(st.tab) < 0) st.tab = JINX_CONFIG.platforms[0] || "android";
+  var M = null;   /* current model (exact values used by every button) */
+  function opts(animate) {
+    return { now: Date.now(), loadedAt: st.loadedAt, origin: location.origin, here: location.href.split("#")[0].split("?")[0],
+      lang: st.lang, theme: st.theme, tab: st.tab, op: st.op, demo: DEMO, cfg: JINX_CONFIG, ping: st.ping, animate: animate };
+  }
+  var fa = function () { return st.lang === "fa"; };
+  var tr = function (f, e) { return fa() ? f : e; };
+
+  /* ---------- full render (first load + language change only) ---------- */
+  function renderAll(animate) {
+    root.setAttribute("lang", st.lang);
+    root.setAttribute("dir", st.lang === "fa" ? "rtl" : "ltr");
+    applyTheme();
+    var y = window.scrollY || 0;
+    var o = opts(animate);
+    M = JinxModel(D, o);
+    $("app").innerHTML = JinxRender(D, o);
+    $("sh-x").textContent = tr("بستن", "Close");
+    var fill = function () {
+      var rs = document.querySelectorAll("[data-off]"); for (var i = 0; i < rs.length; i++) rs[i].style.strokeDashoffset = rs[i].getAttribute("data-off");
+      if (animate) countUp();
+    };
+    if (animate) setTimeout(fill, 260); else fill();
+    drawSpark(); bindTilt(); spy();
+    if (!animate) window.scrollTo(0, y);
+    tick();
+  }
+  /* ---------- signature motion: count-up, holo tilt, sparkline, dock spy ---------- */
+  var raf = window.requestAnimationFrame || function (f) { return setTimeout(f, 16); };
+  function countUp() {
+    var els = document.querySelectorAll("[data-count]");
+    for (var i = 0; i < els.length; i++) (function (el) {
+      var fin = el.getAttribute("data-count"), to = parseFloat(fin), dec = (fin.split(".")[1] || "").length, t0 = null;
+      if (!isFinite(to) || to <= 0) return;
+      var clock = function () { return window.performance && performance.now ? performance.now() : Date.now(); };
+      var step = function () {
+        var t = clock(); if (t0 == null) t0 = t; var k = Math.min(1, (t - t0) / 1100), e = 1 - Math.pow(1 - k, 3);
+        el.textContent = k >= 1 ? fin : (to * e).toFixed(dec);
+        if (k < 1 && !(k >= 0)) { el.textContent = fin; return; }
+        if (k < 1) raf(step);
+      };
+      el.textContent = (0).toFixed(dec); raf(step);
+    })(els[i]);
+  }
+  function bindTilt() {
+    var p = $("jx-pass"); if (!p || p._tilt || !p.addEventListener) return; p._tilt = 1;
+    var q = null, set = function (x, y) {
+      if (q) return; q = 1;
+      raf(function () { q = null; p.style.setProperty("--ry", ((x - .5) * 14).toFixed(2) + "deg"); p.style.setProperty("--rx", ((.5 - y) * 12).toFixed(2) + "deg");
+        p.style.setProperty("--mx", (x * 100).toFixed(1) + "%"); p.style.setProperty("--my", (y * 100).toFixed(1) + "%"); });
+    };
+    p.addEventListener("pointermove", function (e) { if (!p.getBoundingClientRect) return; var r = p.getBoundingClientRect(); p.classList.add("tilt"); set((e.clientX - r.left) / r.width, (e.clientY - r.top) / r.height); }, { passive: true });
+    var reset = function () { p.classList.remove("tilt"); p.style.setProperty("--rx", "0deg"); p.style.setProperty("--ry", "0deg"); };
+    p.addEventListener("pointerleave", reset); p.addEventListener("pointerup", reset); p.addEventListener("pointercancel", reset);
+  }
+  function drawSpark() {
+    var sv = $("jx-spark"); if (!sv) return;
+    var a = st.pings.slice(-12), pl = sv.firstChild || sv.querySelector && sv.querySelector("polyline"); if (!pl || !pl.setAttribute) return;
+    if (a.length < 2) { pl.setAttribute("points", "0,20 100,20"); return; }
+    var mx = Math.max.apply(null, a), mn = Math.min.apply(null, a), rg = Math.max(1, mx - mn), pts = [];
+    for (var i = 0; i < a.length; i++) pts.push((i / (a.length - 1) * 100).toFixed(1) + "," + (21 - (a[i] - mn) / rg * 14).toFixed(1));
+    pl.setAttribute("points", pts.join(" "));
+  }
+  var spyOn = false;
+  function spy() {
+    if (spyOn) { spyTick(); return; } spyOn = true;
+    var pend = false; window.addEventListener("scroll", function () { if (pend) return; pend = true; raf(function () { pend = false; spyTick(); }); }, { passive: true });
+    spyTick();
+  }
+  function spyTick() {
+    var ids = ["s-pass", "s-cfg", "s-apps", "s-care"], cur = ids[0], h = window.innerHeight || 700;
+    for (var i = 0; i < ids.length; i++) { var el = $(ids[i]); if (el && el.getBoundingClientRect && el.getBoundingClientRect().top < h * 0.45) cur = ids[i]; }
+    if ((window.innerHeight || 0) + (window.scrollY || 0) >= ((document.documentElement && document.documentElement.scrollHeight) || 1e9) - 4) cur = "s-care";
+    var ds = document.querySelectorAll('[data-a="nav"]');
+    for (var k = 0; k < ds.length; k++) ds[k].classList.toggle("on", ds[k].getAttribute("data-v") === cur);
+  }
+  function switchTheme(btn) {
+    var go = function () { st.theme = st.theme === "dark" ? "light" : "dark"; S.set("jx-theme", st.theme); applyTheme(); };
+    var calm = (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) || root.classList.contains("lite");
+    root.classList.add("jx-sw");                       // all transitions off: nothing fades in late
+    var end = function () { root.classList.remove("jx-sw"); };
+    if (document.startViewTransition && !calm) {
+      var r = btn && btn.getBoundingClientRect ? btn.getBoundingClientRect() : { left: innerWidth / 2, top: 0, width: 0, height: 0 };
+      var x = r.left + r.width / 2, y = r.top + r.height / 2, R = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+      try {
+        var vt = document.startViewTransition(go);
+        vt.ready.then(function () {
+          document.documentElement.animate({ clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + R + "px at " + x + "px " + y + "px)"] },
+            { duration: 560, easing: "cubic-bezier(.22,.9,.24,1)", pseudoElement: "::view-transition-new(root)" });
+        }).catch(function () {});
+        vt.finished.then(end, end);
+        return;
+      } catch (x2) {}
+    }
+    go(); void root.offsetWidth;                       // instant and in sync where the browser has no view transitions
+    requestAnimationFrame(function () { requestAnimationFrame(end); });
+  }
+  function applyTheme() {
+    root.setAttribute("data-theme", st.theme);
+    var tc = document.querySelector('meta[name="theme-color"]'); if (tc) tc.setAttribute("content", st.theme === "light" ? "#efece4" : "#050507");
+    var tb = document.querySelector('[data-a="theme"]'); if (tb) tb.innerHTML = JinxIcon(st.theme === "light" ? "moon" : "sun");
+  }
+
+  /* ---------- live parts (patched in place: no flicker, no scroll jump) ---------- */
+  function setPing() {
+    var n = $("jx-ping"); if (!n) return;
+    var p = st.ping;
+    n.className = "ltr " + (p == null ? "off-c" : p < 0 ? "bad-c" : p <= 150 ? "on-c" : p <= 400 ? "mid-c" : "bad-c");
+    n.textContent = p == null ? "…" : p < 0 ? "—" : p + " ms";
+    var cs = document.querySelectorAll('.pgc[data-pg]'), cl = "pgc ltr " + (p == null ? "" : p < 0 ? "bad" : p <= 150 ? "on" : p <= 400 ? "mid" : "bad"), tx = p == null ? "…" : p < 0 ? "—" : "📶 " + p + " ms";
+    for (var k = 0; k < cs.length; k++) { if (cs[k].className !== cl) cs[k].className = cl; if (cs[k].textContent !== tx) cs[k].textContent = tx; }
+  }
+  function tick() {
+    var n = $("jx-cd"); if (!n || !M || !M.hasTime) return;
+    var ms = M.exp * 1000 - Date.now();
+    if (ms <= 0) { n.textContent = tr("به پایان رسیده", "Ended"); return; }
+    var d = Math.floor(ms / 86400000), h = Math.floor(ms % 86400000 / 3600000), m = Math.floor(ms % 3600000 / 60000), s = Math.floor(ms % 60000 / 1000);
+    var p2 = function (x) { return (x < 10 ? "0" : "") + x; };
+    n.textContent = (d > 0 ? d + tr(" روز  ", "d  ") : "") + p2(h) + ":" + p2(m) + ":" + p2(s);
+  }
+  setInterval(function () { if (!document.hidden) tick(); }, 1000);
+  document.addEventListener("visibilitychange", function () { root.classList.toggle("paused", document.hidden); });
+
+  /* ---------- network probe (used by ping + support bot) ---------- */
+  var nowMs = function () { return window.performance && performance.now ? performance.now() : Date.now(); };
+  function probe(url, ms) {
+    return new Promise(function (done) {
+      if (typeof fetch !== "function") { done({ ok: false }); return; }
+      var t = nowMs(), ctl = window.AbortController ? new AbortController() : null, fin = false;
+      var to = setTimeout(function () { if (ctl) ctl.abort(); if (!fin) { fin = true; done({ ok: false, timeout: true }); } }, ms || 4000);
+      fetch(url + (url.indexOf("?") < 0 ? "?" : "&") + "t=" + Date.now(), { cache: "no-store", credentials: "omit", signal: ctl ? ctl.signal : undefined })
+        .then(function (r) {
+          var hd = null; try { hd = r.headers && r.headers.get ? r.headers.get("date") : null; } catch (e) {}
+          if (!fin) { fin = true; clearTimeout(to); done({ ok: !!r.ok, ms: nowMs() - t, date: hd }); }
+        }, function () { if (!fin) { fin = true; clearTimeout(to); done({ ok: false }); } });
+    });
+  }
+  var pingTry = 0, lastHealth = null;
+  function measure(cb) {
+    if (DEMO) { st.ping = 74; st.pings = [82, 77, 79, 74, 76, 73, 75, 74]; setPing(); drawSpark(); if (cb) cb(); return; }
+    var best = Infinity, n = 0;
+    var once = function () {
+      probe("/jinx-api/health", 4000).then(function (r) {
+        if (r.ok) { lastHealth = r; if (r.ms < best) best = r.ms; st.pings.push(Math.max(1, Math.round(r.ms))); if (st.pings.length > 24) st.pings.shift(); drawSpark(); }
+        if (++n < 3) { setTimeout(once, 200); return; }
+        st.ping = isFinite(best) ? Math.max(1, Math.round(best)) : -1; setPing();
+        if (st.ping < 0 && pingTry < 3) { var w = 3000 * Math.pow(2, pingTry++); setTimeout(function () { measure(); }, w); }   /* self-heal: retry 3s, 6s, 12s */
+        else if (st.ping > 0) pingTry = 0;
+        if (cb) cb();
+      });
+    };
+    once();
+  }
+  window.addEventListener("online", function () { pingTry = 0; measure(); });
+
+  /* ---------- feedback ---------- */
+  var ICO_OK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>';
+  var ICO_ERR = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0 3.75h.008M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>';
+  function toast(msg, bad) {
+    var t = $("toast"); t.className = "toast" + (bad ? " err" : ""); t.innerHTML = bad ? ICO_ERR : ICO_OK;
+    var s = document.createElement("span"); s.textContent = msg; t.appendChild(s);
+    void t.offsetWidth; t.classList.add("on");
+    clearTimeout(toast.h); toast.h = setTimeout(function () { t.classList.remove("on"); }, bad ? 2600 : 1600);
+    if (!bad && navigator.vibrate) { try { navigator.vibrate(12); } catch (e) {} }
+  }
+  function flash(btn) {
+    if (!btn) return;
+    btn.classList.add("ok");
+    if (!btn._label) {   /* saved WITHOUT the press ripple: otherwise it came back and flashed again on every restore */
+      var c = btn.cloneNode(true), rp = c.querySelectorAll(".rp");
+      for (var i = 0; i < rp.length; i++) rp[i].parentNode.removeChild(rp[i]);
+      btn._label = c.innerHTML;
+    }
+    var lbl = btn.getAttribute("data-done");
+    if (lbl) { btn.innerHTML = ICO_OK + "<span></span>"; btn.lastChild.textContent = lbl; }
+    else if (btn.classList.contains("ic")) btn.innerHTML = ICO_OK;
+    clearTimeout(btn._t);
+    btn._t = setTimeout(function () { btn.classList.remove("ok"); if (btn._label) { btn.innerHTML = btn._label; btn._label = null; } }, 1400);
+  }
+
+  /* ---------- copy: confirmed success only, never a fake "copied" ---------- */
+  /* ---------- copy engine: instant + bullet-proof ----------
+     1) synchronous copy inside the tap (instant; iOS gets its own selection method)
+     2) Clipboard API as a fallback, with a time limit (some in-app browsers never answer)
+     3) last resort: the text opens pre-selected so it can be copied by hand
+     never a late write: an older copy can never overwrite a newer one */
+  var IOS = /iP(hone|od|ad)/.test(navigator.platform || "") || (/Mac/.test(navigator.platform || "") && navigator.maxTouchPoints > 1);
+  var copySeq = 0;
+  function legacyCopy(text) {
+    var act = document.activeElement, sx = window.pageXOffset, sy = window.pageYOffset, sel = window.getSelection ? window.getSelection() : null, keep = [];
+    try { if (sel) for (var k = 0; k < sel.rangeCount; k++) keep.push(sel.getRangeAt(k)); } catch (e) {}
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("aria-hidden", "true"); ta.setAttribute("tabindex", "-1");
+    ta.style.cssText = "position:fixed;top:0;left:0;width:2px;height:2px;padding:0;border:0;outline:0;margin:0;opacity:0;font-size:16px;pointer-events:none;z-index:-1";
+    document.body.appendChild(ta);
+    var ok = false;
+    try {
+      if (IOS) { ta.contentEditable = "true"; ta.readOnly = false; var r = document.createRange(); r.selectNodeContents(ta); if (sel) { sel.removeAllRanges(); sel.addRange(r); } ta.setSelectionRange(0, text.length); }
+      else { ta.readOnly = true; try { ta.focus({ preventScroll: true }); } catch (x) { ta.focus(); } ta.select(); ta.setSelectionRange(0, text.length); }
+      ok = !!document.execCommand("copy");
+    } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    try { if (sel) { sel.removeAllRanges(); keep.forEach(function (x) { sel.addRange(x); }); } } catch (e) {}
+    try { if (act && act.focus && act !== document.body) act.focus({ preventScroll: true }); } catch (e) {}
+    if (window.pageXOffset !== sx || window.pageYOffset !== sy) try { window.scrollTo(sx, sy); } catch (e) {}
+    return ok;
+  }
+  function copyNow(text) {     /* call straight from the click; resolves true / false */
+    var my = ++copySeq;
+    if (legacyCopy(text)) return Promise.resolve(true);
+    if (!window.isSecureContext || !navigator.clipboard || !navigator.clipboard.writeText) return Promise.resolve(false);
+    return new Promise(function (res) {
+      var done = false, fin = function (v) { if (!done) { done = true; res(my === copySeq ? v : null); } };
+      setTimeout(function () { fin(false); }, 1200);
+      try { navigator.clipboard.writeText(text).then(function () { fin(true); }, function () { fin(false); }); } catch (e) { fin(false); }
+    });
+  }
+  function copy(text, btn, okMsg) {
+    if (!text) { toast(tr("چیزی برای کپی وجود ندارد", "Nothing to copy"), true); return; }
+    if (btn && btn._busy) return;
+    if (btn) { btn._busy = true; setTimeout(function () { btn._busy = false; }, 350); }
+    copyNow(String(text)).then(function (ok) {
+      if (ok === null) return;                       /* a newer copy took over */
+      if (ok) { toast(okMsg || tr("کپی شد", "Copied")); flash(btn); try { navigator.vibrate && navigator.vibrate(12); } catch (e) {} }
+      else manual(String(text));
+    });
+  }
+  function manual(text) {   /* last resort: show the text pre-selected so the user can copy by hand */
+    openSheet(tr("کپی دستی", "Copy manually"), function (box) {
+      var ta = document.createElement("textarea"); ta.className = "manual"; ta.readOnly = true; ta.value = text; box.appendChild(ta);
+      setTimeout(function () { try { ta.focus(); ta.select(); } catch (e) {} }, 60);
+    });
+    toast(tr("کپی خودکار مجاز نبود؛ متن را نگه دار و کپی کن", "Auto-copy blocked; long-press to copy"), true);
+  }
+
+  /* ---------- download configs as a file ---------- */
+  function download() {
+    var list = M.links;
+    if (!list.length) { toast(tr("کانفیگی وجود ندارد", "No configs"), true); return; }
+    var name = (JINX_CONFIG.brand + "-" + (D.username || "configs")).replace(/[^A-Za-z0-9_.-]+/g, "_") + ".txt";
+    try {
+      var blob = new Blob([list.join("\n") + "\n"], { type: "text/plain;charset=utf-8" });
+      var url = URL.createObjectURL(blob), a = document.createElement("a");
+      a.href = url; a.download = name; a.rel = "noopener"; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+      toast(tr("فایل کانفیگ‌ها دانلود شد", "Configs file downloaded"));
+    } catch (e) { manual(list.join("\n")); }
+  }
+
+  /* ---------- sheet (QR / manual copy) with scroll lock ---------- */
+  var lastFocus = null;
+  function openSheet(title, fill) {
+    lastFocus = document.activeElement;
+    $("sh-t").textContent = title;
+    var box = $("sh-q"); box.innerHTML = ""; fill(box);
+    root.classList.add("lock");
+    $("sheet").classList.add("on");
+    setTimeout(function () { var x = $("sh-x"); if (x && !box.querySelector("textarea")) x.focus(); }, 30);
+  }
+  function closeSheet() {
+    if (!$("sheet").classList.contains("on")) return;
+    $("sheet").classList.remove("on"); root.classList.remove("lock");
+    if (lastFocus && lastFocus.focus) { try { lastFocus.focus({ preventScroll: true }); } catch (e) {} }
+  }
+  function qr(title, text) {
+    openSheet(title, function (box) {
+      var w = document.createElement("div"); w.className = "qr"; box.appendChild(w);
+      var img = new Image(); img.alt = "QR"; img.decoding = "async";
+      var retried = false;
+      img.onerror = function () {
+        if (!retried) { retried = true; setTimeout(function () { img.src = "/jinx-api/qr?r=1&d=" + encodeURIComponent(text); }, 600); return; }   /* self-heal: one retry */
+        w.innerHTML = ""; var p = document.createElement("p"); p.textContent = tr("کد QR فقط روی سرور ساخته می‌شود", "QR is generated on the server"); w.appendChild(p); };
+      img.src = "/jinx-api/qr?d=" + encodeURIComponent(text);
+      w.appendChild(img);
+    });
+  }
+
+  /* ---------- deep links: tell the user if the app didn't open ---------- */
+  function deeplink(href) {
+    var left = false, onHide = function () { if (document.hidden) left = true; };
+    document.addEventListener("visibilitychange", onHide);
+    window.addEventListener("blur", function b() { left = true; window.removeEventListener("blur", b); });
+    setTimeout(function () {
+      document.removeEventListener("visibilitychange", onHide);
+      if (!left) toast(tr("برنامه باز نشد؛ اول از «دریافت» نصبش کن", "App didn't open; install it via “Get” first"), true);
+    }, 1800);
+    window.location.href = href;
+  }
+
+  /* ---------- actions ---------- */
+  document.addEventListener("click", function (e) {
+    var b = e.target && e.target.closest ? e.target.closest("[data-a]") : null; if (!b) return;
+    var a = b.getAttribute("data-a"), i = parseInt(b.getAttribute("data-i"), 10);
+    switch (a) {
+      case "copy-sub": e.preventDefault(); copy(M.sub, b, tr("لینک اشتراک کپی شد", "Subscription link copied")); break;
+      case "copy-cfg": e.preventDefault(); if (M.links[i] != null) copy(M.links[i], b, tr("کانفیگ " + (i + 1) + " کپی شد", "Config " + (i + 1) + " copied")); break;
+      case "copy-test": e.preventDefault(); copy("http://cp.cloudflare.com/", b, tr("آدرس تست کپی شد", "Test address copied")); break;
+      case "copy-all": e.preventDefault(); copy(M.links.join("\n"), b, tr(M.links.length + " کانفیگ کپی شد", M.links.length + " configs copied")); break;
+      case "qr-sub": e.preventDefault(); qr(tr("لینک اشتراک", "Subscription link"), M.sub); break;
+      case "qr-cfg": e.preventDefault(); if (M.links[i] != null) qr(M.remarks[i], M.links[i]); break;
+      case "download": e.preventDefault(); download(); flash(b); break;
+      case "share": e.preventDefault();
+        if (navigator.share) navigator.share({ title: JINX_CONFIG.brand, url: M.sub }).catch(function (err) { if (err && err.name !== "AbortError") copy(M.sub, b); });
+        else copy(M.sub, b, tr("لینک اشتراک کپی شد", "Subscription link copied"));
+        break;
+      case "deep": e.preventDefault(); deeplink(b.getAttribute("href")); break;
+      case "nav": e.preventDefault();
+        var tg = $(b.getAttribute("data-v")); if (tg && tg.scrollIntoView) { try { tg.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (x) { tg.scrollIntoView(); } }
+        var ns = document.querySelectorAll('[data-a="nav"]'); for (var q = 0; q < ns.length; q++) ns[q].classList.toggle("on", ns[q].getAttribute("data-v") === b.getAttribute("data-v"));
+        break;
+      case "diag": e.preventDefault(); diagnose(true, b); break;
+      case "reload": e.preventDefault(); b.setAttribute("disabled", ""); b.classList.add("spin"); b.classList.add("busy"); setTimeout(function () { location.reload(); }, 250); break;
+      case "theme": e.preventDefault(); switchTheme(b); break;
+      case "lang": e.preventDefault(); st.lang = st.lang === "fa" ? "en" : "fa"; S.set("jx-lang", st.lang); renderAll(false); setPing(); diagnose(false); break;
+      case "op": e.preventDefault();
+        var ov = jxOp(b.getAttribute("data-v")).k; if (ov === st.op) break; st.op = ov; S.set("jx-op", ov);
+        var cl = $("jx-cfgs"); if (cl) cl.innerHTML = JinxCfgList(M, st.op);
+        var obs = document.querySelectorAll('[data-a="op"]'); for (var z = 0; z < obs.length; z++) { var zon = obs[z].getAttribute("data-v") === ov; obs[z].classList.toggle("on", zon); obs[z].setAttribute("aria-checked", zon ? "true" : "false"); }
+        setPing(); if (ov !== "all") toast(tr("کانفیگ‌های مناسب " + jxOp(ov).fa + " اومدن بالا", "Best configs for " + jxOp(ov).en + " moved to the top"));
+        break;
+      case "tab": e.preventDefault();
+        var v = b.getAttribute("data-v"); if (!v || v === st.tab) break; st.tab = v;
+        var box = $("jx-apps"); if (box) box.innerHTML = JinxApps(M, st.tab, fa());
+        var tabs = document.querySelectorAll('[data-a="tab"]');
+        var sg = b.parentNode; if (sg && sg.style && sg.style.setProperty) sg.style.setProperty("--k", String(Math.max(0, M.plats.indexOf(v))));
+        for (var k = 0; k < tabs.length; k++) { var on = tabs[k].getAttribute("data-v") === v; tabs[k].classList.toggle("on", on); tabs[k].setAttribute("aria-selected", on ? "true" : "false"); }
+        break;
+    }
+  });
+  $("sh-x").addEventListener("click", closeSheet);
+  $("sheet").addEventListener("click", function (e) { if (e.target === $("sheet")) closeSheet(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeSheet(); });
+
+  /* ---------- ripple (tactile press feedback) ---------- */
+  document.addEventListener("pointerdown", function (e) {
+    var b = e.target && e.target.closest ? e.target.closest(".b,.ib,.portal,.field") : null;
+    if (!b || !b.getBoundingClientRect || b.hasAttribute("disabled")) return;
+    var r = b.getBoundingClientRect(), d = document.createElement("span");
+    d.className = "rp"; d.style.left = (e.clientX - r.left) + "px"; d.style.top = (e.clientY - r.top) + "px";
+    b.appendChild(d); setTimeout(function () { if (d.parentNode) d.parentNode.removeChild(d); }, 750);
+  }, { passive: true });
+
+  /* =====================================================================================
+     Support bot: watches the page, fixes what it can, explains what it can't.
+     ===================================================================================== */
+  var CARE = { errors: 0, healed: 0, safe: false, busy: false, fps: 0 };
+  function appOk() { var a = $("app"); return !!a && (a.innerHTML || "").length > 400; }
+  function safeMode() {   /* last resort: minimal page built with textContent only */
+    if (CARE.safe) return; CARE.safe = true;
+    var app = $("app"); if (!app) return;
+    app.innerHTML = "";
+    var box = document.createElement("div"); box.className = "safe";
+    var h1 = document.createElement("h1"); h1.textContent = JINX_CONFIG.brand; box.appendChild(h1);
+    var p = document.createElement("p"); p.textContent = tr("حالت ایمن: نمایش ساده فعال شد تا کانفیگ‌ها همیشه در دسترس باشند.", "Safe mode: a simple view is shown so your configs stay available."); box.appendChild(p);
+    var list = (D && D.links && D.links.length ? D.links : []).filter(function (x) { return typeof x === "string"; });
+    var sub = (M && M.sub) || location.href.split("#")[0];
+    [sub].concat(list).forEach(function (txt, i) {
+      var row = document.createElement("div"); row.className = "row";
+      var c = document.createElement("code"); c.textContent = txt; row.appendChild(c);
+      var bt = document.createElement("button"); bt.type = "button"; bt.className = "b sm"; bt.textContent = i === 0 ? tr("کپی لینک", "Copy link") : tr("کپی", "Copy") + " " + i;
+      bt.addEventListener("click", function () { copy(txt, bt); });
+      row.appendChild(bt); box.appendChild(row);
+    });
+    var ch = document.createElement("a"); ch.className = "b full pri"; ch.href = JINX_CONFIG.channel; ch.target = "_blank"; ch.rel = "noopener noreferrer"; ch.textContent = tr("عضویت در کانال", "Join our channel");
+    ch.style.marginTop = "10px"; box.appendChild(ch);
+    app.appendChild(box);
+  }
+  function boot(animate) {
+    try { renderAll(animate); return true; }
+    catch (e1) {
+      CARE.errors++;
+      try { S.set("jx-theme", "dark"); S.set("jx-lang", "fa"); st.theme = "dark"; st.lang = "fa"; renderAll(false); CARE.healed++; return true; }   /* heal: reset prefs, render again */
+      catch (e2) { CARE.errors++; try { console.warn("[jinx] render failed: " + (e2 && e2.message)); } catch (x) {} safeMode(); return false; }
+    }
+  }
+  window.addEventListener("error", function () { CARE.errors++; if (!appOk()) { if (!boot(false)) safeMode(); else CARE.healed++; } });
+  window.addEventListener("unhandledrejection", function () { CARE.errors++; });
+
+  var BOT_ICO = { ok: "✓", warn: "!", bad: "✕", run: "…" };
+  function checks(report) {
+    var out = [], add = function (s, t, d) { var c = { s: s, t: t, d: d || "" }; out.push(c); if (report) report(c); return c; };
+    return new Promise(function (finish) {
+      /* 1. page */
+      if (!appOk() && !CARE.safe) { if (boot(false)) CARE.healed++; }
+      add(CARE.safe ? "warn" : "ok", tr("نمایش صفحه", "Page rendering"), CARE.safe ? tr("حالت ایمن فعال است", "Safe mode is on") : CARE.healed ? tr("خطا پیدا و خودکار رفع شد", "An error was found and fixed") : tr("سالم", "Healthy"));
+      /* 2. data */
+      add(DEMO ? "warn" : "ok", tr("اطلاعات اشتراک", "Subscription data"), DEMO ? tr("پیش‌نمایش با داده‌ی نمونه", "Preview with sample data") : tr("از پنل دریافت شد", "Received from the panel"));
+      /* 3. status */
+      var stt = M ? M.status : "active", bad = stt === "expired" || stt === "limited" || stt === "disabled";
+      add(bad ? "bad" : M && M.near ? "warn" : "ok", tr("وضعیت اشتراک", "Subscription status"),
+        bad ? tr("برای تمدید از دکمه‌ی عضویت در کانال پیام بده", "Use the channel button to renew") : M && M.near ? tr("رو به اتمام؛ زودتر تمدید کن", "Running low; renew soon") : tr("فعال و معتبر", "Active and valid"));
+      /* 4. configs */
+      var nc = M ? M.links.length : 0;
+      add(nc ? "ok" : "bad", tr("کانفیگ‌ها", "Configs"), nc ? nc + " " + tr("کانفیگ آماده", "ready") : tr("کانفیگی نیست؛ به پشتیبانی خبر بده", "None; contact support"));
+      /* 5. internet */
+      var online = navigator.onLine !== false;
+      add(online ? "ok" : "bad", tr("اینترنت دستگاه", "Device internet"), online ? tr("وصل", "Connected") : tr("قطع است؛ اینترنت را روشن کن", "Offline; turn on your internet"));
+      /* 6. storage (auto-clean bad values) */
+      var okS = true; try { localStorage.setItem("jx-t", "1"); okS = localStorage.getItem("jx-t") === "1"; localStorage.removeItem("jx-t"); } catch (e) { okS = false; }
+      var th = S.get("jx-theme"), lg = S.get("jx-lang"), fixedS = false;
+      if (th && th !== "dark" && th !== "light") { S.set("jx-theme", "dark"); fixedS = true; }
+      if (lg && lg !== "fa" && lg !== "en") { S.set("jx-lang", "fa"); fixedS = true; }
+      if (fixedS) CARE.healed++;
+      add(okS ? "ok" : "warn", tr("تنظیمات صفحه", "Page settings"), !okS ? tr("ذخیره نمی‌شود (حالت خصوصی مرورگر)", "Not saved (private browsing)") : fixedS ? tr("تنظیمات خراب پاک شد", "Corrupt settings cleaned") : tr("سالم", "Healthy"));
+      /* 7. clipboard */
+      var clip = !!(window.isSecureContext && navigator.clipboard && navigator.clipboard.writeText);
+      add(clip ? "ok" : "warn", tr("کپی", "Copy"), clip ? tr("کپی مستقیم فعال", "Direct copy available") : tr("روش جایگزین فعال شد", "Fallback method enabled"));
+      /* 7b. config links are valid (exact copy is guaranteed, this only reports broken ones) */
+      if (M && M.links.length) {
+        var badL = (D && Array.isArray(D.links) ? D.links.length : 0) - M.links.length;
+        add(badL > 0 ? "warn" : "ok", tr("سلامت کانفیگ‌ها", "Config integrity"), badL > 0 ? badL + tr(" لینک نامعتبر کنار گذاشته شد", " invalid link(s) skipped") : tr("همه معتبر و دست‌نخورده", "All valid and untouched"));
+      }
+      /* 7c. layout: no sideways scroll on any screen (auto-fix) */
+      var ow = (document.documentElement && document.documentElement.scrollWidth || 0) - (window.innerWidth || 0);
+      if (ow > 1 && !root.classList.contains("fixx")) { root.classList.add("fixx"); CARE.healed++; }
+      add("ok", tr("چیدمان صفحه", "Layout"), ow > 1 ? tr("بیرون‌زدگی پیدا و رفع شد", "Overflow found and fixed") : (isDesk() ? tr("نسخه‌ی کامپیوتر", "Desktop layout") : tr("نسخه‌ی موبایل", "Mobile layout")));
+      /* 7d. smoothness: slow devices get the light mode automatically */
+      add("ok", tr("روانی انیمیشن", "Smoothness"), CARE.fps ? CARE.fps + " fps" + (root.classList.contains("lite") ? tr(" · حالت سبک فعال شد", " · light mode on") : "") : tr("سالم", "Healthy"));
+      /* 7e. font */
+      var fontOk = true; try { fontOk = !document.fonts || !document.fonts.check || document.fonts.check('12px "Vazirmatn"'); } catch (e) {}
+      add("ok", tr("فونت فارسی", "Persian font"), fontOk ? tr("بارگذاری شد", "Loaded") : tr("فونت سیستم (سالم)", "System font (fine)"));
+      /* 8 + 9. server, ping and device clock (VMess fails if the clock is off) */
+      measure(function () {
+        var p = st.ping;
+        add(p == null || p < 0 ? "bad" : p <= 150 ? "ok" : p <= 400 ? "warn" : "bad", tr("سرور و پینگ", "Server and ping"),
+          p == null || p < 0 ? tr("پاسخ نداد؛ تلاش دوباره خودکار است", "No answer; auto-retrying") : p + " ms" + (p > 400 ? tr(" · کانفیگ دیگری را امتحان کن", " · try another config") : ""));
+        var skew = 0;
+        if (!DEMO && lastHealth && lastHealth.date) { var sd = Date.parse(lastHealth.date); if (isFinite(sd)) skew = Math.abs(Date.now() - sd) / 1000; }
+        add(skew > 90 ? "bad" : "ok", tr("ساعت دستگاه", "Device clock"), skew > 90 ? tr("ساعت گوشی دقیق نیست؛ روی خودکار بگذار", "Clock is off; set it to automatic") : tr("دقیق", "Accurate"));
+        if (DEMO) { add("ok", tr("سرویس QR", "QR service"), tr("پیش‌نمایش", "Preview")); finish(out); return; }
+        probe("/jinx-api/qr?d=jinx", 4000).then(function (r) {
+          add(r.ok ? "ok" : "warn", tr("سرویس QR", "QR service"), r.ok ? tr("سالم", "Healthy") : tr("در دسترس نیست؛ از کپی استفاده کن", "Unavailable; use copy"));
+          finish(out);
+        });
+      });
+    });
+  }
+  function term(c) {
+    var t = $("jx-term"); if (!t || !t.appendChild) return;
+    var p = document.createElement("p"), i = document.createElement("i"); i.textContent = "›"; p.appendChild(i);
+    var w = document.createElement("span"); w.className = c.s; w.textContent = "[" + (c.s === "ok" ? " ok " : c.s === "warn" ? "warn" : c.s === "bad" ? "fail" : " .. ") + "] "; p.appendChild(w);
+    var tx = document.createElement("span"); tx.className = "msg"; tx.textContent = c.t + (c.d ? " · " + c.d : ""); p.appendChild(tx);
+    t.appendChild(p);
+    for (var g = 0; g < 20 && t.children && t.children.length > 7; g++) { var f = t.children[0]; if (f && f.parentNode === t) t.removeChild(f); else break; }
+  }
+  function botSet(list) {
+    var bad = 0, warn = 0;
+    list.forEach(function (c) { if (c.s === "bad") bad++; else if (c.s === "warn") warn++; });
+    var av = $("jx-bav"), s = $("jx-bot-s"), t = $("jx-bot-t");
+    if (av) av.className = "bav" + (bad ? " bad" : warn ? " warn" : "");
+    if (s) s.textContent = bad ? bad + tr(" مشکل نیاز به توجه دارد", " issue(s) need attention") : warn ? warn + tr(" هشدار · بقیه سالم", " warning(s) · rest healthy") : tr("همه‌چیز سالم است", "Everything is healthy") + (CARE.healed ? tr(" · " + CARE.healed + " مورد رفع شد", " · " + CARE.healed + " fixed") : "");
+    if (t) t.textContent = new Date().toTimeString().slice(0, 5);
+  }
+  function diagnose(show, btn) {
+    if (CARE.busy) return; CARE.busy = true;
+    var av = $("jx-bav"); if (av) av.className = "bav run";
+    if (btn) btn.classList.add("busy");
+    var box = null
+    if (show) openSheet(tr("پشتیبان هوشمند · عیب‌یابی", "Smart support · diagnosis"), function (b) { box = document.createElement("div"); box.className = "chk"; b.appendChild(box); });
+    var row = function (c) {
+      if (!box) return;
+      var r = document.createElement("div"); r.className = "ck " + c.s;
+      var i = document.createElement("i"); i.textContent = BOT_ICO[c.s]; r.appendChild(i);
+      var g = document.createElement("span"); g.className = "grow";
+      var b = document.createElement("b"); b.textContent = c.t; g.appendChild(b);
+      var sm = document.createElement("small"); sm.textContent = c.d; g.appendChild(sm);
+      r.appendChild(g); box.appendChild(r);
+    };
+    term({ s: "run", t: "diagnose", d: new Date().toTimeString().slice(0, 8) });
+    checks(function (c) { row(c); term(c); }).then(function (list) {
+      CARE.busy = false; if (btn) btn.classList.remove("busy");
+      botSet(list);
+      if (show) { var bad = list.filter(function (c) { return c.s === "bad"; }).length; toast(bad ? tr("عیب‌یابی تمام شد", "Diagnosis finished") : tr("همه‌چیز سالم است", "Everything is healthy"), !!bad); if (!bad) flash(btn); }
+    });
+  }
+
+  /* smoothness watchdog: measure real frame rate once, switch to light mode on slow phones */
+  function fpsProbe() {
+    if (!window.requestAnimationFrame || document.hidden) return;
+    if (S.get("jx-lite") === "1") { root.classList.add("lite"); return; }
+    try {   /* weak phones / data saver: light mode from the very first frame (no stutter while measuring) */
+      var nv = navigator, cn = nv.connection || {};
+      if (cn.saveData || (nv.deviceMemory && nv.deviceMemory <= 2) || (nv.hardwareConcurrency && nv.hardwareConcurrency <= 2)) { root.classList.add("lite"); return; }
+    } catch (x) {}
+    var n = 0, t0 = 0, f = function (t) { if (!t0) t0 = t; n++; if (t - t0 < 1500) requestAnimationFrame(f); else {
+      CARE.fps = Math.round(n * 1000 / (t - t0));
+      if (CARE.fps < 32) { root.classList.add("lite"); S.set("jx-lite", "1"); CARE.healed++; term({ s: "warn", t: tr("حالت سبک", "Light mode"), d: CARE.fps + " fps" }); }
+    } };
+    requestAnimationFrame(f);
+  }
+  /* network + freshness watchdog */
+  window.addEventListener("offline", function () { toast(tr("اینترنت قطع شد", "You are offline"), true); term({ s: "bad", t: tr("اینترنت", "Internet"), d: tr("قطع", "offline") }); });
+  window.addEventListener("online", function () { toast(tr("اینترنت وصل شد", "Back online")); diagnose(false); });
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden && Date.now() - st.loadedAt > 3600000 && !$("sheet").classList.contains("on")) location.reload();   /* data older than 1h -> fresh copy */
+  });
+
+  boot(true);
+  setTimeout(fpsProbe, 2400);
+  setTimeout(function () { if (!appOk()) { if (!boot(false)) safeMode(); } }, 2500);   /* watchdog */
+  setTimeout(function () { diagnose(false); }, 600);
+  setInterval(function () { if (!document.hidden && !CARE.busy) diagnose(false); }, 120000);   /* re-check every 2 minutes */
+  window.JINX = { model: function () { return M; }, state: st, care: CARE, diagnose: diagnose };
+})();
+</script>
+</body>
+</html>

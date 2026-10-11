@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-label="Features">
+<defs>
+<linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#7c5cff"/><stop offset="0.5" stop-color="#5b8cff"/><stop offset="1" stop-color="#00d4a6"/>
+</linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+  <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter>
+</defs>
+<rect x="0.5" y="0.5" width="1199" height="379" rx="26" fill="#0b0a1f" stroke="url(#brand)" stroke-opacity="0.4"/>
+
+  <g transform="translate(24 24)">
+    <rect width="275" height="162" rx="20" fill="#11102a" stroke="#7c5cff" stroke-opacity="0.35"/>
+    <rect width="275" height="162" rx="20" fill="none" stroke="#7c5cff" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.06;0.2" dur="6.4s" begin="0.0s" repeatCount="indefinite"/></rect>
+    <g transform="translate(48 50)">
+      <circle r="28" fill="#7c5cff" fill-opacity="0.14" stroke="#7c5cff" stroke-opacity="0.5"/>
+      <circle r="28" fill="none" stroke="#7c5cff" stroke-opacity="0.7"><animate attributeName="r" values="28;40" dur="2.6s" begin="0.00s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.6;0" dur="2.6s" begin="0.00s" repeatCount="indefinite"/></circle>
+      <g color="#7c5cff"><path d="M4,-16 L-9,3 L0,3 L-4,16 L9,-3 L0,-3 Z" fill="currentColor"/></g>
+    </g>
+    <text x="22" y="108" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">12 Methods</text>
+    <text x="22" y="132" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">Every protocol, fingerprint</text>
+    <text x="22" y="150" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">and fragment profile</text>
+  </g>
+  <g transform="translate(315 24)">
+    <rect width="275" height="162" rx="20" fill="#11102a" stroke="#5b8cff" stroke-opacity="0.35"/>
+    <rect width="275" height="162" rx="20" fill="none" stroke="#5b8cff" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.06;0.2" dur="6.4s" begin="0.8s" repeatCount="indefinite"/></rect>
+    <g transform="translate(48 50)">
+      <circle r="28" fill="#5b8cff" fill-opacity="0.14" stroke="#5b8cff" stroke-opacity="0.5"/>
+      <circle r="28" fill="none" stroke="#5b8cff" stroke-opacity="0.7"><animate attributeName="r" values="28;40" dur="2.6s" begin="0.33s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.6;0" dur="2.6s" begin="0.33s" repeatCount="indefinite"/></circle>
+      <g color="#5b8cff"><path d="M0,-16 L13,-11 L13,0 C13,9 7,14 0,17 C-7,14 -13,9 -13,0 L-13,-11 Z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M-5,0 L-1,4 L6,-4" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+    </g>
+    <text x="22" y="108" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Locked Inbound</text>
+    <text x="22" y="132" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">Any change is reverted</text>
+    <text x="22" y="150" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">within 20 seconds</text>
+  </g>
+  <g transform="translate(606 24)">
+    <rect width="275" height="162" rx="20" fill="#11102a" stroke="#00d4a6" stroke-opacity="0.35"/>
+    <rect width="275" height="162" rx="20" fill="none" stroke="#00d4a6" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.06;0.2" dur="6.4s" begin="1.6s" repeatCount="indefinite"/></rect>
+    <g transform="translate(48 50)">
+      <circle r="28" fill="#00d4a6" fill-opacity="0.14" stroke="#00d4a6" stroke-opacity="0.5"/>
+      <circle r="28" fill="none" stroke="#00d4a6" stroke-opacity="0.7"><animate attributeName="r" values="28;40" dur="2.6s" begin="0.66s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.6;0" dur="2.6s" begin="0.66s" repeatCount="indefinite"/></circle>
+      <g color="#00d4a6"><path d="M-16,1 L-8,1 L-4,-9 L2,11 L6,1 L16,1" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+    </g>
+    <text x="22" y="108" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Self-Healing</text>
+    <text x="22" y="132" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">Health checks every 15 s,</text>
+    <text x="22" y="150" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">daily backups</text>
+  </g>
+  <g transform="translate(897 24)">
+    <rect width="275" height="162" rx="20" fill="#11102a" stroke="#ff5ca8" stroke-opacity="0.35"/>
+    <rect width="275" height="162" rx="20" fill="none" stroke="#ff5ca8" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.06;0.2" dur="6.4s" begin="2.4s" repeatCount="indefinite"/></rect>
+    <g transform="translate(48 50)">
+      <circle r="28" fill="#ff5ca8" fill-opacity="0.14" stroke="#ff5ca8" stroke-opacity="0.5"/>
+      <circle r="28" fill="none" stroke="#ff5ca8" stroke-opacity="0.7"><animate attributeName="r" values="28;40" dur="2.6s" begin="0.99s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.6;0" dur="2.6s" begin="0.99s" repeatCount="indefinite"/></circle>
+      <g color="#ff5ca8"><circle cx="-5" cy="-6" r="5" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M-14,12 C-14,4 4,4 4,12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="8" cy="-4" r="4" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8,5 C13,5 15,8 15,12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></g>
+    </g>
+    <text x="22" y="108" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Reseller Panels</text>
+    <text x="22" y="132" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">Wizard, packages and</text>
+    <text x="22" y="150" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">server-side limits</text>
+  </g>
+  <g transform="translate(24 202)">
+    <rect width="275" height="162" rx="20" fill="#11102a" stroke="#7c5cff" stroke-opacity="0.35"/>
+    <rect width="275" height="162" rx="20" fill="none" stroke="#7c5cff" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.06;0.2" dur="6.4s" begin="3.2s" repeatCount="indefinite"/></rect>
+    <g transform="translate(48 50)">
+      <circle r="28" fill="#7c5cff" fill-opacity="0.14" stroke="#7c5cff" stroke-opacity="0.5"/>
+      <circle r="28" fill="none" stroke="#7c5cff" stroke-opacity="0.7"><animate attributeName="r" values="28;40" dur="2.6s" begin="1.32s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.6;0" dur="2.6s" begin="1.32s" repeatCount="indefinite"/></circle>
+      <g color="#7c5cff"><path d="M-15,-9 L15,-9 L15,-3 A4,4 0 0 0 15,5 L15,10 L-15,10 L-15,5 A4,4 0 0 0 -15,-3 Z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M-3,-9 L-3,10" stroke="currentColor" stroke-width="2.2" stroke-dasharray="3 3"/></g>
+    </g>
+    <text x="22" y="108" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">JinX Pass</text>
+    <text x="22" y="132" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">Subscription page for</text>
+    <text x="22" y="150" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">desktop and mobile</text>
+  </g>
+  <g transform="translate(315 202)">
+    <rect width="275" height="162" rx="20" fill="#11102a" stroke="#5b8cff" stroke-opacity="0.35"/>
+    <rect width="275" height="162" rx="20" fill="none" stroke="#5b8cff" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.06;0.2" dur="6.4s" begin="4.0s" repeatCount="indefinite"/></rect>
+    <g transform="translate(48 50)">
+      <circle r="28" fill="#5b8cff" fill-opacity="0.14" stroke="#5b8cff" stroke-opacity="0.5"/>
+      <circle r="28" fill="none" stroke="#5b8cff" stroke-opacity="0.7"><animate attributeName="r" values="28;40" dur="2.6s" begin="1.65s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.6;0" dur="2.6s" begin="1.65s" repeatCount="indefinite"/></circle>
+      <g color="#5b8cff"><circle r="14" fill="none" stroke="currentColor" stroke-width="2.6"/><ellipse rx="6" ry="14" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M-14,0 L14,0" stroke="currentColor" stroke-width="2.2"/></g>
+    </g>
+    <text x="22" y="108" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">4 Languages</text>
+    <text x="22" y="132" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">Persian, English,</text>
+    <text x="22" y="150" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">Russian, Chinese</text>
+  </g>
+  <g transform="translate(606 202)">
+    <rect width="275" height="162" rx="20" fill="#11102a" stroke="#00d4a6" stroke-opacity="0.35"/>
+    <rect width="275" height="162" rx="20" fill="none" stroke="#00d4a6" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.06;0.2" dur="6.4s" begin="4.8s" repeatCount="indefinite"/></rect>
+    <g transform="translate(48 50)">
+      <circle r="28" fill="#00d4a6" fill-opacity="0.14" stroke="#00d4a6" stroke-opacity="0.5"/>
+      <circle r="28" fill="none" stroke="#00d4a6" stroke-opacity="0.7"><animate attributeName="r" values="28;40" dur="2.6s" begin="1.98s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.6;0" dur="2.6s" begin="1.98s" repeatCount="indefinite"/></circle>
+      <g color="#00d4a6"><circle r="14" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M-10,10 L10,-10" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></g>
+    </g>
+    <text x="22" y="108" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Ad Blocking</text>
+    <text x="22" y="132" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">Ads and trackers dropped</text>
+    <text x="22" y="150" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">on the server</text>
+  </g>
+  <g transform="translate(897 202)">
+    <rect width="275" height="162" rx="20" fill="#11102a" stroke="#ff5ca8" stroke-opacity="0.35"/>
+    <rect width="275" height="162" rx="20" fill="none" stroke="#ff5ca8" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.06;0.2" dur="6.4s" begin="5.6s" repeatCount="indefinite"/></rect>
+    <g transform="translate(48 50)">
+      <circle r="28" fill="#ff5ca8" fill-opacity="0.14" stroke="#ff5ca8" stroke-opacity="0.5"/>
+      <circle r="28" fill="none" stroke="#ff5ca8" stroke-opacity="0.7"><animate attributeName="r" values="28;40" dur="2.6s" begin="2.31s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.6;0" dur="2.6s" begin="2.31s" repeatCount="indefinite"/></circle>
+      <g color="#ff5ca8"><rect x="-12" y="-3" width="24" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M-7,-3 L-7,-8 A7,7 0 0 1 7,-8 L7,-3" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cy="6" r="2.4" fill="currentColor"/></g>
+    </g>
+    <text x="22" y="108" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Login Lock</text>
+    <text x="22" y="132" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">10 wrong passwords</text>
+    <text x="22" y="150" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13.5" fill="#9aa4c7">= 5 minute lock</text>
+  </g>
+</svg>

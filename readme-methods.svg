@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-label="12 connection methods">
+<defs>
+<linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#7c5cff"/><stop offset="0.5" stop-color="#5b8cff"/><stop offset="1" stop-color="#00d4a6"/>
+</linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+  <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter>
+</defs>
+<rect x="0.5" y="0.5" width="1199" height="419" rx="26" fill="#0b0a1f" stroke="url(#brand)" stroke-opacity="0.4"/>
+<text x="24" y="44" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="900" letter-spacing="3" fill="url(#brand)">12 DIRECT METHODS</text>
+<text x="1176" y="44" text-anchor="end" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="1" fill="#9aa4c7">+ REALITY  ·  + MIRROR</text>
+
+  <g transform="translate(24 70)">
+    <rect width="275" height="92" rx="18" fill="#11102a" stroke="#7c5cff" stroke-opacity="0.35"/>
+    <rect width="275" height="92" rx="18" fill="#7c5cff" opacity="0"><animate attributeName="opacity" values="0;0.22;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="0.0s" repeatCount="indefinite"/></rect>
+    <rect width="275" height="92" rx="18" fill="none" stroke="#7c5cff" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="0.0s" repeatCount="indefinite"/></rect>
+    <text x="20" y="32" font-family="'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#7c5cff">01</text>
+    <text x="20" y="60" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Amsterdam Rocket</text>
+    <text x="20" y="80" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9aa4c7">JinX Core</text>
+    <rect x="192" y="16" width="63" height="22" rx="11" fill="#00d4a6" fill-opacity="0.15" stroke="#00d4a6" stroke-opacity="0.6"/>
+    <text x="224" y="31" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="800" letter-spacing="1" fill="#eee">SPEED</text>
+  </g>
+  <g transform="translate(315 70)">
+    <rect width="275" height="92" rx="18" fill="#11102a" stroke="#5b8cff" stroke-opacity="0.35"/>
+    <rect width="275" height="92" rx="18" fill="#5b8cff" opacity="0"><animate attributeName="opacity" values="0;0.22;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="0.6s" repeatCount="indefinite"/></rect>
+    <rect width="275" height="92" rx="18" fill="none" stroke="#5b8cff" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="0.6s" repeatCount="indefinite"/></rect>
+    <text x="20" y="32" font-family="'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#5b8cff">02</text>
+    <text x="20" y="60" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Ghost Anti-Filter</text>
+    <text x="20" y="80" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9aa4c7">JinX Core</text>
+    <rect x="166" y="16" width="89" height="22" rx="11" fill="#ff5ca8" fill-opacity="0.15" stroke="#ff5ca8" stroke-opacity="0.6"/>
+    <text x="211" y="31" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="800" letter-spacing="1" fill="#eee">FRAGMENT</text>
+  </g>
+  <g transform="translate(606 70)">
+    <rect width="275" height="92" rx="18" fill="#11102a" stroke="#00d4a6" stroke-opacity="0.35"/>
+    <rect width="275" height="92" rx="18" fill="#00d4a6" opacity="0"><animate attributeName="opacity" values="0;0.22;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="1.2s" repeatCount="indefinite"/></rect>
+    <rect width="275" height="92" rx="18" fill="none" stroke="#00d4a6" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="1.2s" repeatCount="indefinite"/></rect>
+    <text x="20" y="32" font-family="'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#00d4a6">03</text>
+    <text x="20" y="60" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Hyper Drive</text>
+    <text x="20" y="80" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9aa4c7">VLESS WS</text>
+    <rect x="183" y="16" width="72" height="22" rx="11" fill="#7c5cff" fill-opacity="0.15" stroke="#7c5cff" stroke-opacity="0.6"/>
+    <text x="219" y="31" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="800" letter-spacing="1" fill="#eee">STABLE</text>
+  </g>
+  <g transform="translate(897 70)">
+    <rect width="275" height="92" rx="18" fill="#11102a" stroke="#ff5ca8" stroke-opacity="0.35"/>
+    <rect width="275" height="92" rx="18" fill="#ff5ca8" opacity="0"><animate attributeName="opacity" values="0;0.22;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="1.8s" repeatCount="indefinite"/></rect>
+    <rect width="275" height="92" rx="18" fill="none" stroke="#ff5ca8" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="1.8s" repeatCount="indefinite"/></rect>
+    <text x="20" y="32" font-family="'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#ff5ca8">04</text>
+    <text x="20" y="60" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Swift Shield</text>
+    <text x="20" y="80" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9aa4c7">VLESS WS</text>
+    <rect x="166" y="16" width="89" height="22" rx="11" fill="#ff5ca8" fill-opacity="0.15" stroke="#ff5ca8" stroke-opacity="0.6"/>
+    <text x="211" y="31" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="800" letter-spacing="1" fill="#eee">FRAGMENT</text>
+  </g>
+  <g transform="translate(24 178)">
+    <rect width="275" height="92" rx="18" fill="#11102a" stroke="#7c5cff" stroke-opacity="0.35"/>
+    <rect width="275" height="92" rx="18" fill="#7c5cff" opacity="0"><animate attributeName="opacity" values="0;0.22;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="2.4s" repeatCount="indefinite"/></rect>
+    <rect width="275" height="92" rx="18" fill="none" stroke="#7c5cff" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="2.4s" repeatCount="indefinite"/></rect>
+    <text x="20" y="32" font-family="'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#7c5cff">05</text>
+    <text x="20" y="60" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Vortex</text>
+    <text x="20" y="80" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9aa4c7">VMess WS</text>
+    <rect x="192" y="16" width="63" height="22" rx="11" fill="#00d4a6" fill-opacity="0.15" stroke="#00d4a6" stroke-opacity="0.6"/>
+    <text x="224" y="31" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="800" letter-spacing="1" fill="#eee">SPEED</text>
+  </g>
+  <g transform="translate(315 178)">
+    <rect width="275" height="92" rx="18" fill="#11102a" stroke="#5b8cff" stroke-opacity="0.35"/>
+    <rect width="275" height="92" rx="18" fill="#5b8cff" opacity="0"><animate attributeName="opacity" values="0;0.22;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="3.0s" repeatCount="indefinite"/></rect>
+    <rect width="275" height="92" rx="18" fill="none" stroke="#5b8cff" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="3.0s" repeatCount="indefinite"/></rect>
+    <text x="20" y="32" font-family="'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#5b8cff">06</text>
+    <text x="20" y="60" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Trident</text>
+    <text x="20" y="80" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9aa4c7">Trojan WS</text>
+    <rect x="183" y="16" width="72" height="22" rx="11" fill="#7c5cff" fill-opacity="0.15" stroke="#7c5cff" stroke-opacity="0.6"/>
+    <text x="219" y="31" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="800" letter-spacing="1" fill="#eee">STABLE</text>
+  </g>
+  <g transform="translate(606 178)">
+    <rect width="275" height="92" rx="18" fill="#11102a" stroke="#00d4a6" stroke-opacity="0.35"/>
+    <rect width="275" height="92" rx="18" fill="#00d4a6" opacity="0"><animate attributeName="opacity" values="0;0.22;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="3.6s" repeatCount="indefinite"/></rect>
+    <rect width="275" height="92" rx="18" fill="none" stroke="#00d4a6" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="3.6s" repeatCount="indefinite"/></rect>
+    <text x="20" y="32" font-family="'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#00d4a6">07</text>
+    <text x="20" y="60" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Ninja Stealth</text>
+    <text x="20" y="80" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9aa4c7">Trojan WS</text>
+    <rect x="166" y="16" width="89" height="22" rx="11" fill="#ff5ca8" fill-opacity="0.15" stroke="#ff5ca8" stroke-opacity="0.6"/>
+    <text x="211" y="31" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="800" letter-spacing="1" fill="#eee">FRAGMENT</text>
+  </g>
+  <g transform="translate(897 178)">
+    <rect width="275" height="92" rx="18" fill="#11102a" stroke="#ff5ca8" stroke-opacity="0.35"/>
+    <rect width="275" height="92" rx="18" fill="#ff5ca8" opacity="0"><animate attributeName="opacity" values="0;0.22;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="4.2s" repeatCount="indefinite"/></rect>
+    <rect width="275" height="92" rx="18" fill="none" stroke="#ff5ca8" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="4.2s" repeatCount="indefinite"/></rect>
+    <text x="20" y="32" font-family="'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#ff5ca8">08</text>
+    <text x="20" y="60" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Lightning</text>
+    <text x="20" y="80" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9aa4c7">HTTPUpgrade</text>
+    <rect x="192" y="16" width="63" height="22" rx="11" fill="#00d4a6" fill-opacity="0.15" stroke="#00d4a6" stroke-opacity="0.6"/>
+    <text x="224" y="31" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="800" letter-spacing="1" fill="#eee">SPEED</text>
+  </g>
+  <g transform="translate(24 286)">
+    <rect width="275" height="92" rx="18" fill="#11102a" stroke="#7c5cff" stroke-opacity="0.35"/>
+    <rect width="275" height="92" rx="18" fill="#7c5cff" opacity="0"><animate attributeName="opacity" values="0;0.22;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="4.8s" repeatCount="indefinite"/></rect>
+    <rect width="275" height="92" rx="18" fill="none" stroke="#7c5cff" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="4.8s" repeatCount="indefinite"/></rect>
+    <text x="20" y="32" font-family="'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#7c5cff">09</text>
+    <text x="20" y="60" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Meteor</text>
+    <text x="20" y="80" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9aa4c7">HTTPUpgrade</text>
+    <rect x="166" y="16" width="89" height="22" rx="11" fill="#ff5ca8" fill-opacity="0.15" stroke="#ff5ca8" stroke-opacity="0.6"/>
+    <text x="211" y="31" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="800" letter-spacing="1" fill="#eee">FRAGMENT</text>
+  </g>
+  <g transform="translate(315 286)">
+    <rect width="275" height="92" rx="18" fill="#11102a" stroke="#5b8cff" stroke-opacity="0.35"/>
+    <rect width="275" height="92" rx="18" fill="#5b8cff" opacity="0"><animate attributeName="opacity" values="0;0.22;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="5.4s" repeatCount="indefinite"/></rect>
+    <rect width="275" height="92" rx="18" fill="none" stroke="#5b8cff" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="5.4s" repeatCount="indefinite"/></rect>
+    <text x="20" y="32" font-family="'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#5b8cff">10</text>
+    <text x="20" y="60" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Warp Speed</text>
+    <text x="20" y="80" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9aa4c7">XHTTP · packet-up</text>
+    <rect x="192" y="16" width="63" height="22" rx="11" fill="#00d4a6" fill-opacity="0.15" stroke="#00d4a6" stroke-opacity="0.6"/>
+    <text x="224" y="31" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="800" letter-spacing="1" fill="#eee">SPEED</text>
+  </g>
+  <g transform="translate(606 286)">
+    <rect width="275" height="92" rx="18" fill="#11102a" stroke="#00d4a6" stroke-opacity="0.35"/>
+    <rect width="275" height="92" rx="18" fill="#00d4a6" opacity="0"><animate attributeName="opacity" values="0;0.22;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="6.0s" repeatCount="indefinite"/></rect>
+    <rect width="275" height="92" rx="18" fill="none" stroke="#00d4a6" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="6.0s" repeatCount="indefinite"/></rect>
+    <text x="20" y="32" font-family="'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#00d4a6">11</text>
+    <text x="20" y="60" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Nebula</text>
+    <text x="20" y="80" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9aa4c7">HTTPUpgrade</text>
+    <rect x="183" y="16" width="72" height="22" rx="11" fill="#7c5cff" fill-opacity="0.15" stroke="#7c5cff" stroke-opacity="0.6"/>
+    <text x="219" y="31" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="800" letter-spacing="1" fill="#eee">STABLE</text>
+  </g>
+  <g transform="translate(897 286)">
+    <rect width="275" height="92" rx="18" fill="#11102a" stroke="#ff5ca8" stroke-opacity="0.35"/>
+    <rect width="275" height="92" rx="18" fill="#ff5ca8" opacity="0"><animate attributeName="opacity" values="0;0.22;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="6.6s" repeatCount="indefinite"/></rect>
+    <rect width="275" height="92" rx="18" fill="none" stroke="#ff5ca8" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.16" dur="7.2s" begin="6.6s" repeatCount="indefinite"/></rect>
+    <text x="20" y="32" font-family="'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace" font-size="13" font-weight="700" fill="#ff5ca8">12</text>
+    <text x="20" y="60" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#fff">Quantum</text>
+    <text x="20" y="80" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9aa4c7">XHTTP · stream-up</text>
+    <rect x="192" y="16" width="63" height="22" rx="11" fill="#00d4a6" fill-opacity="0.15" stroke="#00d4a6" stroke-opacity="0.6"/>
+    <text x="224" y="31" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="800" letter-spacing="1" fill="#eee">SPEED</text>
+  </g>
+</svg>

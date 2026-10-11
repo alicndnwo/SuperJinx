@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="210" height="44" viewBox="0 0 210 44" role="img" aria-label="Telegram @Super_Jinx">
+<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#26A5E4"/><stop offset="1" stop-color="#26A5E4" stop-opacity="0.75"/></linearGradient>
+<linearGradient id="s" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.5" stop-color="#fff" stop-opacity="0.45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<clipPath id="c"><rect width="210" height="44" rx="22"/></clipPath></defs>
+<g clip-path="url(#c)">
+<rect width="210" height="44" fill="#14122e"/>
+<rect x="44" width="166" height="44" fill="url(#g)"/>
+<rect y="0" width="60" height="44" fill="url(#s)" transform="skewX(-20)"><animate attributeName="x" values="-120;290" dur="3.2s" repeatCount="indefinite"/></rect>
+</g>
+<g transform="translate(22 22)"><path d="M-9,-1 L9,-8 L6,8 L1,4 L-2,7 L-2,2 L5,-4 L-4,1 Z" fill="#26A5E4"/></g>
+<text x="127" y="28.5" text-anchor="middle" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="800" letter-spacing="0.6" fill="#fff">@Super_Jinx</text>
+</svg>
